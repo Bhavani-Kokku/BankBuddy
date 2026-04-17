@@ -1,0 +1,192 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+marquee {
+  border: 2px solid white;
+  font-size: medium;
+}
+
+.box1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forms {
+  margin: 2vw;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  background-color: #8FBAF3;
+  border: 2px solid black;
+  overflow: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form {
+  margin: 2vh;
+  padding: 2vh;
+  background-color: white;
+  border: 2px solid gray;
+  text-align: center;
+  border-radius: 1rem;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  color: black;
+}
+
+.form:hover {
+  animation: zoom 0.3s ease-in-out;
+}
+
+footer {
+  height: auto;
+  background-color: rgb(94, 188, 226);
+  color: whitesmoke;
+  text-align: center;
+  padding: 1vh;
+}
+
+.top {
+  display: block;
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .card {
+    height: 150px;
+    width: 90vw;
+  }
+  .forms {
+    grid-template-columns: 1fr;
+    font-size: medium;
+  }
+}
+
+#lang-toggle {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid #2c3570;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font-family: Arial, sans-serif;
+}
+ 
+#lang-toggle button {
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s;
+  letter-spacing: 0.04em;
+}
+ 
+#btn-en {
+  background: #2c3570;
+  color: #fff;
+}
+ 
+#btn-te {
+  background: #fff;
+  color: #2c3570;
+}
+ 
+/* Active states when Telugu is selected */
+body.lang-te #btn-en {
+  background: #fff;
+  color: #2c3570;
+}
+ 
+body.lang-te #btn-te {
+  background: #2c3570;
+  color: #fff;
+}
+ 
+/* ── Language visibility ── */
+body.lang-en .te { display: none; }
+body.lang-en .en { display: inline; }
+body.lang-te .en  { display: none; }
+body.lang-te .te  { display: inline; }
+ 
+/* Default: show both (graceful fallback if JS fails) */
+.en, .te { display: inline; 
+}
+ 
+
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .card {
+    height: 180px;
+    width: 85vw;
+  }
+  .forms {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: large;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .card {
+    height: 220px;
+    width: 90vw;
+   
+  }
+  .forms {
+    grid-template-columns: repeat(4, 1fr);
+    font-size: x-large;
+  }
+}
+body {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* CARD STYLE */
+.form {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border:2px solid #007bff;
+}
+
+/* ICON STYLE */
+.icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/* HOVER EFFECT */
+.form:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: white;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* GRID IMPROVEMENT */
+.forms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}

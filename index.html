@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Service Token System - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="card-inner">
+
+      <!-- FRONT -->
+      <div class="card-front">
+        <!-- BankBuddy image automatically from CSS -->
+      </div>
+
+      <!-- BACK -->
+      <div class="card-back">
+        <!-- SBI warning image from CSS -->
+      </div>
+
+
+    </div>
+  </div>
+<div class="dashboard">
+  
+  <div class="dash-card" onclick="goPage('services.html')">
+    <h2>Services</h2>
+    <p>View services & generate token</p>
+  </div>
+
+  <div class="dash-card" onclick="goPage('complaint.html')">
+    <h2>Complaint</h2>
+    <p>Submit complaint</p>
+  </div>
+
+  <div class="dash-card" onclick="goPage('login.html')">
+    <h2>Reception</h2>
+    <p>Manage tokens (staff only)</p>
+  </div>
+
+  <div class="dash-card" onclick="goPage('display.html')">
+    <h2>Live Display</h2>
+    <p>View tokens</p>
+  </div>
+  
+  <div class="dash-card" onclick="goPage('analysis.html')">
+    <h2>Fraud Analysis</h2>
+    <p>View fraud statistics</p>
+</div>
+</div>
+  <div class="container">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <!-- GENERAL -->
+    <div class="faq-item">
+      <button onclick="toggleFAQ(0)">How is my waiting time calculated?</button>
+      <p class="faq-answer">
+        Waiting time is calculated based on the number of customers ahead of you and the average service time for each
+        service.
+      </p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(1)">What if I miss my token?</button>
+      <p class="faq-answer">
+        You may need to rejoin the queue or contact reception staff.
+      </p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(2)">How do I know which counter to go to?</button>
+      <p class="faq-answer">
+        After generating your token, the system assigns a counter based on your selected service.
+      </p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(3)">Can I skip the queue?</button>
+      <p class="faq-answer">
+        No, tokens are served in order to maintain fairness, unless priority is given by staff.
+      </p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(4)">Who should I contact if I face an issue?</button>
+      <p class="faq-answer">
+        Please contact customer care at <b>1800-123456</b> for assistance.
+      </p>
+    </div>
+
+
+
+    <!-- ACCOUNT SERVICES -->
+
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ(5)">Can I open a joint account?</button>
+      <p class="faq-answer">
+        Yes, joint accounts can be opened with all account holders providing valid documents.
+      </p>
+    </div>
+    <div id="moreFAQs" style="display: none;">
+
+      <!-- CARD & DIGITAL -->
+      <div class="faq-item">
+        <button onclick="toggleFAQ(6)">How can I apply for an ATM/Debit card?</button>
+        <p class="faq-answer">
+          You can apply by submitting account details, ID proof, and a photo at the counter.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <button onclick="toggleFAQ(7)">How do I activate internet banking?</button>
+        <p class="faq-answer">
+          Register using your account number and mobile number. You may need ID verification.
+        </p>
+      </div>
+
+      <!-- KYC & UPDATES -->
+      <div class="faq-item">
+        <button onclick="toggleFAQ(8)">How do I update my KYC details?</button>
+        <p class="faq-answer">
+          Submit updated ID proof, address proof, and PAN card at the bank.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <button onclick="toggleFAQ(9)">How can I update my mobile number or email?</button>
+        <p class="faq-answer">
+          You need to provide ID proof and fill out an update request form.
+        </p>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleFAQ(10)">What should I do if my transaction fails?</button>
+        <p class="faq-answer">
+          If your transaction fails, please check your payment status and try again. If the issue persists, contact
+          customer support.
+        </p>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleFAQ(11)">My amount was deducted but transaction failed. What should I do?</button>
+        <p class="faq-answer">
+          In most cases, the deducted amount will be automatically refunded within 3–5 working days. If not, please
+          contact customer care.
+        </p>
+
+      </div>
+
+      <!-- DEPOSITS -->
+
+
+      <div class="faq-item">
+        <button onclick="toggleFAQ(12)">What is a Recurring Deposit (RD)?</button>
+        <p class="faq-answer">
+          RD allows you to deposit a fixed amount monthly for a specified period.
+        </p>
+      </div>
+
+
+
+      <!-- SPECIAL SCHEMES -->
+      <div class="faq-item">
+        <button onclick="toggleFAQ(13)">What is PPF and who can apply?</button>
+        <p class="faq-answer">
+          Public Provident Fund (PPF) is a long-term savings scheme available to Indian residents.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <button onclick="toggleFAQ(14)">Who can apply for Sukanya Samriddhi Yojana?</button>
+        <p class="faq-answer">
+          Parents or guardians of a girl child can open this account with required documents.
+        </p>
+      </div>
+
+      <!-- OTHER SERVICES -->
+      <div class="faq-item">
+        <button onclick="toggleFAQ(15)">How can I close my account?</button>
+        <p class="faq-answer">
+          Submit a closure form, ID proof, and return passbook/debit card.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <button onclick="toggleFAQ(16)">What should I do if my debit card is lost?</button>
+        <p class="faq-answer">
+          Immediately request card blocking and apply for a replacement.
+        </p>
+      </div>
+    </div>
+    <button onclick="toggleMoreFAQs()" id="faqBtn">
+      Show More FAQs
+    </button>
+
+
+
+  </div>
+
+
+<script>
+function goPage(page) {
+  window.location.href = page;
+}
+function toggleFAQ(index) {
+
+      const answers = document.querySelectorAll(".faq-answer");
+
+      answers.forEach((ans, i) => {
+        if (i === index) {
+          ans.style.display = ans.style.display === "block" ? "none" : "block";
+        } else {
+          ans.style.display = "none";
+        }
+      });
+    }
+    function toggleMoreFAQs() {
+
+      const more = document.getElementById("moreFAQs");
+      const btn = document.getElementById("faqBtn");
+
+      if (more.style.display === "none") {
+        more.style.display = "block";
+        btn.innerText = "Show Less";
+      } else {
+        more.style.display = "none";
+        btn.innerText = "Show More FAQs";
+      }
+    }
+</script>
+
+</body>
+</html>

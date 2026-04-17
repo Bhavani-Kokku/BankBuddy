@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Services</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+  <!-- 🔷 LANGUAGE TOGGLE -->
+  <div id="lang-toggle">
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-te" onclick="setLang('te')">తెలుగు</button>
+  </div>
+
+
+  <!-- 🔷 TITLE BAR -->
+  <div class="form" style="grid-column: 1/-1; background-color: navy; color: white;">
+    <b>
+      <span class="en">Services and respective forms</span>
+      <span class="te">సేవలు మరియు ఫార్ములు</span>
+    </b>
+    <div class="marquee-box">
+      <marquee scrollamount="6">
+
+        <span class="en">
+          ⚠️ Never share your PIN or OTP with anyone.
+        </span>
+
+        <span class="te">
+          ⚠️ మీ PIN లేదా OTP ఎవరికీ చెప్పవద్దు.
+        </span>
+
+      </marquee>
+    </div>
+  </div>
+
+  <!-- 🔷 SERVICES GRID -->
+  <div class="forms">
+
+    <div class="form" onclick="goService('Aadhaar Seeding')" onmouseover="playAudio('aadhaarAudio')"
+      onmouseout="stopAudio('aadhaarAudio')">
+      <img src="images/accountseeding.png" class="icon">
+      <span class="en">Aadhaar Seeding</span>
+      <span class="te">ఆధార్ సీడింగ్</span>
+
+    </div>
+
+    <div class="form" onclick="goService('Account Opening')" onmouseover="playLangAudio('accountTelAudio')"
+      onmouseout="stopAllAudio()">
+      <img src="images/accountopening.png" class="icon">
+      <span class="en">Account Opening</span>
+      <span class="te">ఖాతా ప్రారంభం</span>
+
+    </div>
+
+    <div class="form" onclick="goService('ATM / Debit Card Application')"
+      onmouseover="playAudio('atmEngAudio','atmAudio')" onmouseout="stopAllAudio()">
+      <img src="images/accountseeding.png" class="icon">
+      <span class="en">ATM / Debit Card</span>
+      <span class="te">డెబిట్ కార్డ్</span>
+    </div>
+
+    <div class="form" onclick="goService('Deposit Money')" onmouseover="playAudio('depositAudio')"
+      onmouseout="stopAudio('depositAudio')">
+      <img src="images/deposit.png" class="icon">
+      <span class="en">Deposit Money</span>
+      <span class="te">డబ్బు జమ</span>
+    </div>
+
+    <div class="form" onclick="goService('Withdraw Money')" onmouseover="playAudio('withdrawAudio')"
+      onmouseout="stopAudio('withdrawAudio')">
+      <img src="images/withdraw.png" class="icon">
+      <span class="en">Withdraw Money</span>
+      <span class="te">డబ్బు తీసుకోవడం</span>
+    </div>
+
+    <div class="form" onclick="goService('Joint Account Opening')" onmouseover="playAudio('jointAudio')"
+      onmouseout="stopAudio('jointAudio')">
+      <img src="images/jointaccount.png" class="icon">
+      <span class="en">Joint Account</span>
+      <span class="te">జాయింట్ ఖాతా</span>
+    </div>
+
+    <div class="form" onclick="goService('Internet Banking Registration')" onmouseover="playAudio('netBankingAudio')"
+      onmouseout="stopAudio('netBankingAudio')">
+      <img src="images/internetbanking.png" class="icon">
+      <span class="en">Internet Banking</span>
+      <span class="te">ఇంటర్నెట్ బ్యాంకింగ్</span>
+    </div>
+
+    <div class="form" onclick="goService('Cheque Book Request')">
+      <img src="images/cheque.png" class="icon">
+      <span class="en">Cheque Book</span>
+      <span class="te">చెక్ బుక్</span>
+    </div>
+
+    <div class="form" onclick="goService('KYC Update')">
+      <img src="images/kyc.png" class="icon">
+      <span class="en">KYC Update</span>
+      <span class="te">KYC నవీకరణ</span>
+    </div>
+
+    <div class="form" onclick="goService('Mobile / Email Update')">
+      <img src="images/mobile.png" class="icon">
+      <span class="en">Mobile Update</span>
+      <span class="te">మొబైల్ నవీకరణ</span>
+    </div>
+
+    <div class="form" onclick="goService('Fixed Deposit (FD)')">
+      <img src="images/deposit.png" class="icon">
+      <span class="en">Fixed Deposit</span>
+      <span class="te">FD</span>
+    </div>
+
+    <div class="form" onclick="goService('Recurring Deposit (RD)')">
+      <img src="images/deposit.png" class="icon">
+      <span class="en">Recurring Deposit</span>
+      <span class="te">RD</span>
+    </div>
+
+    <div class="form" onclick="goService('Car Loan')" onmouseover="playAudio('carLoanAudio')"
+      onmouseout="stopAudio('carLoanAudio')">
+      <img src="images/carloan.png" class="icon">
+      <span class="en">Car Loan</span>
+      <span class="te">కార్ లోన్</span>
+    </div>
+
+    <div class="form" onclick="goService('Home Loan')" onmouseover="playAudio('homeLoanAudio')"
+      onmouseout="stopAudio('homeLoanAudio')">
+      <img src="images/homeloan.png" class="icon">
+      <span class="en">Home Loan</span>
+      <span class="te">హోమ్ లోన్</span>
+    </div>
+
+    <div class="form" onclick="goService('PPF')" onmouseover="playAudio('ppfAudio')" onmouseout="stopAudio('ppfAudio')">
+      <img src="images/ppf.png" class="icon">
+      <span class="en">PPF</span>
+    </div>
+
+    <div class="form" onclick="goService('SCSS')" onmouseover="playAudio('scssAudio')"
+      onmouseout="stopAudio('scssAudio')">
+      <img src="images/scss.png" class="icon">
+      <span class="en">SCSS</span>
+    </div>
+
+    <div class="form" onclick="goService('Sukanya Samriddhi')" onmouseover="playAudio('sskAudio')"
+      onmouseout="stopAudio('sskAudio')">
+      <img src="images/sky.png" class="icon">
+      <span class="en">Sukanya</span>
+      <span class="te">సుకన్య</span>
+    </div>
+
+  </div>
+  <!-- 🔊 AUDIO FILES -->
+
+
+  <!--<audio id="accountTelAudio" src="audio/telopenaccount.mpeg"></audio>
+
+  <audio id="ppfAudio" src="audio/ppf.mpeg"></audio>
+  <audio id="scssAudio" src="audio/scss.mpeg"></audio>
+  <audio id="sskAudio" src="audio/ssk.mpeg"></audio>
+
+  <audio id="withdrawAudio" src="audio/withdraw.mpeg"></audio>
+
+  <audio id="form60Audio" src="audio/form60.mpeg"></audio>
+  <audio id="homeLoanAudio" src="audio/homeloan.mpeg"></audio>
+  <audio id="netBankingAudio" src="audio/internetbanking.mpeg"></audio>
+  <audio id="jointAudio" src="audio/joint.mpeg"></audio>
+  <audio id="nriAudio" src="audio/nri.mpeg"></audio>-->
+  <!-- 🔊 ALL AUDIO FILES -->
+
+  <audio id="aadhaarAudio" src="audio/adharseeding.mpeg"></audio>
+
+  <audio id="accountAudio" src="audio/openaccount.mpeg"></audio>
+  <audio id="accountTelAudio" src="audio/telopenaccount.mpeg"></audio>
+
+  <audio id="atmAudio" src="audio/atm.mpeg"></audio>
+  <audio id="atmEngAudio" src="audio/atmeng.mpeg"></audio>
+
+  <audio id="depositAudio" src="audio/deposit.mpeg"></audio>
+  <audio id="withdrawAudio" src="audio/withdraw.mpeg"></audio>
+
+  <audio id="jointAudio" src="audio/joint.mpeg"></audio>
+  <audio id="nriAudio" src="audio/nri.mpeg"></audio>
+
+  <audio id="netBankingAudio" src="audio/internetbanking.mpeg"></audio>
+
+  <audio id="homeLoanAudio" src="audio/homeloan.mpeg"></audio>
+  <audio id="carLoanAudio" src="audio/carloan.mpeg"></audio>
+
+  <audio id="ppfAudio" src="audio/ppf.mpeg"></audio>
+  <audio id="scssAudio" src="audio/scss.mpeg"></audio>
+  <audio id="sskAudio" src="audio/ssk.mpeg"></audio>
+
+  <audio id="form60Audio" src="audio/form60.mpeg"></audio>
+  <audio id="settlementAudio" src="audio/settlement.mpeg"></audio>
+
+  <!-- 🔷 FOOTER -->
+  <footer>
+    Customer Care: 1800-123456
+  </footer>
+
+  <!-- 🔥 JS -->
+  <script>
+
+    function goService(serviceName) {
+      localStorage.setItem("service", serviceName);
+      window.location.href = "service.html";
+    }
+
+    /* 🌐 Language toggle */
+    function setLang(lang) {
+      document.body.className = "lang-" + lang;
+    }
+    /* 🔊 PLAY BASED ON LANGUAGE */
+    function playLangAudio(enId, teId) {
+
+      let lang = document.body.className;
+
+      if (lang === "lang-te") {
+        playAudio(teId);
+      } else {
+        playAudio(enId);
+      }
+    }
+
+    /* 🔊 PLAY AUDIO 
+    function playAudio(id) {
+      const audio = document.getElementById(id);
+      audio.currentTime = 0;
+      audio.play();
+    }*/
+    function playAudio(id) {
+      stopAllAudio(); // 🔥 ensures only one audio plays
+      const audio = document.getElementById(id);
+      audio.currentTime = 0;
+      audio.play().catch(() => { });
+    }
+
+
+    /* 🔊 STOP AUDIO */
+    function stopAudio(id) {
+      const audio = document.getElementById(id);
+      audio.pause();
+      audio.currentTime = 0;
+    }
+
+    /* 🔊 STOP ALL */
+    function stopAllAudio() {
+      document.querySelectorAll("audio").forEach(a => {
+        a.pause();
+        a.currentTime = 0;
+      });
+    }
+
+  </script>
+
+</body>
+
+</html>

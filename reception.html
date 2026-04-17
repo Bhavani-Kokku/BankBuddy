@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reception Panel</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* COUNTER CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* RECEPTION BOX */
+.reception-box {
+  background: white;
+  padding: 20px;
+  margin: 15px auto;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Reception Dashboard</h1>
+
+  <!-- 🔷 COUNTER SELECTION -->
+  <div class="cards">
+    <div class="card" onclick="selectCounter(1)">Counter 1</div>
+    <div class="card" onclick="selectCounter(2)">Counter 2</div>
+    <div class="card" onclick="selectCounter(3)">Counter 3</div>
+    <div class="card" onclick="selectCounter(4)">Counter 4</div>
+  </div>
+
+  <!-- 🔷 COUNTER DETAILS -->
+  <div id="counterView" style="display:none; margin-top:20px;">
+
+    <h2 id="counterTitle"></h2>
+
+    <!-- NOW SERVING -->
+    <div class="reception-box">
+      <h3>Now Serving</h3>
+      <p id="currentToken">--</p>
+    </div>
+
+    <!-- BUTTON -->
+    <button onclick="nextToken()">Update Token</button>
+
+    <!-- 🔥 QUEUE DETAILS -->
+    <div class="reception-box">
+      <h3>Waiting Queue</h3>
+      <p id="queueList">--</p>
+      <p id="queueCount"></p>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getFirestore, collection, query, where,
+  onSnapshot, updateDoc, doc, getDocs, limit
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+/* 🔥 FIREBASE CONFIG */
+const firebaseConfig = {
+  apiKey: "AIzaSyCiU8zbZX1T1zRt3pqkX08MZR5gEvp5XOk",
+  authDomain: "bankbuddy-af594.firebaseapp.com",
+  projectId: "bankbuddy-af594"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/* GLOBAL VARIABLES */
+let currentCounter = null;
+let currentDocId = null;
+
+/* 🔷 SELECT COUNTER */
+window.selectCounter = function(counter) {
+  currentCounter = counter;
+
+  document.getElementById("counterView").style.display = "block";
+  document.getElementById("counterTitle").innerText =
+    "Counter " + counter;
+
+  loadToken();
+  loadQueue();
+};
+
+/* 🔥 LOAD CURRENT SERVING TOKEN */
+function loadToken() {
+
+  const today = new Date().toDateString();
+
+  const q = query(
+    collection(db, "tokens"),
+    where("status", "==", "serving"),
+    where("counter", "==", currentCounter),
+    where("date", "==", today),
+    limit(1)
+  );
+
+  onSnapshot(q, (snapshot) => {
+
+    if (snapshot.empty) {
+      document.getElementById("currentToken").innerText =
+        "No Active Token";
+      currentDocId = null;
+      return;
+    }
+
+    const docSnap = snapshot.docs[0];
+    const data = docSnap.data();
+
+    currentDocId = docSnap.id;
+
+    document.getElementById("currentToken").innerText =
+      "Token " + data.token;
+  });
+}
+
+/* 🔥 LOAD WAITING QUEUE */
+function loadQueue() {
+
+  const today = new Date().toDateString();
+
+  const q = query(
+    collection(db, "tokens"),
+    where("status", "==", "waiting"),
+    where("counter", "==", currentCounter),
+    where("date", "==", today)
+  );
+
+  onSnapshot(q, (snapshot) => {
+
+    let tokens = [];
+
+    snapshot.forEach(docSnap => {
+      tokens.push(docSnap.data().token);
+    });
+
+    // sort tokens
+    tokens.sort((a, b) => a - b);
+
+    // display list
+    document.getElementById("queueList").innerText =
+      tokens.length ? tokens.join(", ") : "No waiting tokens";
+
+    // display count
+    document.getElementById("queueCount").innerText =
+      "Total Waiting: " + tokens.length;
+  });
+}
+
+/* 🔥 NEXT TOKEN FUNCTION */
+window.nextToken = async function() {
+
+  const today = new Date().toDateString();
+
+  // mark current as done
+  if (currentDocId) {
+    await updateDoc(doc(db, "tokens", currentDocId), {
+      status: "done"
+    });
+  }
+
+  // get next waiting token (same counter)
+  const q = query(
+    collection(db, "tokens"),
+    where("status", "==", "waiting"),
+    where("counter", "==", currentCounter),
+    where("date", "==", today),
+    limit(1)
+  );
+
+  const snapshot = await getDocs(q);
+
+  if (!snapshot.empty) {
+    const nextDoc = snapshot.docs[0];
+
+    await updateDoc(doc(db, "tokens", nextDoc.id), {
+      status: "serving"
+    });
+  }
+};
+if(localStorage.getItem("isLoggedIn") !== "true") {
+    alert("Please login first!");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

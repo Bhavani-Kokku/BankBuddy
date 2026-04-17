@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 class="title">Now Serving</h1>
+
+<div class="display-grid">
+
+    <div class="display-card">
+      <h2>Counter 1</h2>
+      <p id="c1">-</p>
+      <p id="c1">--</p>
+  <p id="c1next">Next: --</p>
+
+    </div>
+
+    <div class="display-card">
+      <h2>Counter 2</h2>
+      <p id="c2">-</p>
+      <p id="c2">--</p>
+  <p id="c2next">Next: --</p>
+    </div>
+
+    <div class="display-card">
+      <h2>Counter 3</h2>
+      <p id="c3">-</p>
+      <p id="c3">--</p>
+  <p id="c3next">Next: --</p>
+    </div>
+
+    <div class="display-card">
+      <h2>Counter 4</h2>
+      <p id="c4">-</p>
+      <p id="c4">--</p>
+<p id="c4next">Next: --</p>
+  </div>
+
+</div>
+
+</body>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, query, where, onSnapshot, getDocs } 
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCiU8zbZX1T1zRt3pqkX08MZR5gEvp5XOk",
+    authDomain: "bankbuddy-af594.firebaseapp.com",
+    projectId: "bankbuddy-af594"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/* 🔥 LOAD CURRENT TOKEN */
+function loadCurrent(counter) {
+
+    const today = new Date().toDateString();
+
+    const q = query(
+        collection(db, "tokens"),
+        where("status", "==", "serving"),
+        where("counter", "==", counter),
+        where("date", "==", today)
+    );
+
+    onSnapshot(q, (snapshot) => {
+
+        if (snapshot.empty) {
+            document.getElementById("c" + counter).innerText = "--";
+            return;
+        }
+
+        const data = snapshot.docs[0].data();
+
+        document.getElementById("c" + counter).innerText =
+            "Token " + data.token;
+    });
+}
+
+/* 🔥 LOAD NEXT 3 TOKENS */
+async function loadNext(counter) {
+
+    const today = new Date().toDateString();
+
+    const q = query(
+        collection(db, "tokens"),
+        where("status", "==", "waiting"),
+        where("counter", "==", counter),
+        where("date", "==", today)
+    );
+
+    const snapshot = await getDocs(q);
+
+    let tokens = [];
+
+    snapshot.forEach(doc => {
+        tokens.push(doc.data().token);
+    });
+
+    tokens.sort((a, b) => a - b);
+
+    let next3 = tokens.slice(0, 3);
+
+    document.getElementById("c" + counter + "next").innerText =
+        next3.length ? "Next: " + next3.join(", ") : "Next: --";
+}
+
+/* 🔥 INITIAL LOAD */
+function loadAll() {
+    for (let i = 1; i <= 4; i++) {
+        loadCurrent(i);
+        loadNext(i);
+    }
+}
+
+/* 🔁 AUTO REFRESH NEXT TOKENS */
+setInterval(() => {
+    for (let i = 1; i <= 4; i++) {
+        loadNext(i);
+    }
+}, 3000);
+
+loadAll();
+
+</script>
+
+</body>
+</html>

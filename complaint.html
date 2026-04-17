@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <link rel="stylesheet" href="complaint.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cyber Fraud Complaint Form</h1>
+    </header>
+
+    <div class="comForm">
+        <main>
+            <form action="">
+
+                <h2>Mandatory Information</h2>
+
+                <div class="MandatoryInformation">
+                    <div class="part1">
+                        <label>Incident Date-Time:
+                            <input type="date">
+                        </label><br><br>
+
+                        <label>Incident Time:
+                            <input type="time">
+                        </label><br><br>
+                    </div>
+
+                    <label>
+                        Upload ID Proof:
+                        <input type="file" name="document">
+                    </label><br>
+                </div>
+
+                <h2>Details for Financial Fraud</h2>
+
+                <div class="FinancialFraud">
+                    <label>Bank Account Number:
+                        <input type="text">
+                    </label><br><br>
+
+                    <div class="part1">
+                        <label>Email:
+                            <input type="text">
+                        </label><br><br>
+
+                        <label>Bank Name:
+                            <input type="text">
+                        </label><br><br>
+                    </div>
+
+                    <div class="part2">
+                        <label>Transaction ID:
+                            <input type="text">
+                        </label><br><br>
+
+                        <label>Transaction Date:
+                            <input type="date">
+                        </label>
+                    </div><br><br>
+
+                    <label>Mobile Number:
+                        <input type="text">
+                    </label><br><br>
+
+                    <label>Fraud Amount:
+                        <input type="number" id="Famount">
+                    </label><br><br>
+
+                    <label>Upload Evidence:
+                        <input type="file">
+                        <input type="file">
+                    </label><br><br>
+
+                    <label>Type of Fraud:
+                        <select id="frauds">
+                            <option value="Sim Swap">Sim Swap</option>
+                            <option value="Smishing">Smishing</option>
+                            <option value="Vishing">Vishing</option>
+                            <option value="Phishing">Phishing</option>
+                            <option value="Money Mule">Money Mule</option>
+                            <option value="Trojan">Trojan</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                </div>
+
+                <!-- ✅ MOVED INSIDE FORM -->
+                <h2>Suspect Details (if Available)</h2>
+
+                <div class="part1">
+                    <label>Suspect Mobile Number:
+                        <input type="text">
+                    </label><br><br>
+
+                    <label>Suspect Email:
+                        <input type="text">
+                    </label>
+                </div><br>
+
+                <label>Suspect Bank Account:
+                    <input type="text">
+                </label><br><br>
+
+                <label>Upload Suspect Proof:
+                    <input type="file">
+                </label><br><br>
+
+                <textarea placeholder="Enter incident description"></textarea><br><br>
+
+                <!-- ✅ BUTTON AT VERY END -->
+                <div class="submission">
+                    <input type="submit" value="Submit" id="submit">
+                    <input type="reset" value="Reset" id="reset">
+                </div>
+
+            </form>
+        </main>
+    </div>
+
+    <!-- FIREBASE SCRIPT -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCiU8zbZX1T1zRt3pqkX08MZR5gEvp5XOk",
+            authDomain: "bankbuddy-af594.firebaseapp.com",
+            projectId: "bankbuddy-af594"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.querySelector("form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            let fraudType = document.getElementById("frauds").value;
+
+            await addDoc(collection(db, "complaints"), {
+                type: fraudType,
+                time: new Date()
+            });
+
+            alert("Complaint submitted successfully!");
+        });
+    </script>
+
+</body>
+</html>

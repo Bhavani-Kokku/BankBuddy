@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Service Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2 id="serviceTitle"></h2>
+
+    <h3>Required Documents<br>(Please confirm you have all the documents with you)</h3>
+    <div id="docs"></div>
+
+    <!-- ✅ ALWAYS CLICKABLE -->
+    <button onclick="generateToken()">Generate Token</button>
+
+    <p id="message"></p>
+
+  </div>
+  <p id="avgTime"></p>
+
+  <script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import {
+      getFirestore, collection, addDoc, query, where, getDocs
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    /* 🔥 FIREBASE CONFIG */
+    const firebaseConfig = {
+      apiKey: "AIzaSyCiU8zbZX1T1zRt3pqkX08MZR5gEvp5XOk",
+      authDomain: "bankbuddy-af594.firebaseapp.com",
+      projectId: "bankbuddy-af594"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    /* 🟡 SERVICE NAME */
+    const service = localStorage.getItem("service");
+    document.getElementById("serviceTitle").innerText = service;
+
+    /* 📄 SERVICE DOCUMENTS */
+    const serviceDocs = {
+
+      "Account Opening": ["ID Proof", "Address Proof", "PAN Card / Form 60", "Passport Photos"],
+      "Joint Account Opening": ["ID Proof (all holders)", "Address Proof", "PAN Card", "Photos"],
+      "NRI Account Opening": ["Passport", "Visa", "Address Proof", "PAN"],
+
+      "Deposit Money": ["Deposit Slip", "Account Number", "Cash / Cheque"],
+      "Withdraw Money": ["Withdrawal Slip", "Passbook", "ID Proof"],
+
+      "ATM / Debit Card Application": ["Account Details", "ID Proof", "Photo"],
+      "Internet Banking Registration": ["Account Number", "Mobile Number", "ID Proof"],
+      "Cheque Book Request": ["Account Number", "ID Proof"],
+
+      "Aadhaar Seeding": ["Aadhaar Card", "Account Details"],
+      "KYC Update": ["ID Proof", "Address Proof", "PAN Card"],
+      "Mobile / Email Update": ["ID Proof"],
+
+      "Fixed Deposit (FD)": ["Account Number", "PAN Card", "Amount"],
+      "Recurring Deposit (RD)": ["Account Number", "PAN Card", "Initial Deposit"],
+
+      "Car Loan": ["ID Proof", "Income Proof", "Bank Statement"],
+      "Home Loan": ["ID Proof", "Income Proof", "Property Documents"],
+
+      "Public Provident Fund (PPF)": [
+        "ID Proof", "Address Proof", "PAN Card", "Passport Photos", "Initial Deposit"
+      ],
+
+      "Senior Citizen Savings Scheme (SCSS)": [
+        "Age Proof (60+)", "ID Proof", "Address Proof", "PAN Card", "Passport Photos"
+      ],
+
+      "Sukanya Samriddhi Account": [
+        "Girl Child Birth Certificate", "Parent/Guardian ID Proof",
+        "Address Proof", "Passport Photos"
+      ],
+
+      "Settlement of Deceased Account": [
+        "Death Certificate", "ID Proof of Nominee", "Account Details",
+        "Legal Heir Certificate / Will"
+      ],
+
+      "Account Closure": [
+        "Closure Form", "ID Proof", "Passbook / Debit Card"
+      ],
+
+      "Debit Card Block / Unblock": [
+        "Account Details", "ID Proof", "Request Form"
+      ]
+    };
+    const defaultServiceTime = {
+      "Account Opening": 8,
+      "Joint Account Opening": 10,
+      "NRI Account Opening": 12,
+      "Deposit Money": 3,
+      "Withdraw Money": 4,
+      "ATM / Debit Card Application": 5,
+      "Internet Banking Registration": 6,
+      "Cheque Book Request": 4,
+      "Aadhaar Seeding": 5,
+      "KYC Update": 6,
+      "Mobile / Email Update": 3,
+      "Fixed Deposit (FD)": 7,
+      "Recurring Deposit (RD)": 6,
+      "Car Loan": 12,
+      "Home Loan": 15,
+      "Public Provident Fund (PPF)": 8,
+      "Senior Citizen Savings Scheme (SCSS)": 9,
+      "Sukanya Samriddhi Account": 8,
+      "Settlement of Deceased Account": 15,
+      "Account Closure": 6,
+      "Debit Card Block / Unblock": 4
+    };
+    /* 📄 DISPLAY DOCUMENTS */
+    const docsDiv = document.getElementById("docs");
+    const docs = serviceDocs[service] || [];
+
+    if (docs.length === 0) {
+      docsDiv.innerHTML = "<p>No documents required</p>";
+    } else {
+      docs.forEach(doc => {
+        docsDiv.innerHTML += `
+      <label>
+        <input type="checkbox" class="doc"> ${doc}
+      </label>
+    `;
+      });
+    }
+
+    /* 🎯 COUNTER LOGIC */
+    function getCounter(service) {
+      if (
+        service.includes("Account") ||
+        service.includes("PPF") ||
+        service.includes("SCSS") ||
+        service.includes("Sukanya")
+      ) return 1;
+
+      if (
+        service.includes("Deposit") ||
+        service.includes("Withdraw") ||
+        service.includes("FD") ||
+        service.includes("RD")
+      ) return 2;
+
+      if (
+        service.includes("ATM") ||
+        service.includes("Card") ||
+        service.includes("Cheque") ||
+        service.includes("Internet")
+      ) return 3;
+
+      return 4;
+    }
+    async function getAvgServiceTime(serviceName) {
+
+      const q = query(collection(db, "servedCustomers"));
+      const snapshot = await getDocs(q);
+
+      let total = 0;
+      let count = 0;
+
+      snapshot.forEach(doc => {
+        const data = doc.data();
+
+        if (data.service === serviceName) {
+          total += data.timeTaken;
+          count++;
+        }
+      });
+
+      if (count === 0) {
+        return defaultServiceTime[serviceName] || 5;
+      }
+
+      return Math.round(total / count);
+    }
+    async function calculateWaitingTime(counter, newToken) {
+
+      const today = new Date().toDateString();
+
+      const q = query(
+        collection(db, "tokens"),
+        where("counter", "==", counter),
+        where("status", "in", ["waiting", "serving"]),
+        where("date", "==", today)
+      );
+
+      const snapshot = await getDocs(q);
+
+      let totalWaitingTime = 0;
+
+      for (const docSnap of snapshot.docs) {
+
+        const data = docSnap.data();
+
+        if (data.token < newToken) {
+
+          const avgTime = await getAvgServiceTime(data.service);
+          totalWaitingTime += avgTime;
+        }
+      }
+
+      return totalWaitingTime;
+    }
+
+    /* 🔥 GENERATE TOKEN */
+    window.generateToken = async function () {
+
+      // ✅ CHECK DOCUMENTS FIRST
+      const checkboxes = document.querySelectorAll(".doc");
+      const allChecked = Array.from(checkboxes).every(c => c.checked);
+
+      if (!allChecked && checkboxes.length > 0) {
+        document.getElementById("message").innerText =
+          "❌ Token not generated! Please confirm you have ALL required documents.";
+        return;
+      }
+
+      const today = new Date().toDateString();
+
+      // GLOBAL TOKEN COUNT
+      const qCount = query(
+        collection(db, "tokens"),
+        where("date", "==", today)
+      );
+
+      const snapshotCount = await getDocs(qCount);
+      const newToken = snapshotCount.size + 1;
+
+      const counter = getCounter(service);
+
+      // CHECK SERVING FOR THIS COUNTER
+      const qServing = query(
+        collection(db, "tokens"),
+        where("status", "==", "serving"),
+        where("counter", "==", counter),
+        where("date", "==", today)
+      );
+
+      const snapshotServing = await getDocs(qServing);
+
+      let statusValue = "waiting";
+
+      if (snapshotServing.empty) {
+        statusValue = "serving";
+      }
+
+      // SAVE TOKEN
+      await addDoc(collection(db, "tokens"), {
+        token: newToken,
+        counter: counter,
+        service: service,
+        status: statusValue,
+        date: today
+      });
+
+      // 🔥 CALCULATE WAITING TIME
+      const waitingTime = await calculateWaitingTime(counter, newToken);
+      const avgTime = await getAvgServiceTime(service);
+
+      document.getElementById("message").innerHTML = `
+  ✅ Token: ${newToken} <br>
+  👉 Go to Counter ${counter} <br>
+  ⏳ Estimated Waiting Time: ${waitingTime} minutes <br>
+  ⏱️ Average Service Time (${service}): ${avgTime} minutes
+`;
+    };
+
+  </script>
+
+</body>
+
+</html>

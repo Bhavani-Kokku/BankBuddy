@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align:center;">Fraud Analysis</h1>
+
+    <div style="width:90%; max-width:900px; margin:auto;">
+    <canvas id="fraudChart"></canvas>
+</div>
+
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCiU8zbZX1T1zRt3pqkX08MZR5gEvp5XOk",
+        authDomain: "bankbuddy-af594.firebaseapp.com",
+        projectId: "bankbuddy-af594"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadData() {
+        let counts = [0,0,0,0,0,0,0]; // 7 fraud types
+
+        const querySnapshot = await getDocs(collection(db, "complaints"));
+
+        querySnapshot.forEach((doc) => {
+    let type = doc.data().type;
+
+    switch(type) {
+        case "Sim Swap": counts[0]++; break;
+        case "Smishing": counts[1]++; break;
+        case "Vishing": counts[2]++; break;
+        case "Phishing": counts[3]++; break;
+        case "Money Mule": counts[4]++; break;
+        case "Trojan": counts[5]++; break;
+        case "Other": counts[6]++; break;
+    }
+});
+
+        drawChart(counts);
+    }
+
+    function drawChart(data) {
+        new Chart(document.getElementById("fraudChart"), {
+            type: "bar",
+            data: {
+                labels: ["Sim Swap","Smishing","Vishing","Phishing","Money Mule","Trojan","Other"],
+                datasets: [{
+                    label: "Number of Complaints",
+                    data: data
+                }]
+            }
+        });
+    }
+
+    loadData();
+    </script>
+
+</body>
+</html>
