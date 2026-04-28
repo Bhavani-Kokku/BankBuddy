@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Account Opening Form - Dasari Praneeth Sanjay</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 10px; line-height: 1.3; color: #000; background-color: #555; margin: 0; padding: 20px; }
+        .page { width: 210mm; min-height: 297mm; margin: 0 auto 20px auto; background: white; padding: 15mm; box-sizing: border-box; box-shadow: 0 0 10px rgba(0,0,0,0.5); position: relative; }
+        h1, h2, h3, h4 { text-align: center; margin: 5px 0; font-size: 12px; }
+        .section { border: 1px solid #000; margin-bottom: 10px; padding: 5px; }
+        .section-title { background: #000; color: #fff; font-weight: bold; padding: 3px; margin: -5px -5px 5px -5px; }
+        .row { display: flex; flex-wrap: wrap; margin-bottom: 5px; }
+        .col { flex: 1; padding: 0 5px; }
+        .field { margin-bottom: 4px; display: flex; align-items: center; flex-wrap: wrap; }
+        .field label { font-weight: bold; margin-right: 5px; }
+        input[type="text"], input[type="email"] { border: none; border-bottom: 1px dashed #000; font-family: monospace; font-size: 11px; padding: 2px; }
+        .mandatory { color: red; font-weight: bold; }
+        .checkbox-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; font-size: 9px; }
+        .checkbox-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 9px; }
+        th, td { border: 1px solid #000; padding: 3px; text-align: left; }
+        .instructions, .terms { font-size: 8px; text-align: justify; }
+        .footer-page { text-align: right; font-weight: bold; margin-top: 10px; border-top: 1px solid #000; padding-top: 5px; font-size: 12px; }
+        .box { border: 1px solid #000; width: 100px; height: 120px; display: inline-block; text-align: center; line-height: 120px; color: #999; }
+        .sig-box { border: 1px solid #000; width: 200px; height: 50px; display: inline-block; }
+        @media print { body { background: none; padding: 0; } .page { margin: 0; box-shadow: none; border: none; page-break-after: always; } }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div style="text-align: right; font-weight: bold;">SBI</div>
+    <h1>CUSTOMER INFORMATION SHEET (CIF Creation/Amendment)</h1>
+    <h2>ACCOUNT OPENING FORM FOR RESIDENT INDIVIDUAL (PART-1)</h2>
+    <p style="text-align: center;">(Must accompanied with Terms and Conditions)<br>
+    (In case of joint accounts/Related Person/Guardian, Part-I (CIF Sheet) and Terms & Conditions to be taken for each customer)<br>
+    In case of current account, declaration cum undertaking Annexure III to be obtained</p>
+    
+    <div class="row" style="border: 1px solid #000; padding: 5px;">
+        <div class="col">Branch Name: <input type="text" value=""></div>
+        <div class="col">Branch Code: <input type="text" value=""></div>
+    </div>
+    <p style="font-style: italic;">Fields marked asterix (<span class="mandatory">*</span>) are mandatory. Please fill up in BLOCK letters only and use black ink for signature.</p>
+
+    <div class="section">
+        <div class="row">
+            <div class="col">Customer ID: <input type="text"></div>
+            <div class="col">Account No.: <input type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col">Account type: <input type="checkbox" checked> Normal <input type="checkbox"> Small <input type="checkbox"> Minor</div>
+            <div class="col">Application type: <input type="checkbox" checked> New <input type="checkbox"> Update</div>
+        </div>
+        <div class="row">
+            <div class="col">CKYC No.: <input type="text"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">A. Personal Details</div>
+        <div class="field"><label><span class="mandatory">*</span> 1. Name: (Same as ID Proof)</label> <input type="text" value="DASARI PRANEETH SANJAY" style="width: 300px;"></div>
+        <div class="field"><label>2. Maiden Name:</label> <input type="text" value=""></div>
+        <div class="row">
+            <div class="col field"><label><span class="mandatory">*</span> 3. Date of Birth:</label> <input type="text" value="01/01/2000"></div>
+            <div class="col field"><label><span class="mandatory">*</span> 4. Gender:</label> <input type="checkbox" checked> Male <input type="checkbox"> Female <input type="checkbox"> Third Gender</div>
+            <div class="col field"><label><span class="mandatory">*</span> 5. Marital Status:</label> <input type="checkbox"> Married <input type="checkbox" checked> Unmarried <input type="checkbox"> Others</div>
+        </div>
+        <div class="row">
+            <div class="col field"><label>6. No of Dependents:</label> <input type="text"></div>
+            <div class="col field"><label>7. Name of (Tick one):</label> <input type="checkbox" checked> Father <input type="checkbox"> Mother <input type="checkbox"> Spouse <br><input type="text" style="width: 150px;"></div>
+        </div>
+        <div class="row">
+            <div class="col field"><label>8. Name of Guardian (In Case Of Minor):</label> <input type="text"></div>
+            <div class="col field"><label>Relationship with Guardian:</label> <input type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col field"><label>9. Nationality:</label> <input type="checkbox" checked> IN-Indian <input type="checkbox"> Others <input type="text" placeholder="Country Name"></div>
+            <div class="col field"><label>10. Citizenship:</label> <input type="text" value="INDIAN"></div>
+        </div>
+
+        <div class="field"><label><span class="mandatory">*</span> 11. Occupation Type:</label></div>
+        <div class="checkbox-grid">
+            <div><input type="checkbox"> Service</div>
+            <div><input type="checkbox"> State Govt.</div>
+            <div><input type="checkbox"> Central Govt.</div>
+            <div><input type="checkbox"> Public Sector Undertaking</div>
+            <div><input type="checkbox"> Defence</div>
+            <div><input type="checkbox"> Pvt. Sector</div>
+            <div><input type="checkbox"> Business</div>
+            <div><input type="checkbox"> Industrialist</div>
+            <div><input type="checkbox"> Trade Sect</div>
+            <div><input type="checkbox"> Serv. Sect</div>
+            <div><input type="checkbox"> Migrant Labour</div>
+            <div><input type="checkbox"> Contractor</div>
+            <div><input type="checkbox"> Jeweller/Bullion Trader</div>
+            <div><input type="checkbox"> Pawn Shop</div>
+            <div><input type="checkbox"> Import/Export Customer</div>
+            <div><input type="checkbox"> Other Self Employed</div>
+            <div><input type="checkbox"> Medical Prof.</div>
+            <div><input type="checkbox"> Legal Prof.</div>
+            <div><input type="checkbox"> CA/ICWA/Taxation/Finance</div>
+            <div><input type="checkbox"> Eng./Architect/Tech. Consultant</div>
+            <div><input type="checkbox"> Retired</div>
+            <div><input type="checkbox"> Journalist</div>
+            <div><input type="checkbox"> Housewife</div>
+            <div><input type="checkbox" checked> <b>Student</b></div>
+            <div><input type="checkbox"> Share and Stock Broker</div>
+            <div><input type="checkbox"> Oth. Professional</div>
+            <div><input type="checkbox"> Agriculture</div>
+            <div><input type="checkbox"> Political/Social Worker</div>
+            <div><input type="checkbox"> Not categorised-Please specify</div>
+        </div>
+        
+        <div class="row" style="margin-top: 5px;">
+            <div class="col field"><label>12. Organization's Name:</label> <input type="text"></div>
+            <div class="col field"><label>Designation/Profession:</label> <input type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col field"><label>13. Annual Income Rs.:</label> <input type="text" value="2,00,000"></div>
+            <div class="col field"><label>14. Net Worth (approx value) Rs.:</label> <input type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col field"><label>15. Source of funds:</label> <input type="checkbox"> Salary <input type="checkbox"> Business Income <input type="checkbox"> Agriculture <input type="checkbox"> Investment <input type="checkbox"> Pension <input type="checkbox" checked> Others</div>
+        </div>
+        <div class="row">
+            <div class="col field"><label>16. Religion:</label> <input type="checkbox" checked> Hindu <input type="checkbox"> Muslim <input type="checkbox"> Christian <input type="checkbox"> Sikh <input type="checkbox"> Others</div>
+            <div class="col field"><label>17. Category:</label> <input type="checkbox" checked> General <input type="checkbox"> OBC <input type="checkbox"> SC <input type="checkbox"> ST</div>
+        </div>
+        <div class="row">
+            <div class="col field"><label>18. Person with disability:</label> <input type="checkbox"> Yes <input type="checkbox" checked> No (If yes: <input type="checkbox"> Visually impaired <input type="checkbox"> Differently abled)</div>
+        </div>
+        <div class="field"><label>19. Educational Qualification:</label> <input type="checkbox"> upto 9th <input type="checkbox"> 10th <input type="checkbox" checked> Graduate (Gen.) <input type="checkbox"> Post Graduate <input type="checkbox"> Illiterate</div>
+        <div class="field"><label>20. Please Tick the Applicable box:</label> <input type="checkbox"> Politically exposed Person <input type="checkbox"> Related to politically Exposed Person <input type="checkbox" checked> None</div>
+        <div class="field"><label>21. Country of Tax Residence in India only and not in any other country:</label> <input type="checkbox" checked> Yes <input type="checkbox"> No</div>
+        <div class="field"><label>22. PAN:</label> <input type="text" value="ABCDE1234F"> (If PAN is not submitted, submit Form 60-Annexure 1)</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">B. Contact Details (All communications will be sent on provided Mobile No./Email-ID)</div>
+        <div class="row">
+            <div class="col field"><label><span class="mandatory">*</span> Mobile No.:</label> <input type="text" value="9876543210"></div>
+            <div class="col field"><label>Email ID:</label> <input type="email" value="praneeth.sanjay@example.com" style="width:200px;"></div>
+            <div class="col field"><label>STD Tel. (Off/Res):</label> <input type="text"></div>
+        </div>
+    </div>
+    <div class="footer-page">1</div>
+</div>
+
+<div class="page">
+    <div class="section">
+        <div class="section-title">C. Proof of Identity/Address (Officially Valid Documents)</div>
+        <p>Please tick the appropriate Box (any one ID type) and give details*</p>
+        <div class="row">
+            <div class="col"><input type="checkbox"> A-PASSPORT</div>
+            <div class="col"><input type="checkbox"> B-VOTER'S IDENTITY CARD</div>
+            <div class="col"><input type="checkbox"> C-DRIVING LICENCE</div>
+        </div>
+        <div class="row">
+            <div class="col"><input type="checkbox" checked> D-Proof of possession of Aadhaar Number (Verification Offline)</div>
+            <div class="col"><input type="checkbox"> E-NREGA JOB CARD</div>
+            <div class="col"><input type="checkbox"> F-LETTER ISSUED BY NPR</div>
+        </div>
+        <div class="field"><label>Whether submitted document is equivalant e-document:</label> <input type="checkbox"> Yes <input type="checkbox"> No</div>
+        <div class="row">
+            <div class="col field"><label><span class="mandatory">*</span> Document No/Identification Number:</label> <input type="text" value="[REDACTED AADHAAR]"></div>
+            <div class="col field"><label>Issued By:</label> <input type="text" value="UIDAI"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">D. Address details Current / Overseas</div>
+        <div class="field"><label>Address type:</label> <input type="checkbox" checked> Residential/Business <input type="checkbox"> Residential <input type="checkbox"> Business <input type="checkbox"> Registered Office</div>
+        <div class="field"><label><span class="mandatory">*</span> Address:</label> <input type="text" value="123 Main Street, Rasapudipalem" style="width: 80%;"></div>
+        <div class="row">
+            <div class="col field"><label><span class="mandatory">*</span> City/Village:</label> <input type="text" value="Rajahmundry"></div>
+            <div class="col field"><label>District:</label> <input type="text" value="East Godavari"></div>
+        </div>
+        <div class="row">
+            <div class="col field"><label><span class="mandatory">*</span> State:</label> <input type="text" value="Andhra Pradesh"></div>
+            <div class="col field"><label><span class="mandatory">*</span> Pin:</label> <input type="text" value="533101"></div>
+            <div class="col field"><label>Country Name:</label> <input type="text" value="India"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">E. Address details Correspondence</div>
+        <div class="field"><input type="checkbox" checked> Same as Current/Overseas Address</div>
+        <div class="field"><label>Address type:</label> <input type="checkbox"> Residential/Business <input type="checkbox"> Residential <input type="checkbox"> Business</div>
+        <div class="field"><label>Address:</label> <input type="text" value="" style="width: 80%;"></div>
+        <div class="row">
+            <div class="col field"><label>City/Village:</label> <input type="text"></div>
+            <div class="col field"><label>District:</label> <input type="text"></div>
+            <div class="col field"><label>State:</label> <input type="text"></div>
+            <div class="col field"><label>Pin:</label> <input type="text"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">F. If the Offically Valid Document (OVD) does not contain current address</div>
+        <p>please provide any of the documents below (Not more than 2 months old)</p>
+        <div class="field"><input type="checkbox"> Utility Bill <input type="checkbox"> PPO/FPPO <input type="checkbox"> Property or Municipal tax receipt <input type="checkbox"> Letter of allotment of accomodation <input type="checkbox"> Self-Declaration</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">G. DECLARATION CUM UNDERTAKING CUM SELF-CERTIFICATION</div>
+        <p>1. I have read the copy of Terms and Conditions of the Account Opening Form given to me. The Terms and Conditions have been explained to me/us and having understood, I accept the same.</p>
+        <p>2. I hereby declare that I have submitted the Aadhaar Card issued by UIDAI voluntarily for identification and/or address proof towards the compliance of KYC norms under the PMLA, 2002.</p>
+        <p>3. I hereby consent that the Bank may verify the same with the UIDAI and authorise the UIDAI expressly to release the identity and address through biometric/OTP based authentication to the Bank.</p>
+        <div class="field"><label>E-KYC authentication and Aadhaar seeding is mandatory for availing DBT benefit:</label> <input type="checkbox" checked> YES <input type="checkbox"> NO</div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col" style="text-align: center;">
+                <div class="box">PHOTO</div>
+            </div>
+            <div class="col" style="text-align: center;">
+                <div class="sig-box"></div><br>Signature/Thumb impression of the Applicant
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="background: #eee;">
+        <div class="section-title" style="background: #888;">H. FOR OFFICE USE</div>
+        <p>Documents received: Self-certified / True Copies / Notary / Equivalent e-Documents / Aadhar verification: e-KYC Offline</p>
+        <p>1. Self-certification & documents received as part of account opening process have been verified and found correct.<br>
+        ii. Certified that Copy of Terms and Conditions signed by Customer obtained<br>
+        Risk Category: High / Medium / Low</p>
+        <div class="row">
+            <div class="col">Official Name: <input type="text"></div>
+            <div class="col">Signature: <input type="text"></div>
+        </div>
+    </div>
+    <div class="footer-page">2</div>
+</div>
+
+<div class="page">
+    <h2>ACCOUNT OPENING FORM FOR INDIVIDUAL (PART-II)<br>(SAVING BANK, CURRENT ACCOUNT AND TERM DEPOSITS)</h2>
+    <p>I/We request you to open my/our deposit account with your branch/bank as under:</p>
+
+    <div class="section">
+        <div class="section-title">A. Type of Account</div>
+        <div class="checkbox-grid-3">
+            <div><input type="checkbox" checked> Savings Bank Account</div>
+            <div><input type="checkbox"> BSBDA</div>
+            <div><input type="checkbox"> BSBDA Small Account</div>
+            <div><input type="checkbox"> Current Account (Individual)</div>
+            <div><input type="checkbox"> Caps Gain (SB)</div>
+            <div><input type="checkbox"> Savings Plus Account</div>
+            <div><input type="checkbox"> Fixed Deposit/MOD/RD</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">B. Mode of Operation</div>
+        <div class="checkbox-grid-3">
+            <div><input type="checkbox" checked> Self</div>
+            <div><input type="checkbox"> Either or Survivor</div>
+            <div><input type="checkbox"> Former or Survivor</div>
+            <div><input type="checkbox"> Any one or Survivor</div>
+            <div><input type="checkbox"> Jointly Operated</div>
+            <div><input type="checkbox"> Other</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">C. Services Required</div>
+        <div class="row">
+            <div class="col"><label>1. ATM-CUM-DEBIT CARD</label><br><input type="checkbox" checked> Yes <input type="checkbox"> No<br>Name on Card: <input type="text" value="DASARI PRANEETH SANJAY"></div>
+            <div class="col"><label>2. CHEQUE BOOK</label><br><input type="checkbox" checked> Yes <input type="checkbox"> No</div>
+            <div class="col"><label>3. INTERNET BANKING</label><br><input type="checkbox" checked> Yes <input type="checkbox"> No</div>
+        </div>
+        <div class="row">
+            <div class="col"><label>4. SMS ALERTS</label><br><input type="checkbox" checked> Yes <input type="checkbox"> No</div>
+            <div class="col"><label>5. PHONE BANKING</label><br><input type="checkbox"> Yes <input type="checkbox" checked> No</div>
+            <div class="col"><label>6. MOBILE BANKING</label><br><input type="checkbox" checked> Yes <input type="checkbox"> No</div>
+        </div>
+        <div class="row">
+            <div class="col"><label>7. PASSBOOK REQUIRED</label><br><input type="checkbox" checked> Yes <input type="checkbox"> No</div>
+            <div class="col"><label>8. e-Statement</label><br><input type="checkbox"> Required <input type="checkbox" checked> Not Required</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">D. Term Deposit</div>
+        <div class="row">
+            <div class="col">
+                <strong>1. Fixed Deposit:</strong><br>
+                <input type="checkbox"> TERM DEPOSIT <input type="checkbox"> TERM DEPOSIT (REINVESTMENT)<br>
+                Amount Rs. <input type="text"><br>
+                Period: <input type="text" size="2"> Year(s) <input type="text" size="2"> Month(s) <input type="text" size="2"> Days
+            </div>
+            <div class="col">
+                <strong>2. MULTI-OPTION DEPOSIT (MOD) / AUTO SWEEP:</strong><br>
+                <input type="checkbox"> Term Deposit <input type="checkbox"> Term Deposit (Reinvestment)<br>
+                Period: <input type="text" size="2"> Year(s)<br>
+                Sweep MOD to be broken by: <input type="checkbox"> LIFO <input type="checkbox"> FIFO
+            </div>
+        </div>
+        <div class="row" style="border: 2px solid #d32f2f; padding: 5px; margin-top: 5px;">
+            <div class="col">
+                <strong>3. RECURRING DEPOSIT</strong><br>
+                <label>Monthly/Core Monthly installment Rs.:</label> <input type="text" value="5000"><br>
+                <label>Rs. (In words):</label> <input type="text" value="Five Thousand Only"><br>
+                <label>Period:</label> <input type="text" value="1" size="2"> Years <input type="text" value="0" size="2"> Month(s)<br>
+                <input type="checkbox"> Standing instruction (if any) Debit Account No. <input type="text"><br>
+                <input type="checkbox" checked> On Maturity, credit proceeds to Account No. <input type="text" placeholder="Same account">
+            </div>
+        </div>
+    </div>
+    <div class="footer-page">3</div>
+</div>
+
+<div class="page">
+    <div class="section">
+        <div class="section-title">E. Saving Plus Account</div>
+        <div class="row">
+            <div class="col">Threshold: <input type="text"></div>
+            <div class="col">Resultant Balance: <input type="text"></div>
+            <div class="col">Sweep Multiple: <input type="text"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">F. Nomination (If required, fill Form DA-1)</div>
+        <h3 style="margin: 2px 0;">FORM DA-1 (Nomination Form)</h3>
+        <p class="instructions">Nomination under section 45ZA of the Banking Regulation Act, 1949 and Rules 1985 in respect of Bank Deposits.</p>
+        <p>I/We nominate the following person to whom in the event of my/our/minor's death the amount of this deposit may be returned by State Bank of India.</p>
+        <div class="field"><input type="checkbox" checked> I/We want the name of the nominee to be printed on the passbook</div>
+        <table border="1">
+            <tr><th>Name of Nominee</th><th>Address</th><th>Relationship</th><th>Age</th></tr>
+            <tr>
+                <td><input type="text" value="RAVI KUMAR"></td>
+                <td><input type="text" value="123 Main Street, Rajahmundry"></td>
+                <td><input type="text" value="Brother"></td>
+                <td><input type="text" value="28"></td>
+            </tr>
+        </table>
+        <p class="instructions">As the nominee is a minor on this date, I appoint Shri/Smt/Kum... to receive the amount of deposit on behalf of the nominee in the event of my/our/minor death during the minority of the nominee.</p>
+        <div class="row">
+            <div class="col"><div class="sig-box"></div><br>Signature of the Applicant</div>
+            <div class="col"><div class="sig-box"></div><br>Signature of witness (if applicable)</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">G. DECLARATION CUM UNDERTAKING CUM SELF-CERTIFICATION</div>
+        <p class="instructions">1. I/We have read the copy of Terms and Conditions of the Account Opening Form given to me/us. The Terms and Conditions have been explained to me/us and having understood, I/we accept the same.<br>
+        2. (In case of Minor Accounts) I hereby declare that the date of birth of the minor... and I am his/her natural and lawful guardian.<br>
+        3. I hereby declare that I do not maintain a Basic Savings Bank Deposit Account (BSBDA) with any other Bank/Branch.</p>
+        <div class="row">
+            <div class="col">Place: Rajahmundry<br>Date: 01/01/2026</div>
+            <div class="col"><div class="sig-box"></div><br>Signature of the Applicant</div>
+        </div>
+    </div>
+
+    <div class="section" style="background: #eee;">
+        <div class="section-title" style="background: #888;">FOR OFFICE USE/ATTESTATION</div>
+        <div class="row">
+            <div class="col">Queue No: <input type="text"></div>
+            <div class="col">Open Account Date: <input type="text"></div>
+            <div class="col">CIF Linking: <input type="text"></div>
+        </div>
+    </div>
+    <div class="footer-page">4</div>
+</div>
+
+<div class="page">
+    <div class="section-title">TERMS AND CONDITIONS FOR OPENING OF DEPOSITS ACCOUNTS</div>
+    <div class="terms">
+        <ol>
+            <li>I affirm and declare that I have read over and understood the rules and regulations of the "Bank" and those relating to various services offered by the Bank including but not limiting to debit card/internet banking/SMS banking/Tele-Banking/Mobile Banking/Virtual Banking and any other facilities.</li>
+            <li>I agree to abide by the same as amended/modified from time to time by the Bank/Regulator/Government published through circulars, notifications, notice board/websites/newspaper publications, etc. I waive the rights, if any, to have personal notice in respect of such amendments/modifications. I agree that the transactions and requests executed in my account(s) through internet, mobile, tele-banking or virtual banking under my User ID and password/PIN/OTP will be legally binding on me & I am responsible for the maintenance of secrecy and confidentiality of the authentication credentials.</li>
+            <li>I agree that Bank has got all the rights to debit my account for any service charge, expenses or other dues which the Bank is entitled/liable to recover from me.</li>
+            <li>I also authorise the Bank and agree to close/discontinue my account without any notice to me (under normal circumstance, bank will not close account without giving 30 days notice indicating reason for closure). I hereby undertake to inform the Bank on any change in my communication address or constitution.</li>
+            <li>In respect of accounts opened on the basis of Aadhaar details, I hereby declare that I have submitted the Aadhaar Card issued by UIDAI voluntarily for identification and/or address proof towards the compliance of KYC norms under the PMLA, 2002 and I hereby consent that the Bank may verify the same with the UIDAI.</li>
+            <li>I wish to seed this account with NPCI mapper to enable me to receive Direct Benefit Transfer (DBT) including LPG subsidy from Govt of India (GOI) in this account.</li>
+            <li>I confirm and declare that I am not prevented/prohibited/restricted by any applicable legal/regulatory/contractual or other provisions from opening and/or maintaining the accounts.</li>
+            <li>I agree that my personal KYC details may be shared with Central KYC registry or any other competent authority.</li>
+            <li>I hereby provide my consent to download the KYC records from the Central KYC Records Registry (CKYCRR).</li>
+            <li>I hereby consent to receive information from the Bank/Central KYC Registry/ GoI/RBI or any other authority through SMS/e-mail on my registered mobile number/ e-mail address.</li>
+            <li>I also agree that the non-receipt of any such SMS/e-mail shall not make the Bank liable for any loss or damage whatsoever in nature.</li>
+            <li>I hereby certify that I have declared my status as per the rules applicable under section 285BA of the Income Tax Act, 1961...</li>
+            <li>I understand, acknowledge and authorize that as per the provisions of Income Tax Act... the Bank may have to report the details in respect of my account(s) as per the prescribed format to the Central Board of Direct Taxes (CBDT) or other Government Agencies...</li>
+            <li>I certify & declare that the information provided by me... is true, correct and complete...</li>
+            <li>I undertake the responsibility to declare and disclose immediately and in no case beyond 30 days from the date of change, any changes that may take place in the information provided herein...</li>
+            <li>I also agree that my failure to disclose any material fact/information known to me now or in future... may invalidate me from transacting in the account...</li>
+            <li>I shall indemnify the Bank from any loss/damage that may be caused to the Bank on account of any defect/mistake in the details provided herein...</li>
+            <li>I undertake to submit data/information together with fresh KYC documents for updation of KYC details at periodical intervals...</li>
+            <li>I understand that the account will be activated and debits will be allowed only after completion of Customer Due Diligence relating to KYC by the Bank.</li>
+            <li>In case the account is opened without PAN, I undertake to submit PAN on or before such date as may be notified by the Government of India...</li>
+            <li>In case, deemed OVDs are submitted for Current Address... I undertake to submit Aadhaar or any of the OVD having Current Address within 3 months...</li>
+            <li>I have received the Welcome Kit containing INB Kit and ATM card/cheque book and understand that in case of any misuse/misplacement of the contents of the Kit, the Bank will not be liable...</li>
+            <li>I hereby certify that the Savings Bank Account would be used by me to route transactions of only non-business/non-commercial nature.</li>
+            <li>I have been advised of Average Monthly Balance(AMB) requirement...</li>
+            <li>I confirm that the product features of BSBD account have been explained to me.</li>
+            <li>Applicable for Small Accounts: I understand that this account shall remain operational initially for twelve months...</li>
+            <li>I have been advised that if I do not provide my mobile number, I will not be eligible for any facility of electronic transactions other than ATM cash withdrawals.</li>
+        </ol>
+        <div class="row">
+            <div class="col" style="text-align:right;"><div class="sig-box"></div><br>Signature of Applicant</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">ACKNOWLEDGEMENT DA-1</div>
+        <p>We acknowledge receipt of nomination made by you in favour of: Name of the Nominee: <strong>RAVI KUMAR</strong><br>
+        With respect to your Account Number: Registration No. Date: Signature of Bank Official with Seal</p>
+    </div>
+    <div class="footer-page">5</div>
+</div>
+
+<div class="page">
+    <div class="section-title">Know Your Customer Guidelines / SAVINGS BANK RULES (ABRIDGED)</div>
+    <div class="terms">
+        <p><strong>General:</strong> Any person fulfilling account opening requirements may, upon agreeing to comply with the prescribed rules, open a Savings Bank Account, provided she/he furnishes proof of identity and proof of address as required by the Bank.</p>
+        <p><strong>Nomination & Survivorship Facility:</strong> The nomination facility is available on Savings Bank Accounts and the account holders are advised to avail of this facility for smooth settlement of claim by legal heirs in unforeseen circumstances. Nomination can be made in favour of only one nominee. Joint account with survivorship benefit can be operated by the survivor.</p>
+        <p><strong>Types of Accounts, Balance Stipulation & Service Charges:</strong> The applicants can open an account either with chequebook facility or without chequebook. The current monthly average balances prescribed for SB accounts and the charges prescribed for non maintenance of minimum balance, are available at the Banks website and Contact Centre.</p>
+        <p><strong>Minors Accounts:</strong> Minors who can adhere to uniform signature and are not less than ten years old can open accounts in their single name and maintain therein a maximum balance of Rs. 10,00,000/-.</p>
+        <p><strong>How To Open An Account?:</strong> In ordinary course, applicant(s) should attend the Bank personally for completion of formalities. They will duly fill in and sign the prescribed application form... Signatures should not be in capital or block letters.</p>
+        <p><strong>Pass Book:</strong> The pass book and cheque book supplied to the account holder should be kept in a safe place. The Bank will not be responsible for any loss or incorrect payment attributable to the account holders neglect in this regard. For withdrawing cash by means of a withdrawal form, the pass book must be presented.</p>
+        <p><strong>Cheque Book:</strong> The Bank will issue the first cheque book after completion of all formalities with regard to opening of the account. Bank shall issue Cheque Book subject to recovery of charges as applicable.</p>
+        <p><strong>General:</strong> Savings Bank account is essentially a facility to build up savings and hence must not be used as a Current Account. Bank may close an account should it have any reason to believe that the account holder has used her/his account for a purpose for which it is not allowed.</p>
+        <p><strong>Deposits:</strong> Only three cash deposit tranactions are allowed free of cost in a month. No restrictions on cash deposit at Non Home branch. No deposit in cash for less than Rs 10/-will be accepted.</p>
+        <p><strong>Withdrawals:</strong> The account holder can withdraw money personally from her/his ordinary Savings Bank Account by using Banks standard withdrawal form. The Pass Book/any OVD must accompany the withdrawal form. ATM cum Debit card can also be used in ATMs for cash withdrawal.</p>
+        <p><strong>Overdrafts:</strong> Overdrafts in Savings Bank accounts may be permitted under exceptional circumstances with prior arrangements only. Cheques drawn in excess of the balance in the account will be returned unpaid.</p>
+        <p><strong>Inoperative Accounts:</strong> Account holders are advised to operate their accounts regularly. Accounts not operated are classified as Inoperative after the stipulated time period of 24 months since last operation.</p>
+        <p><strong>Standing Instructions:</strong> The account holder can request the Bank for effecting periodical payment of insurance premium, membership fees, etc. by debit to her/his account on payment of service charges.</p>
+        <p><strong>Payment of Interest:</strong> As per RBI guidelines applicable from time to time. Interest will be calculated on a daily product basis. Interest will be credited to the account at quarterly intervals.</p>
+        <p><strong>Transfer & Closure Of Account:</strong> Accounts may be transferred between branches of the Bank at the request of the account holder(s). Request for closure of account should state the reason for closure. The pass book must accompany such request.</p>
+        <p><strong>Features of BSBD account:</strong> i. The deposit of cash at bank branch as well as ATMs/CDMs. ii. Receipt/credit of money through any electronic channel... iii. No limit on number and value of deposits... iv. Minimum 4 withdrawals including ATM withdrawals. v. ATM Card or ATM-cum-Debit Card.</p>
+    </div>
+    <div class="footer-page">6</div>
+</div>
+
+<div class="page">
+    <div class="section-title">Annexure-1: Income-tax Rules, 1962 FORM NO.60</div>
+    <p class="instructions">[See second proviso to rule 114B] Form for declaration to be filed by an individual or a person (not being a company or firm) who does not have a permanent account number and who enters into any transaction specified in rule 114B</p>
+    
+    <table border="1">
+        <tr><td>1</td><td>First Name / Middle Name / Surname</td><td>DASARI / PRANEETH / SANJAY</td></tr>
+        <tr><td>2</td><td>Date of Birth/Incorporation of declarant</td><td>01/01/2000</td></tr>
+        <tr><td>3</td><td>Father's Name (in case of individual)</td><td></td></tr>
+        <tr><td>4</td><td>Flat No./Floor No.</td><td></td></tr>
+        <tr><td>5</td><td>Name of premises / Block Name & No.</td><td>123 Main Street</td></tr>
+        <tr><td>6</td><td>Road/Street / Lane</td><td>Rasapudipalem</td></tr>
+        <tr><td>7</td><td>Area/Locality</td><td>Rajahmundry</td></tr>
+        <tr><td>8</td><td>Town/District/State</td><td>Andhra Pradesh</td></tr>
+        <tr><td>9</td><td>Pin code</td><td>533101</td></tr>
+        <tr><td>10</td><td>Telephone Number (with STD code)</td><td></td></tr>
+        <tr><td>11</td><td>Mobile Number</td><td>9876543210</td></tr>
+        <tr><td>12</td><td>Amount of Transaction (Rs.)</td><td>5000</td></tr>
+        <tr><td>13</td><td>Date of Transaction</td><td></td></tr>
+        <tr><td>14</td><td>In case of transaction in joint names, number of persons involved</td><td>1</td></tr>
+    </table>
+    
+    <div class="field" style="margin-top: 5px;">
+        <label>15 Mode of transaction:</label> <input type="checkbox"> Cash <input type="checkbox"> Cheque <input type="checkbox"> Card <input type="checkbox"> Draft/Banker's Cheque <input type="checkbox"> Online transfer <input type="checkbox" checked> Other
+    </div>
+    <div class="field"><label>16 Aadhaar Number issued by UIDAI (if available):</label> <input type="text" value="[REDACTED]"></div>
+    <div class="field"><label>17 If applied for PAN and it is not yet generated, enter date of application and acknowledgement number:</label> <input type="text"></div>
+    <div class="field"><label>18 If PAN not applied, fill estimated total income:</label> (a) Agricultural income (Rs.) <input type="text"> (b) Other than Agr. Income (Rs.) <input type="text"></div>
+
+    <div class="section" style="margin-top: 10px;">
+        <div class="section-title">Verification</div>
+        <p class="instructions">I, DASARI PRANEETH SANJAY do hereby declare that what is stated above is true to the best of my knowledge and belief. I further declare that I do not have a Permanent Account Number and my/our estimated total income computed in accordance with the provisions of Income tax Act, 1961 for the financial year in which the above transaction is held will be less than maximum amount not chargeable to tax.</p>
+        <div class="row">
+            <div class="col">Verified today the _______ day of ____________ 20___<br>Place: Rajahmundry</div>
+            <div class="col" style="text-align: right;"><div class="sig-box"></div><br>(Signature of declarant)</div>
+        </div>
+        <p class="instructions" style="font-size: 7px; margin-top: 10px;">Note: Before signing the declaration, the declarant should satisfy himself that the information furnished in this form is true, correct and complete in all respects. Any person making a false statement in the declaration shall be liable to prosecution under section 277 of the Income-tax Act, 1961...</p>
+    </div>
+    <div class="footer-page">7</div>
+</div>
+
+<div class="page">
+    <div class="section-title">Instruction:</div>
+    <p class="instructions">(1) Documents which can be produced in support of identity and address (not required if applied for PAN and item 20 is filled): -</p>
+    <table border="1" style="font-size: 8px;">
+        <tr><th>Sl.</th><th>Nature of Documents</th><th>Proof of Address</th><th>Proof of Identity</th><th>Document Code</th></tr>
+        <tr><td colspan="5"><b>A. For Individuals and HUF</b></td></tr>
+        <tr><td>1</td><td>AADHAAR card</td><td>Yes</td><td>Yes</td><td>01</td></tr>
+        <tr><td>2</td><td>Bank/Post office passbook bearing photograph of the person</td><td>Yes</td><td>Yes</td><td>02</td></tr>
+        <tr><td>3</td><td>Elector's photo identity card</td><td>Yes</td><td>Yes</td><td>03</td></tr>
+        <tr><td>4</td><td>Ration/Public Distribution System card bearing photograph</td><td>Yes</td><td>Yes</td><td>04</td></tr>
+        <tr><td>5</td><td>Driving License</td><td>Yes</td><td>Yes</td><td>05</td></tr>
+        <tr><td>6</td><td>Passport</td><td>Yes</td><td>Yes</td><td>06</td></tr>
+        <tr><td>7</td><td>Pensioner Photo card</td><td>Yes</td><td>Yes</td><td>07</td></tr>
+        <tr><td>8</td><td>National Rural Employment Guarantee Scheme (NREGS) Job Card</td><td>Yes</td><td>Yes</td><td>08</td></tr>
+        <tr><td>9</td><td>Caste or Domicile certificate bearing photo of the person</td><td>Yes</td><td>Yes</td><td>09</td></tr>
+        <tr><td>10</td><td>Certificate of identity/address signed by a Member of Parliament...</td><td>Yes</td><td>Yes</td><td>10</td></tr>
+        <tr><td>11</td><td>Certificate from employer as per annexure B prescribed in Form 49A</td><td>Yes</td><td>Yes</td><td>11</td></tr>
+        <tr><td>12</td><td>Kisan passbook bearing photo</td><td>Yes</td><td>No</td><td>12</td></tr>
+        <tr><td>13</td><td>Arm's license</td><td>No</td><td>Yes</td><td>13</td></tr>
+        <tr><td>14</td><td>Central Government Health Scheme/Ex-Service men Contributory Health Scheme</td><td>Yes</td><td>No</td><td>14</td></tr>
+        <tr><td>15</td><td>Photo identity card issued by the Government/Public Sector Undertaking</td><td>No</td><td>Yes</td><td>15</td></tr>
+        <tr><td>16</td><td>Electricity bill (Not more than 3 months old)</td><td>Yes</td><td>No</td><td>16</td></tr>
+        <tr><td>17</td><td>Landline Telephone bill (Not more than 3 months old)</td><td>Yes</td><td>No</td><td>17</td></tr>
+        <tr><td>18</td><td>Water bill (Not more than 3 months old)</td><td>Yes</td><td>No</td><td>18</td></tr>
+        <tr><td>19</td><td>Consumer gas card/book or piped gas bill (Not more than 3 months old)</td><td>Yes</td><td>No</td><td>19</td></tr>
+        <tr><td>20</td><td>Bank Account Statement (Not more than 3 months old)</td><td>Yes</td><td>No</td><td>20</td></tr>
+        <tr><td>21</td><td>Credit Card Statement (Not more than 3 months old)</td><td>Yes</td><td>No</td><td>21</td></tr>
+        <tr><td>22</td><td>Depository Account Statement (Not more than 3 months old)</td><td>Yes</td><td>No</td><td>22</td></tr>
+        <tr><td>23</td><td>Property registration document</td><td>Yes</td><td>No</td><td>23</td></tr>
+        <tr><td>24</td><td>Allotment letter of accommodation from Government</td><td>Yes</td><td>No</td><td>24</td></tr>
+        <tr><td>25</td><td>Passport of spouse bearing name of the person</td><td>Yes</td><td>No</td><td>25</td></tr>
+        <tr><td>26</td><td>Property tax payment receipt (Not more than one year old)</td><td>Yes</td><td>No</td><td>26</td></tr>
+        <tr><td colspan="5"><b>B. For Association of persons (Trusts)</b></td></tr>
+        <tr><td>27</td><td>Copy of trust deed or copy of certificate of registration issued by Charity Commissioner</td><td>Yes</td><td>Yes</td><td>27</td></tr>
+        <tr><td colspan="5"><b>C. For Association of persons (other than Trusts) or Body of Individuals or Local authority or Artificial Juridical Person</b></td></tr>
+        <tr><td>28</td><td>Copy of Agreement or copy of certificate of registration issued by Charity Commissioner or Registrar of Cooperative Society...</td><td>Yes</td><td>Yes</td><td>28</td></tr>
+    </table>
+    <p class="instructions" style="margin-top: 5px;">(2) In case of a transaction in the name of a Minor, any of the above-mentioned documents as proof of Identity and Address of any of parents/guardians of such minor shall be deemed to be the proof of identity and address for the minor declarant, and the declaration should be signed by the parent/guardian.<br>
+    (3) For HUF any document in the name of Karta of HUF is required.<br>
+    (4) In case the transaction is in the name of more than one person, the total number of persons should be mentioned in Sl. No. 14 and the total amount of transaction is to be filled in Sl. No. 12.<br>
+    In case the estimated total income in column 18b exceeds the maximum amount not chargeable to tax, the person should apply for PAN, fill out item 17 and furnish proof of submission of application.</p>
+    <div class="footer-page">8</div>
+</div>
+
+<div class="page">
+    <div class="section">
+        <div class="section-title">Annexure-2: Details of Related Person (To be filled for minor)</div>
+        <div class="row">
+            <div class="col">Customer ID: <input type="text"></div>
+            <div class="col">CKYC No.: <input type="text"></div>
+            <div class="col">Account No.: <input type="text"></div>
+        </div>
+        <div class="field"><input type="checkbox"> Addition of Related Person <input type="checkbox"> Deletion of Related Person</div>
+        <div class="field"><label>Related Person type:</label> <input type="checkbox"> Guardian of Minor <input type="checkbox"> Assignee <input type="checkbox"> Authorised Representative</div>
+        <div class="field"><label>Name:</label> <input type="text" style="width: 300px;"></div>
+        
+        <h4 style="text-align: left;">PROOF OF IDENTITY(POI) OF RELATED PERSON*</h4>
+        <div class="row">
+            <div class="col"><input type="checkbox"> A-PASSPORT</div>
+            <div class="col"><input type="checkbox"> B-VOTER'S IDENTITY CARD</div>
+            <div class="col"><input type="checkbox"> C-DRIVING LICENCE</div>
+        </div>
+        <div class="row">
+            <div class="col"><input type="checkbox"> D-UID (AADHAAR)</div>
+            <div class="col"><input type="checkbox"> E-NREGA JOB CARD</div>
+            <div class="col"><input type="checkbox"> F-LETTER ISSUED BY NPR</div>
+        </div>
+        <div class="field"><input type="checkbox"> G-OTHERS (Any Document notified by the Central Government/RBI)</div>
+        <div class="row">
+            <div class="col">Document No/Identification Number: <input type="text"></div>
+            <div class="col">Issue date: <input type="text"></div>
+            <div class="col">Expiry Date: <input type="text"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">FATCA Declaration Form</div>
+        <div class="row">
+            <div class="col">Customer ID: <input type="text"></div>
+            <div class="col">CKYC No.: <input type="text"></div>
+            <div class="col">Account No.: <input type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col">Name*: <input type="text" value="DASARI PRANEETH SANJAY"></div>
+            <div class="col">Citizenship*: <input type="checkbox" checked> IN-India <input type="checkbox"> Others</div>
+        </div>
+        <div class="row">
+            <div class="col">Place/City of Birth: <input type="text"></div>
+            <div class="col">Country of Birth*: <input type="text" value="INDIA"></div>
+        </div>
+        <div class="field"><label>Address:</label> <input type="text" value="123 Main Street, Rasapudipalem" style="width: 80%;"></div>
+        <p class="instructions">Multiple Tax Residency: Details of Country of Tax Residence in India, and/or in USA and for in any other Country or Territory Outside India as Under:</p>
+        <table border="1">
+            <tr><th>Country of Tax Residence#</th><th>Tax Identification number or equivalent if issued by jurisdiction</th><th>Identification type (TIN or Other, please specify)</th></tr>
+            <tr><td>INDIA</td><td>ABCDE1234F</td><td>PAN</td></tr>
+        </table>
+        <p class="instructions"># A citizen of US including individual born in US but resident in another country (who has not given up US citizenship). * A person residing in US including US green card holder. *Certain persons who spend more than 180 days in US each year.</p>
+        <p><strong>Address in the Jurisdiction/Country - where the Applicant is Resident outside India for Tax Purposes</strong></p>
+        <div class="row">
+            <div class="col">Address: <input type="text"></div>
+            <div class="col">City/Village*: <input type="text"></div>
+            <div class="col">State: <input type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col">Place: Rajahmundry<br>Date: 01/01/2026</div>
+            <div class="col" style="text-align:right;"><div class="sig-box"></div><br>Signature/thumb inpression of the Applicant/Applicants</div>
+        </div>
+    </div>
+    <div class="footer-page">9</div>
+</div>
+
+</body>
+</html>

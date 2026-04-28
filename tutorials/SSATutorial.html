@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukanya Samriddhi Account (SSA) Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #525659;
+            margin: 0;
+            padding: 20px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 15mm;
+            margin: 0 auto 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+        .mandatory { color: red; font-weight: bold; }
+        .text-center { text-align: center; }
+        .title { font-size: 14px; font-weight: bold; text-align: center; margin: 10px 0; }
+        .sub-title { font-size: 12px; text-align: center; margin-bottom: 15px; }
+        .row { display: flex; margin-bottom: 10px; align-items: flex-end; gap: 10px; }
+        .field { flex: 1; display: flex; flex-direction: column; }
+        .input-line { 
+            border-bottom: 1px solid #000; 
+            min-height: 16px; 
+            color: #000080; 
+            font-family: monospace; 
+            font-size: 13px; 
+            padding: 0 5px; 
+            display: inline-block;
+            width: 100%;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #000; padding: 5px; text-align: left; }
+        .photo-box { 
+            width: 90px; height: 110px; border: 1px dashed #000; 
+            position: absolute; top: 20px; right: 20px; 
+            display: flex; align-items: center; justify-content: center; text-align: center; 
+        }
+        .signature-box { margin-top: 30px; text-align: right; }
+        .signature-line { border-top: 1px solid #000; display: inline-block; padding-top: 5px; min-width: 200px; text-align: center; }
+        .sq { display: inline-block; width: 12px; height: 12px; border: 1px solid #000; text-align: center; line-height: 12px; font-size: 10px; margin-right: 5px; }
+        .page-num { position: absolute; bottom: 10mm; right: 15mm; font-weight: bold; font-size: 12px; }
+        @media print {
+            body { background: none; padding: 0; }
+            .page { margin: 0; box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="photo-box">आवेदक/आवेदकों का<br>फोटो चिपकाएं</div>
+        <div class="title">प्ररूप 1</div>
+        <div class="sub-title">[पैरा 3 का उप-पैरा (3) देखिए]<br>(खाता खोलने के लिए आवेदन)</div>
+        
+        <p>सेवा में,<br>श्रीमान, पोस्टमास्टर/प्रबंधक <span class="mandatory">*</span><br><span class="input-line" style="width: 200px;">Rajahmundry</span></p>
+        <p>श्रीमान,</p>
+        <p>मैं <span class="input-line" style="width: 250px;">Dasari Praneeth Sanjay</span> <span class="mandatory">*</span> (आवेदक/संरक्षक) आपके डाकघर/बैंक में <span class="input-line" style="width: 150px;">Sukanya Samriddhi</span> के अधीन खाता खोलने के लिए आवेदन करता हूं।</p>
+        <p>मैं <span class="input-line" style="width: 100px;">5000</span> <span class="mandatory">*</span> रुपए/- (<span class="input-line" style="width: 150px;">Five Thousand</span> शब्दों में रुपए) नकद/चैक/डिमांड ड्राफ्ट संख्यांक <span class="input-line" style="width: 100px;">N/A</span> तारीख <span class="input-line" style="width: 100px;">27/04/2026</span> आरंभिक जमा के रूप में निविदा करता हूं/ हैं। मेरी/हमारी विशिष्टियां निम्न प्रकार हैं: -</p>
+        
+        <div class="row">
+            <div class="field"><label>1. जमाकर्ता का नाम <span class="mandatory">*</span></label><div class="input-line"></div></div>
+            <div class="field"><label>जन्म की तारीख</label><div class="input-line"></div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>2. संरक्षक/पति/पिता/माता का नाम <span class="mandatory">*</span></label><div class="input-line">Dasari Praneeth Sanjay</div></div>
+            <div class="field"><label>जन्म की तारीख <span class="mandatory">*</span></label><div class="input-line">01/01/2000</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>3. संरक्षक का आधार संख्यांक <span class="mandatory">*</span></label><div class="input-line">[Aadhaar Redacted]</div></div>
+            <div class="field"><label>4. संरक्षक का स्थायी खाता संख्यांक (पैन) <span class="mandatory">*</span></label><div class="input-line">ABCDE1234F</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>5. वर्तमान पता <span class="mandatory">*</span></label><div class="input-line">123 Main Street, Rasapudipalem, Rajahmundry, AP - 533101</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>स्थायी पता</label><div class="input-line">Same as Present Address</div></div>
+        </div>
+        <div class="row"><label style="font-weight: bold;">6. संपर्क ब्यौरे <span class="mandatory">*</span></label></div>
+        <div class="row">
+            <div class="field"><label>टेलीफोन नं.</label><div class="input-line"></div></div>
+            <div class="field"><label>मोबाइल नं.</label><div class="input-line">9876543210</div></div>
+            <div class="field"><label>ई-मेल आईडी</label><div class="input-line">praneeth.sanjay@example.com</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>7. खाते का प्रकार <span class="mandatory">*</span></label><div class="input-line">Savings Account (Sukanya Samriddhi)</div></div>
+        </div>
+        <div class="row"><label style="font-weight: bold;">8. जमाकर्ता के जन्म के ब्यौरे</label></div>
+        <div class="row">
+            <div class="field"><label>(क) प्रमाणपत्र सं०</label><div class="input-line"></div></div>
+            <div class="field"><label>(ख) जारी होने की तारीख</label><div class="input-line"></div></div>
+            <div class="field"><label>(ग) जारी करने वाला प्राधिकारी</label><div class="input-line"></div></div>
+        </div>
+        <div class="row"><label style="font-weight: bold;">9. अन्य संलग्न केवाईसी दस्तावेजों के ब्यौरे</label></div>
+        <div class="row">
+            <div class="field"><label>1. पहचान का सबूत</label><div class="input-line">PAN Card</div></div>
+        </div>
+        <div class="page-num">Page 1</div>
+    </div>
+
+    <div class="page">
+        <div class="row">
+            <div class="field"><label>2. पते का सबूत</label><div class="input-line">Aadhaar Card</div></div>
+        </div>
+        <p style="font-size: 10px;">निम्नलिखित दस्तावेज पहचान और पते के सबूत के प्रयोजन के लिए विधिमान्य दस्तावेजों के रूप में स्वीकृत किए जाते हैं: 1. पासपोर्ट 2. चालन अनुज्ञप्ति 3. मतदाता पहचान पत्र 4. नरेगा द्वारा जारी, राज्य अधिकारी द्वारा हस्ताक्षरित जॉब कार्ड 5. नाम और पते के ब्यौरे सहित राष्ट्रीय जनसंख्या रजिस्टर द्वारा जारी पत्र;</p>
+        
+        <p style="font-weight: bold;">10. खाते का संचालन निम्न प्रकार से किया जाएगा:-- <span class="mandatory">*</span></p>
+        <p><span class="sq"></span> (क) संरक्षक द्वारा, जमाकर्ता के वयस्क होने तक</p>
+        <p><span class="sq" style="background:#000; color:#fff;">✓</span> (ख) वयस्कता प्राप्त करने पर स्वयं जमाकर्ता द्वारा</p>
+        
+        <div class="row" style="margin-top: 15px;"><label style="font-weight: bold;">11. नमूने हस्ताक्षर <span class="mandatory">*</span></label></div>
+        <div class="row">
+            <div class="field"><label>1.</label><div class="input-line">Dasari Praneeth Sanjay</div></div>
+            <div class="field"><label>2.</label><div class="input-line"></div></div>
+            <div class="field"><label>3.</label><div class="input-line"></div></div>
+        </div>
+
+        <p>मैं एतद्वारा घोषणा करता/करती हूं कि देश के किसी डाकघर/बैंक में क्रम संख्या 1 में उल्लिखित जमाकर्ता के नाम से सुकन्या समृद्धि खाता नहीं खोला है।<br>
+        मैं यह भी घोषणा करता हूं/करती हूं कि मैं और जमाकर्ता दोने भारत के निवासी /नागरिक हैं और भविष्य में मेरे निवासी/नागरिकता प्रास्थिति में कोई परिवर्तन होने पर लेखा कार्यालय को सूचित करने का वचन देता हूं।<br>
+        मैं, स्कीम पर लागू उपबंधों और स्कीम को लागू सरकारी बचत संवर्धन नियम, 2018, और उसके अधीन समय-समय पर जारी संशोधनों, को पालन करने का वचन देता हूं।</p>
+        
+        <div class="row" style="margin-top: 40px;">
+            <div class="field"><p>तारीख: <span class="input-line" style="width:150px;">27/04/2026</span></p></div>
+            <div class="field signature-box"><div class="signature-line">संरक्षक के हस्ताक्षर या अंगूठा छाप <span class="mandatory">*</span></div></div>
+        </div>
+
+        <div class="title">नाम निर्देशन</div>
+        <p>मैं <span class="input-line" style="width: 250px;">Dasari Praneeth Sanjay</span> <span class="mandatory">*</span> नीचे उल्लिखित व्यक्ति (यों) का नाम निर्देशन करता हूं/करती हूं जिनको मेरी मृत्यु की दशा में अन्य व्यक्तियों को अपवर्जित करके डाकघर बचत खाता स्कीम में मेरी जमा रकम को मेरी मृत्यु के समय <span class="input-line" style="width: 150px;">Sukanya Samriddhi</span> (स्कीम का नाम) में संदत्त की जाएगी:</p>
+        
+        <table>
+            <tr>
+                <th>क्र. सं</th><th>नाम निर्देशिती का नाम और संबंध</th><th>पूरा पता</th><th>आधार संख्यांक (वैकल्पिक)</th><th>अवयस्क के मामले में जन्म की तारीख</th><th>हकदारी का अंश</th><th>हकदारी की प्रकृति</th>
+            </tr>
+            <tr>
+                <td>1</td><td>Ravi Kumar (Brother)</td><td>123 Main Street, Rajahmundry</td><td></td><td></td><td>100%</td><td>Owner</td>
+            </tr>
+            <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <div class="page-num">Page 2</div>
+    </div>
+
+    <div class="page">
+        <p>चूंकि, उपरोक्त विनिर्दिष्ट क्रम संख्या (कों) _________ नाम निर्देशिती (यां) अवयस्क है/हैं, श्री/श्रीमती/कुमारी _________ निवासी _________ पुत्र/पुत्री/पत्नी _________ को नाम निर्देशिती/नाम निर्देशितियों की अवयस्कता के दौरान मेरी मृत्यु की दशा में उक्त खाते के अधीन देय रकम को प्राप्त करने के लिए नियुक्त करता हूं।</p>
+        
+        <div class="row" style="margin-top: 30px;">
+            <div class="field"><label>1. साक्षी के हस्ताक्षर</label><div class="input-line"></div><label>नाम और पता</label><div class="input-line"></div></div>
+            <div class="field"><label>2. साक्षी के हस्ताक्षर</label><div class="input-line"></div><label>नाम और पता</label><div class="input-line"></div></div>
+        </div>
+        
+        <div class="row" style="margin-top: 40px;">
+            <div class="field"><p>स्थान: <span class="input-line" style="width:150px;">Rajahmundry</span><br>तारीख: <span class="input-line" style="width:150px;">27/04/2026</span></p></div>
+            <div class="field signature-box"><div class="signature-line">संरक्षक के हस्ताक्षर या अंगूठा छाप <span class="mandatory">*</span></div></div>
+        </div>
+
+        <div style="border: 2px solid #000; padding: 15px; margin-top: 40px;">
+            <div class="title">डाक घर / बैंक के प्रयोग हेतु</div>
+            <p>यह खाता <span class="input-line" style="width:150px;"></span> के नाम में तारीख <span class="input-line" style="width:100px;"></span> को रु. <span class="input-line" style="width:100px;"></span> के आरंभिक जमा के साथ <span class="input-line" style="width:150px;"></span> स्कीम के अधीन (स्कीम का नाम) खाता संख्यांक <span class="input-line" style="width:150px;"></span> तारीख <span class="input-line" style="width:100px;"></span> द्वारा खोला गया है।</p>
+            <p>ग्राहक पहचान संख्यांक <span class="input-line" style="width:150px;"></span> नाम निर्देशन संख्यांक <span class="input-line" style="width:150px;"></span> तारीख <span class="input-line" style="width:100px;"></span> द्वारा रजिस्ट्रीकृत किया गया है</p>
+            <div class="signature-box"><div class="signature-line">सक्षम प्राधिकारी के हस्ताक्षर और मुद्रा</div></div>
+        </div>
+        <div class="page-num">Page 3</div>
+    </div>
+
+    <div class="page">
+        <div class="title">प्ररूप 2</div>
+        <div class="sub-title">[पैरा 7 का उप-पैरा (1) देखिए]<br>(परिपक्वता पूर्व खाता बंद करने के लिए आवेदन)</div>
+        <p>सेवा में,<br>श्रीमान, पोस्टमास्टर/प्रबंधक <span class="mandatory">*</span><br><span class="input-line" style="width: 200px;">Rajahmundry</span></p>
+        <p>श्रीमान,</p>
+        <p>1. मैं <span class="input-line" style="width:200px;">Dasari Praneeth Sanjay</span> <span class="mandatory">*</span> अपने खाता संख्यांक <span class="input-line" style="width:150px;"></span> जिसमें <span class="input-line" style="width:100px;"></span> रुपए (रुपए <span class="input-line" style="width:200px;"></span> केवल) को परिपक्वता पूर्व बंद करने की वांछा करता हूं। आपसे नीचे दिए गए ब्यौरों के अनुसार लागू शास्ति की कटौती के पश्चात् रकम के संदेय का अनुरोध करता हूं।</p>
+        
+        <p>2. कृपया मेरे बचत खाता संख्यांक <span class="input-line" style="width:200px;"></span> स्थित <span class="input-line" style="width:200px;"></span> (खाता कार्यालय का नाम) को रकम का प्रत्यय करें।<br>या<br>कृपया डिमांड ड्राफ्ट/पाने वाले के नाम चैक जारी करें<br>या<br>कृपया नकद संदाय करें (लागू, यदि रकम अनुज्ञेय सीमा से निम्न हो)</p>
+        
+        <p>3. मैं घोषणा करता हूं कि जिसके अधीन परिपक्वता से पूर्ण खाता बंद किया जा सकता है के उपबंधों की अनुपालना की गई है। आवश्यक दस्तावेज, जहां लागू है, नीचे संलग्नित है :-</p>
+        <p>1. <span class="input-line" style="width:200px;"></span><br>2. <span class="input-line" style="width:200px;"></span></p>
+        
+        <p>*प्रमाणित किया जाता है कि उपयोग के लिए प्रत्याहृत / ऋण की रकम <span class="input-line" style="width:200px;"></span> जो जीवित है और अवयस्क है के प्रयोग के लिए अपेक्षित है।</p>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="field"><p>तारीख: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">जमाकर्ता / संरक्षक के हस्ताक्षर या अंगूठा छाप <span class="mandatory">*</span></div></div>
+        </div>
+        <p style="font-size: 10px;">(लेखा कार्यालय को जानने वाले किसी व्यक्ति द्वारा जमाकर्ता के अंगूछा छाप प्रमाणित किए जाने चाहिए)</p>
+
+        <div style="border: 2px solid #000; padding: 15px; margin-top: 20px;">
+            <div class="title">केवल कार्यालय के प्रयोग हेतु (संदाय के ब्यौरे)</div>
+            <p>खाते में पात्र अतिशेष <span class="input-line" style="width:200px;"></span><br>काटी गई शास्ति की रकम <span class="input-line" style="width:200px;"></span> रुपए<br>संदत्त की जाने वाली कुल रकम (अंकों में) <span class="input-line" style="width:150px;"></span></p>
+        </div>
+        <div class="page-num">Page 4</div>
+    </div>
+
+    <div class="page">
+        <p>(शब्दों में) <span class="input-line" style="width: 100%;"></span></p>
+        <div class="row" style="margin-top: 20px;">
+            <div class="field"><p>तारीख <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">मुद्रा पोस्टमास्टर/प्रबंधक के हस्ताक्षर</div></div>
+        </div>
+
+        <div class="title" style="margin-top: 50px;">निस्तारण</div>
+        <div class="sub-title">(खाताधारक/संदेशवाहक द्वारा भरा जाए)</div>
+        <p>रुपए (अंको में) <span class="input-line" style="width:150px;"></span> (शब्दों में) <span class="input-line" style="width:300px;"></span> नकद चैक/डीडी संख्यांक <span class="input-line" style="width:150px;"></span> तारीख <span class="input-line" style="width:100px;"></span> / खाता संख्यांक <span class="input-line" style="width:150px;"></span> को अंतरण, द्वारा, प्राप्त किए।</p>
+        
+        <div class="row" style="margin-top: 40px;">
+            <div class="field"><p>तारीख: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">जमाकर्ता/संरक्षक के हस्ताक्षर/अगूंठा छाप <span class="mandatory">*</span></div></div>
+        </div>
+        <div class="page-num">Page 5</div>
+    </div>
+
+    <div class="page">
+        <div class="title">प्ररूप 3</div>
+        <div class="sub-title">[पैरा 8 का उप-पैरा (1) देखिए]<br>(निकासी के लिए आवेदन)</div>
+        <p>सेवा में,<br>श्रीमान, पोस्टमास्टर/प्रबंधक <span class="mandatory">*</span><br><span class="input-line" style="width: 200px;">Rajahmundry</span></p>
+        <p>श्रीमान,</p>
+        <p>1. मैं <span class="input-line" style="width:250px;">Dasari Praneeth Sanjay</span> <span class="mandatory">*</span> (जमाकर्ता/संरक्षक) नीचे दिए गए ब्यौरे के अनुसार, अपने खाते से निकासी के लिए आवेदन करता हूं:-</p>
+        <p>खाता संख्यांक: <span class="input-line" style="width:200px;"></span><br>निकासी के लिए आवेदित रकम: <span class="input-line" style="width:200px;"></span></p>
+        <p>* प्रमाणित किया जाता है कि उपभोग के लिए निकासी की मांग की रकम <span class="input-line" style="width:200px;"></span> के प्रयोग के लिए अपेक्षित है, जो जीवित है और अवयस्क है।</p>
+        
+        <p>2. कृपया मेरे बचत बैंक खाता सं. <span class="input-line" style="width:200px;"></span> (खाता कार्यालय का नाम) <span class="input-line" style="width:200px;"></span> में निकासी की रकम प्रत्यय करें।<br>या<br>कृपया डिमांड ड्राफ्ट पाने वाले नाम चैक जारी करें।<br>या<br>कृपया नकद संदाय करें (अनुज्ञेय सीमा से नीचे रकम होने के मामले में लागू)</p>
+        
+        <p>3. प्रमाणित किया जाता है कि निकासी के अनुदान के लिए लागू सभी शर्तों की अनुपालना की गई है। आवश्यक दस्तावेज जहां लागू है, नीचे संलग्नित है :-</p>
+        <p>1. <span class="input-line" style="width:200px;"></span><br>2. <span class="input-line" style="width:200px;"></span></p>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="field"><p>तारीख: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">जमाकर्ता / संरक्षक के हस्ताक्षर या अंगूठा छाप <span class="mandatory">*</span></div></div>
+        </div>
+        <p>प्रमाणित द्वारा. <span class="input-line" style="width:200px;"></span> (अंगूठा छाप के मामले में प्रमाणन लागू)</p>
+
+        <div style="border: 2px solid #000; padding: 15px; margin-top: 20px;">
+            <div class="title">केवल कार्यालय के प्रयोग हेतु (संदाय के ब्यौरे)</div>
+            <p>खाते में उपभोग की गई रमक रु०. <span class="input-line" style="width:200px;"></span><br>आरंभिक अभिदान की तारीख <span class="input-line" style="width:200px;"></span></p>
+        </div>
+        <div class="page-num">Page 6</div>
+    </div>
+
+    <div class="page">
+        <p>तारीख, जब अंतिम निकासी अनुज्ञात थी <span class="input-line" style="width:200px;"></span><br>निकीस के लिए अनुदानित कुल रकम रु०. (अंकों में) <span class="input-line" style="width:150px;"></span> (शब्दों में) <span class="input-line" style="width:250px;"></span></p>
+        
+        <div class="row" style="margin-top: 20px;">
+            <div class="field"><p>तारीख <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">मुद्रा पोस्टमास्टर/प्रबंधक के हस्ताक्षर</div></div>
+        </div>
+
+        <div class="title" style="margin-top: 50px;">निस्तारण</div>
+        <div class="sub-title">(जमाकर्ता द्वारा भरा जाए)</div>
+        <p>रुपए (अंको में) <span class="input-line" style="width:150px;"></span> (शब्दों में) <span class="input-line" style="width:300px;"></span> नकद / चैक/डीडी संख्यांक <span class="input-line" style="width:150px;"></span> तारीख <span class="input-line" style="width:100px;"></span> / खाता संख्यांक <span class="input-line" style="width:150px;"></span> को अंतरण, द्वारा, प्राप्त किए।</p>
+        
+        <div class="row" style="margin-top: 40px;">
+            <div class="field"><p>तारीख: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">जमाकर्ता/संरक्षक के हस्ताक्षर/अंगूठा छाप <span class="mandatory">*</span></div></div>
+        </div>
+        <div class="page-num">Page 7</div>
+    </div>
+
+    <div class="page">
+        <div class="title">प्ररूप 4</div>
+        <div class="sub-title">[पैरा 9 का उप-पैरा (3) देखिए]<br>(खाता बंद करने के लिए आवेदन)</div>
+        
+        <p>डाक घर / बैंक का नाम: <span class="input-line" style="width: 200px;">Rajahmundry</span> <span class="mandatory">*</span><br>तारीख: <span class="input-line" style="width: 150px;"></span><br>खाता संख्यांक: <span class="input-line" style="width: 200px;"></span></p>
+        
+        <p>1. मैं पासबुक/जमा रसीद प्रस्तुत करता हूं और अपने परिपक्व उपरोक्त उल्लिखित खाता को बंद करने के लिए आवेदन करता हूं ।</p>
+        <p>2. कृपया मेरे परिपक्व खाते में अतिशेष रकम का मेरे बचत बैंक खाता संख्यांक <span class="input-line" style="width: 200px;"></span> स्थित <span class="input-line" style="width: 200px;"></span> (खाता कार्यालय का नाम) में प्रत्यय करें।<br>या<br>कृपया डिमांड ड्राफ्ट/पाने वाले के नाम चैक जारी करें<br>या<br>कृपया नकद संदाय करें (लागू, यदि रकम अनुज्ञेय सीमा से नीचे हो)</p>
+        
+        <p>* प्रमाणित किया जाता है कि उपभोग के लिए निकासी / ऋण के लिए मांगी रकम <span class="input-line" style="width: 200px;"></span> के प्रयोग के लिए है जो जीवित है और अवयस्क है, अपेक्षित है।</p>
+        
+        <div class="signature-box" style="margin-top: 30px;"><div class="signature-line">जमाकर्ता/संरक्षक के हस्ताक्षर या अंगूठा छाप <span class="mandatory">*</span></div></div>
+        <p style="font-size: 10px; text-align: right;">(लेखा कार्यालय को ज्ञात व्यक्ति द्वारा अंगूठा छाप प्रमाणित की जानी चाहिए)</p>
+
+        <div style="border: 2px solid #000; padding: 15px; margin-top: 30px;">
+            <div class="title">संदाय आदेश (केवल कार्यालय के प्रयोग हेतु)</div>
+            <p>तारीख <span class="input-line" style="width: 150px;"></span></p>
+            <p>मूल रकम रुपए <span class="input-line" style="width: 150px;"></span><br>(+) देय ब्याज रुपए <span class="input-line" style="width: 150px;"></span><br>(- ) अधिक संदत्त ब्याज की वसूली रुपए <span class="input-line" style="width: 150px;"></span><br>कटौती, यदि कोई हो, रुपए <span class="input-line" style="width: 150px;"></span><br>कुल देय रकम रुपए <span class="input-line" style="width: 150px;"></span></p>
+            <p>रुपए (अंको में) <span class="input-line" style="width: 150px;"></span> (शब्दों में) <span class="input-line" style="width: 250px;"></span> का संदाय करें।</p>
+            <div class="row" style="margin-top: 20px;">
+                <div class="field"><p>तारीख: <span class="input-line" style="width:150px;"></span></p></div>
+                <div class="field signature-box"><div class="signature-line">पोस्टमास्टर/प्रबंधक के हस्ताक्षर</div></div>
+            </div>
+        </div>
+        <div class="page-num">Page 8</div>
+    </div>
+
+    <div class="page">
+        <div class="title">निस्तारण</div>
+        <div class="sub-title">(जमाकर्ता द्वारा भरा जाए)</div>
+        <p>रुपए (अंको में) <span class="input-line" style="width:150px;"></span> (शब्दों में) <span class="input-line" style="width:300px;"></span> नकद / चैक/डीडी संख्यांक <span class="input-line" style="width:150px;"></span> तारीख <span class="input-line" style="width:100px;"></span> / खाता संख्यांक <span class="input-line" style="width:150px;"></span> को अंतरण द्वारा, प्राप्त किए।</p>
+        
+        <div class="row" style="margin-top: 50px;">
+            <div class="field"><p>तारीख: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">जमाकर्ता/संरक्षक के हस्ताक्षर या अंगूठा छाप <span class="mandatory">*</span></div></div>
+        </div>
+        <div class="page-num">Page 9</div>
+    </div>
+
+    <div class="page">
+        <div class="photo-box">Paste photograph of<br>applicant/s</div>
+        <div class="title">FORM -1</div>
+        <div class="sub-title">[See sub-paragraph (3) of paragraph 3]<br>(Application for opening an account)</div>
+        
+        <p>To<br>The Postmaster/Manager <span class="mandatory">*</span><br><span class="input-line" style="width: 200px;">Rajahmundry</span></p>
+        <p>Sir,</p>
+        <p>I <span class="input-line" style="width: 250px;">Dasari Praneeth Sanjay</span> <span class="mandatory">*</span> (Applicant/guardian) hereby apply for opening of an account under <span class="input-line" style="width: 150px;">Sukanya Samriddhi</span> Account Scheme in your Post Office/Bank.</p>
+        <p>I tender herewith Rs. <span class="input-line" style="width: 100px;">5000</span> <span class="mandatory">*</span> /- (Rs. <span class="input-line" style="width: 150px;">Five Thousand</span> In words) in cash/Cheque/DD. No. <span class="input-line" style="width: 100px;">N/A</span> date <span class="input-line" style="width: 100px;">27/04/2026</span> as initial deposit. My particulars are as under:-</p>
+        
+        <div class="row">
+            <div class="field"><label>1. Name of the Depositor</label><div class="input-line"></div></div>
+            <div class="field"><label>Date of Birth</label><div class="input-line"></div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>2. Name of Guardian <span class="mandatory">*</span></label><div class="input-line">Dasari Praneeth Sanjay</div></div>
+            <div class="field"><label>Date of Birth <span class="mandatory">*</span></label><div class="input-line">01/01/2000</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>Husband/Father/mother's name</label><div class="input-line"></div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>3. Aadhaar Number of guardian <span class="mandatory">*</span></label><div class="input-line">[Aadhaar Redacted]</div></div>
+            <div class="field"><label>4. Permanent Account Number (PAN) of guardian <span class="mandatory">*</span></label><div class="input-line">ABCDE1234F</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>5. Present Address <span class="mandatory">*</span></label><div class="input-line">123 Main Street, Rasapudipalem, Rajahmundry, AP - 533101</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>Permanent Address</label><div class="input-line">Same as Present Address</div></div>
+        </div>
+        <div class="row"><label style="font-weight: bold;">6. Contact details <span class="mandatory">*</span></label></div>
+        <div class="row">
+            <div class="field"><label>Telephone Number</label><div class="input-line"></div></div>
+        </div>
+        <div class="page-num">Page 10</div>
+    </div>
+
+    <div class="page">
+        <div class="row">
+            <div class="field"><label>Mobile Number</label><div class="input-line">9876543210</div></div>
+            <div class="field"><label>Email ID</label><div class="input-line">praneeth.sanjay@example.com</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>7. Type of Account</label><div class="input-line">Minor</div></div>
+        </div>
+        <div class="row"><label style="font-weight: bold;">8. (*)Details of Birth Certificate of the depositor</label></div>
+        <div class="row">
+            <div class="field"><label>a) Certificate No.</label><div class="input-line"></div></div>
+            <div class="field"><label>b) Date of Issue</label><div class="input-line"></div></div>
+            <div class="field"><label>c) Issuing authority</label><div class="input-line"></div></div>
+        </div>
+        <div class="row"><label style="font-weight: bold;">9. Details of other KYC documents attached</label></div>
+        <div class="row">
+            <div class="field"><label>1. Proof of identification</label><div class="input-line">PAN Card</div></div>
+            <div class="field"><label>2. Address proof</label><div class="input-line">Aadhaar Card</div></div>
+        </div>
+        <p style="font-size: 10px;">(The following documents are accepted as valid documents for the purpose of identification and address proof: 1. Passport 2. Driving license 3. Voter's ID card 4. Job card issued by NREGA signed by the State Government officer 5. Letter issued by the National Population Register containing details of name and address;)</p>
+        
+        <p style="font-weight: bold;">10. The operation of the account will be:- <span class="mandatory">*</span></p>
+        <p><span class="sq"></span> (a) By the Guardian till the depositor attains majority.</p>
+        <p><span class="sq" style="background:#000; color:#fff;">✓</span> (b) By the depositor herself on attaining majority.</p>
+        
+        <div class="row" style="margin-top: 15px;"><label style="font-weight: bold;">11. Specimen Signatures <span class="mandatory">*</span></label></div>
+        <div class="row">
+            <div class="field"><label>1.</label><div class="input-line">Dasari Praneeth Sanjay</div></div>
+            <div class="field"><label>2.</label><div class="input-line"></div></div>
+            <div class="field"><label>3.</label><div class="input-line"></div></div>
+        </div>
+
+        <p>I hereby declare that I have not opened a Sukanya Samriddhi Account in the name of the depositor mentioned at serial number 1 in any of the Post office/Bank in the country.<br>
+        I further declare that I and the depositor both are Resident citizen of India and undertake to inform the account office of any change in our residency/citizenship status in future.<br>
+        I hereby undertake to abide by the scheme provisions and Government Savings Promotion Rules, 2018 applicable on the Scheme and amendments issued thereto from time to time.</p>
+        
+        <div class="row" style="margin-top: 30px;">
+            <div class="field"><p>Date: <span class="input-line" style="width:150px;">27/04/2026</span></p></div>
+            <div class="field signature-box"><div class="signature-line">Signature or thumb impression of guardian <span class="mandatory">*</span></div></div>
+        </div>
+
+        <div class="title">Nomination</div>
+        <p>17. I <span class="input-line" style="width: 250px;">Dasari Praneeth Sanjay</span> <span class="mandatory">*</span> hereby nominate the person(s) mentioned below to whom to the exclusion of all other persons in the event of my death the</p>
+        <div class="page-num">Page 11</div>
+    </div>
+
+    <div class="page">
+        <p>amount standing to my credit in <span class="input-line" style="width: 200px;">Sukanya Samriddhi</span> (Name of Scheme) at the time of my death would be payable.</p>
+        
+        <table>
+            <tr>
+                <th>S.No.</th><th>Name of nominee & relationship</th><th>Full address</th><th>Aadhaar number of nominee (optional)</th><th>Date of birth (if minor)</th><th>Share of entitlement</th><th>Nature of entitlement</th>
+            </tr>
+            <tr>
+                <td>1</td><td>Ravi Kumar (Brother)</td><td>123 Main Street, Rajahmundry</td><td></td><td></td><td>100%</td><td>Owner</td>
+            </tr>
+            <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+
+        <p>As the nominee(s) at Serial No.(s) ________ specified above is/are minor(s), I appoint Shri/Smt/Kumari ________ S/o,D/o,W/o ________ Address ________ to receive the sum due under the said account in the event of my death during the minority of the nominee(s).</p>
+        
+        <div class="row" style="margin-top: 30px;">
+            <div class="field"><label>1. Signature of witness</label><div class="input-line"></div><label>Name & Address</label><div class="input-line"></div></div>
+            <div class="field"><label>2. Signature of witness</label><div class="input-line"></div><label>Name & Address</label><div class="input-line"></div></div>
+        </div>
+        
+        <div class="row" style="margin-top: 40px;">
+            <div class="field"><p>Place: <span class="input-line" style="width:150px;">Rajahmundry</span><br>Date: <span class="input-line" style="width:150px;">27/04/2026</span></p></div>
+            <div class="field signature-box"><div class="signature-line">Signature or thumb impression of guardian <span class="mandatory">*</span></div></div>
+        </div>
+
+        <div style="border: 2px solid #000; padding: 15px; margin-top: 40px;">
+            <div class="title">For use of Post Office/Bank</div>
+            <p>The account has been opened on <span class="input-line" style="width:100px;"></span> with initial deposit of Rs. <span class="input-line" style="width:100px;"></span> in the name of <span class="input-line" style="width:150px;"></span> under (Name of Scheme) vide Account No. <span class="input-line" style="width:150px;"></span>.</p>
+            <p>Customer identification Number <span class="input-line" style="width:150px;"></span> Nomination has been registered vide No. <span class="input-line" style="width:150px;"></span> dated <span class="input-line" style="width:100px;"></span>.</p>
+            <div class="signature-box"><div class="signature-line">Signature and seal of competent authority</div></div>
+        </div>
+        <div class="page-num">Page 12</div>
+    </div>
+
+    <div class="page">
+        <div class="title">FORM - 2</div>
+        <div class="sub-title">[See sub-paragraph (1) of paragraph 7]<br>(Application for premature closure of account)</div>
+        <p>To,<br>The Postmaster/Manager <span class="mandatory">*</span><br><span class="input-line" style="width: 200px;">Rajahmundry</span></p>
+        <p>Sir,</p>
+        <p>1. I <span class="input-line" style="width:200px;">Dasari Praneeth Sanjay</span> <span class="mandatory">*</span> wish to prematurely close my Account No. <span class="input-line" style="width:150px;"></span> having balance of <span class="input-line" style="width:100px;"></span> (Rupees <span class="input-line" style="width:200px;"></span> Only) and request you to pay the amount after deduction of applicable penalty as per details given below:-</p>
+        
+        <p>2. Please Credit the amount to my SB Account no. <span class="input-line" style="width:200px;"></span> standing at <span class="input-line" style="width:200px;"></span> (Name of Account office).<br>or<br>Please issue a Demand Draft/account payee cheque<br>or<br>Please pay in cash (applicable if the amount is below permissible limit)</p>
+        
+        <p>3. I hereby declare that the provisions under which the account can be closed before maturity have been complied with. Necessary documents as applicable are attached as under:-</p>
+        <p>1. <span class="input-line" style="width:200px;"></span><br>2. <span class="input-line" style="width:200px;"></span></p>
+        
+        <p>*Certified, that the amount sought to be withdrawn/loan to be availed is required for the use of <span class="input-line" style="width:200px;"></span> who is alive and still a Minor.</p>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="field"><p>Date:- <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">Signature or thumb impression of depositor/guardian <span class="mandatory">*</span></div></div>
+        </div>
+        <p style="font-size: 10px;">(Thumb impression of the depositor should be attested by a person known to the accounts office)</p>
+
+        <div style="border: 2px solid #000; padding: 15px; margin-top: 20px;">
+            <div class="title">For office use only</div>
+            <p>Eligible balance in Account <span class="input-line" style="width:200px;"></span><br>Less Penalty amount <span class="input-line" style="width:200px;"></span><br>Total Amount to be paid (In figures) <span class="input-line" style="width:150px;"></span> (In words) <span class="input-line" style="width:250px;"></span></p>
+            <div class="row" style="margin-top: 20px;">
+                <div class="field"><p>Date Stamp</p></div>
+                <div class="field signature-box"><div class="signature-line">Signature of Postmaster/Manager</div></div>
+            </div>
+        </div>
+        <div class="page-num">Page 13</div>
+    </div>
+
+    <div class="page">
+        <div class="title">Acquittance</div>
+        <div class="sub-title">(to be filled by account holder/ messenger)</div>
+        
+        <p>Received Rs. (In figures) <span class="input-line" style="width:150px;"></span> (in words) <span class="input-line" style="width:300px;"></span> By cash/cheque/DD bearing No. <span class="input-line" style="width:150px;"></span> dated <span class="input-line" style="width:100px;"></span> /by transfer to Account No. <span class="input-line" style="width:150px;"></span></p>
+        
+        <div class="row" style="margin-top: 50px;">
+            <div class="field"><p>Date: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">Signature/thumb impression of depositor/guardian <span class="mandatory">*</span></div></div>
+        </div>
+        <div class="page-num">Page 14</div>
+    </div>
+
+    <div class="page">
+        <div class="title">FORM-3</div>
+        <div class="sub-title">[See sub-paragraph (1) of paragraph 8]<br>(Application for Withdrawal)</div>
+        <p>To,<br>The Postmaster/Manager <span class="mandatory">*</span><br><span class="input-line" style="width: 200px;">Rajahmundry</span></p>
+        <p>Sir,</p>
+        <p>1. I <span class="input-line" style="width:250px;">Dasari Praneeth Sanjay</span> <span class="mandatory">*</span> (Depositor/guardian) hereby apply for withdrawal from my account as per details below:-</p>
+        <p>Account Number: <span class="input-line" style="width:200px;"></span><br>Amount of withdrawal applied: <span class="input-line" style="width:200px;"></span></p>
+        <p>*Certified, that the amount sought to be withdrawn to be availed is required for the use of <span class="input-line" style="width:200px;"></span> who is alive and still a Minor.</p>
+        
+        <p>2. Please Credit the amount of withdrawal to my SB Account no. <span class="input-line" style="width:200px;"></span> standing at <span class="input-line" style="width:200px;"></span> (Name of Account office).<br>or<br>Please issue a Demand Draft/account payee cheque<br>or<br>Please pay in cash (applicable if the amount is below permissible limit of cash payment).</p>
+        
+        <p>3. I certify that all the conditions applicable under scheme for grant of withdrawal have been complied with. Necessary documents as applicable are attached as under:-</p>
+        <p>1. <span class="input-line" style="width:200px;"></span><br>2. <span class="input-line" style="width:200px;"></span></p>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="field"><p>Date:- <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">Signature or thumb impression of depositor/guardian <span class="mandatory">*</span></div></div>
+        </div>
+        <p>Attested By <span class="input-line" style="width:200px;"></span> (Attestation is applicable in case of thumb impression)</p>
+
+        <div style="border: 2px solid #000; padding: 15px; margin-top: 20px;">
+            <div class="title">For office use only (Payment detail)</div>
+            <p>Amount available in Account Rs <span class="input-line" style="width:200px;"></span><br>Date of Initial Subscription <span class="input-line" style="width:200px;"></span><br>Date on which last withdrawal was allowed <span class="input-line" style="width:200px;"></span></p>
+        </div>
+        <div class="page-num">Page 15</div>
+    </div>
+
+    <div class="page">
+        <p>Total Amount granted for withdrawal Rs (In figures) <span class="input-line" style="width:150px;"></span> (In words) <span class="input-line" style="width:250px;"></span></p>
+        
+        <div class="row" style="margin-top: 20px;">
+            <div class="field"><p>Date Stamp</p></div>
+            <div class="field signature-box"><div class="signature-line">Signature of Postmaster/Manager</div></div>
+        </div>
+
+        <div class="title" style="margin-top: 50px;">Acquittance</div>
+        <div class="sub-title">(to be filled by depositor)</div>
+        <p>Received Rs (In figures) <span class="input-line" style="width:150px;"></span> (in words) <span class="input-line" style="width:300px;"></span> By cash/cheque/DD bearing no. <span class="input-line" style="width:150px;"></span> dated <span class="input-line" style="width:100px;"></span> /by transfer to Account No. <span class="input-line" style="width:150px;"></span></p>
+        
+        <div class="row" style="margin-top: 40px;">
+            <div class="field"><p>Date: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">Signature/thumb impression of depositor/guardian <span class="mandatory">*</span></div></div>
+        </div>
+        <div class="page-num">Page 16</div>
+    </div>
+
+    <div class="page">
+        <div class="title">FORM - 4</div>
+        <div class="sub-title">[See sub-paragraph (3) of paragraph 9]<br>(Application for closure of account)</div>
+        
+        <p>Name of Post Office/Bank: <span class="input-line" style="width: 200px;">Rajahmundry</span> <span class="mandatory">*</span><br>Date: <span class="input-line" style="width: 150px;"></span><br>Account Number: <span class="input-line" style="width: 200px;"></span></p>
+        
+        <p>1. I hereby submit pass book/deposit receipt book and apply for closure of my above mentioned account.</p>
+        <p>2. Please Credit the amount of eligible balance in my matured account to my SB Account no. <span class="input-line" style="width: 200px;"></span> standing at <span class="input-line" style="width: 200px;"></span> (Name of Account office).<br>or<br>Please issue a Demand Draft/account payee cheque<br>or<br>Please pay in cash (applicable if the amount is below permissible limit).</p>
+        
+        <p>*Certified, that the amount sought to be withdrawn/loan to be availed is required for the use of <span class="input-line" style="width: 200px;"></span> who is alive and still a Minor.</p>
+        
+        <div class="signature-box" style="margin-top: 30px;"><div class="signature-line">Signature or thumb impression of depositor/guardian <span class="mandatory">*</span></div></div>
+        <p style="font-size: 10px; text-align: right;">(Thumb impression should be attested by a person known to Accounts office)</p>
+
+        <div style="border: 2px solid #000; padding: 15px; margin-top: 30px;">
+            <div class="title">Payment Order (For office use only)</div>
+            <p>Date <span class="input-line" style="width: 150px;"></span></p>
+            <p>Principal amount Rs. <span class="input-line" style="width: 150px;"></span><br>(+) Interest due Rs. <span class="input-line" style="width: 150px;"></span><br>(-) Recovery of overpaid interest Rs. <span class="input-line" style="width: 150px;"></span><br>Deduction if any Rs <span class="input-line" style="width: 150px;"></span><br>Total Amount due Rs <span class="input-line" style="width: 150px;"></span></p>
+            <p>Pay Rs. (in figurers) <span class="input-line" style="width: 150px;"></span> (in words) <span class="input-line" style="width: 250px;"></span></p>
+        </div>
+        <div class="page-num">Page 17</div>
+    </div>
+
+    <div class="page">
+        <div class="row" style="margin-top: 20px;">
+            <div class="field"><p>Date: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">Signature of Postmaster/Manager</div></div>
+        </div>
+
+        <div class="title" style="margin-top: 50px;">Acquittance</div>
+        <div class="sub-title">(to be filled by depositor)</div>
+        <p>Received Rs (In figures) <span class="input-line" style="width:150px;"></span> (in words) <span class="input-line" style="width:300px;"></span> By cash/cheque/DD bearing no. <span class="input-line" style="width:150px;"></span> dated <span class="input-line" style="width:100px;"></span> /by transfer to Account No. <span class="input-line" style="width:150px;"></span></p>
+        
+        <div class="row" style="margin-top: 50px;">
+            <div class="field"><p>Date: <span class="input-line" style="width:150px;"></span></p></div>
+            <div class="field signature-box"><div class="signature-line">Signature/thumb impression of depositor/guardian <span class="mandatory">*</span></div></div>
+        </div>
+        <div class="page-num">Page 18</div>
+    </div>
+
+    <div class="page">
+        <div style="height: 100%; display: flex; align-items: center; justify-content: center; color: #ccc;">
+            [Intentionally Left Blank]
+        </div>
+        <div class="page-num">Page 19</div>
+    </div>
+
+</body>
+</html>

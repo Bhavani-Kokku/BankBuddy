@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SBI Account Opening Form – Dasari Praneeth Sanjay</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+  :root {
+    --blue-dark:  #1a237e;
+    --blue-mid:   #283593;
+    --blue-sec:   #3949ab;
+    --blue-light: #e8eaf6;
+    --field-bg:   #f5f5f5;
+    --border:     #9e9e9e;
+    --text-dark:  #212121;
+    --text-mid:   #555555;
+    --white:      #ffffff;
+    --red:        #b71c1c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans', Arial, sans-serif;
+    background: #cfd8dc;
+    font-size: 8px;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    background: var(--white);
+    padding: 6mm 7mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,.25);
+    position: relative;
+    page-break-after: always;
+  }
+
+  /* ── HEADER ── */
+  .form-header {
+    background: var(--blue-mid);
+    color: var(--white);
+    padding: 4mm 5mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+  .header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 22mm;
+  }
+  .logo-box {
+    width: 18mm; height: 10mm;
+    background: var(--white);
+    color: var(--blue-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700;
+    border-radius: 1px;
+    letter-spacing: 1px;
+  }
+  .logo-sub {
+    font-size: 5.5px;
+    margin-top: 1mm;
+    text-align: center;
+    color: #c5cae9;
+    line-height: 1.4;
+  }
+  .header-center { text-align: center; flex: 1; padding: 0 4mm; }
+  .header-center h1 { font-size: 10px; font-weight: 700; letter-spacing: .3px; }
+  .header-center h2 { font-size: 8px; font-weight: 400; margin-top: 1.5mm; color: #c5cae9; }
+  .header-center h3 { font-size: 7.5px; font-weight: 700; margin-top: 1.5mm; color: #e8eaf6; }
+  .header-sbi {
+    display: flex; flex-direction: column;
+    align-items: center; min-width: 22mm;
+  }
+  .sbi-badge {
+    width: 14mm; height: 14mm;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue-dark);
+    font-size: 12px; font-weight: 700;
+  }
+  .sbi-text { font-size: 5.5px; color: #c5cae9; margin-top: 1mm; }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    background: var(--blue-sec);
+    color: var(--white);
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1.5mm 3mm;
+    margin: 2mm 0 1.5mm;
+    letter-spacing: .3px;
+  }
+  .section-header.sub {
+    background: var(--blue-dark);
+    font-size: 7.5px;
+  }
+
+  /* ── OUTER BORDER ── */
+  .form-body { border: 1px solid var(--blue-dark); padding: 0; }
+  .form-inner { padding: 2mm 2.5mm; }
+
+  /* ── INFO STRIP ── */
+  .info-strip {
+    border-bottom: 0.5px solid #bdbdbd;
+    padding: 1.5mm 2.5mm;
+    font-size: 7px;
+    color: var(--text-mid);
+    display: flex; gap: 6mm; align-items: center;
+  }
+  .info-strip b { color: var(--text-dark); }
+
+  /* ── GRID ROWS ── */
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin: 1.5mm 0;
+    flex-wrap: wrap;
+  }
+  .row + .row { margin-top: 1.5mm; }
+
+  /* ── LABEL ── */
+  .lbl {
+    font-size: 7px;
+    font-weight: 700;
+    color: var(--text-dark);
+    white-space: nowrap;
+  }
+  .lbl-sm { font-size: 6.5px; color: var(--text-mid); }
+  .req { color: var(--red); }
+
+  /* ── FIELD BOX ── */
+  .field {
+    background: var(--field-bg);
+    border: 0.4px solid var(--border);
+    padding: 1mm 2mm;
+    min-height: 6mm;
+    display: flex;
+    align-items: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: .3px;
+    flex-shrink: 0;
+  }
+  .field.filled { background: #e8f5e9; border-color: #43a047; }
+  .field.w20  { width: 20mm; }
+  .field.w25  { width: 25mm; }
+  .field.w30  { width: 30mm; }
+  .field.w35  { width: 35mm; }
+  .field.w40  { width: 40mm; }
+  .field.w45  { width: 45mm; }
+  .field.w50  { width: 50mm; }
+  .field.w55  { width: 55mm; }
+  .field.w60  { width: 60mm; }
+  .field.w70  { width: 70mm; }
+  .field.w80  { width: 80mm; }
+  .field.w90  { width: 90mm; }
+  .field.w100 { width: 100mm; }
+  .field.wfull{ flex: 1; }
+  .field.tall  { min-height: 8mm; }
+  .field.empty { font-weight: 400; color: var(--text-mid); font-style: italic; font-size: 7px; }
+
+  /* ── CHECKBOX ── */
+  .cb-group { display: flex; align-items: center; gap: 1.5mm; flex-wrap: wrap; }
+  .cb-item  { display: flex; align-items: center; gap: 1mm; cursor: default; }
+  .cb-box {
+    width: 4mm; height: 4mm;
+    border: 0.5px solid #333;
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 7px;
+    flex-shrink: 0;
+  }
+  .cb-box.checked {
+    background: var(--blue-dark);
+    color: var(--white);
+    font-size: 6px;
+  }
+  .cb-label { font-size: 7px; color: var(--text-dark); white-space: nowrap; }
+
+  /* ── DIVIDER ── */
+  .divider { border: none; border-top: 0.4px solid #bdbdbd; margin: 2mm 0; }
+  .divider-blue { border: none; border-top: 0.6px solid var(--blue-dark); margin: 2mm 0; }
+
+  /* ── SIGNATURE BOXES ── */
+  .sig-row { display: flex; gap: 5mm; margin-top: 3mm; }
+  .sig-box {
+    flex: 1;
+    min-height: 20mm;
+    border: 0.5px solid var(--border);
+    background: var(--field-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5mm;
+  }
+  .sig-caption { font-size: 6px; color: var(--text-mid); text-align: center; }
+
+  /* ── PHOTO BOX ── */
+  .photo-box {
+    width: 30mm; height: 35mm;
+    border: 0.5px dashed var(--border);
+    display: flex; align-items: center; justify-content: center;
+    background: #fafafa;
+    font-size: 6.5px; color: var(--text-mid);
+    text-align: center; padding: 2mm;
+    flex-shrink: 0;
+  }
+
+  /* ── TABLE GRID for fields ── */
+  .field-grid {
+    display: grid;
+    gap: 2mm;
+  }
+  .fg-2 { grid-template-columns: 1fr 1fr; }
+  .fg-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  .field-entry { display: flex; flex-direction: column; gap: 1mm; }
+  .field-entry .lbl { font-size: 6.5px; }
+
+  /* ── NOTICE / INSTRUCTIONS ── */
+  .notice {
+    font-size: 6.5px;
+    color: var(--text-mid);
+    border-left: 2px solid var(--blue-sec);
+    padding-left: 2mm;
+    margin: 1.5mm 0;
+    line-height: 1.5;
+  }
+
+  /* ── OL/UL in T&C ── */
+  .terms-list { padding-left: 4mm; }
+  .terms-list li { font-size: 6.5px; color: #333; margin: 1mm 0; line-height: 1.5; }
+
+  /* ── PAGE NUMBER ── */
+  .page-num {
+    text-align: center;
+    font-size: 6.5px;
+    color: var(--text-mid);
+    margin-top: 3mm;
+    padding-top: 2mm;
+    border-top: 0.3px solid #ddd;
+  }
+
+  /* ── ANNEXURE TITLE ── */
+  .annex-title {
+    text-align: center;
+    font-size: 9px;
+    font-weight: 700;
+    background: var(--blue-light);
+    border: 0.5px solid var(--blue-sec);
+    padding: 2mm;
+    margin: 2mm 0;
+    color: var(--blue-dark);
+  }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+  }
+
+  /* STAMP AREA */
+  .stamp-area {
+    border: 0.5px dashed var(--border);
+    width: 38mm; min-height: 18mm;
+    padding: 2mm;
+    font-size: 6px;
+    color: var(--text-mid);
+    text-align: center;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .header-note {
+    font-size: 6.5px;
+    color: #c5cae9;
+    margin-top: 1mm;
+  }
+
+  .highlight-row {
+    background: var(--blue-light);
+    padding: 1mm 2mm;
+    border-left: 2px solid var(--blue-sec);
+  }
+
+  .tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7px;
+    margin: 1.5mm 0;
+  }
+  .tbl th {
+    background: var(--blue-sec);
+    color: white;
+    padding: 1.5mm 2mm;
+    font-weight: 700;
+    border: 0.4px solid var(--blue-dark);
+    text-align: left;
+  }
+  .tbl td {
+    padding: 1.5mm 2mm;
+    border: 0.4px solid var(--border);
+    background: var(--field-bg);
+  }
+  .tbl td.filled { background: #e8f5e9; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  PAGE 1 — CIF / PART-I Personal Details                        -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="form-header">
+    <div class="header-logo">
+      <div class="logo-box">DSB</div>
+      <div class="logo-sub">Accessibility<br>Leveraging<br>Large Interface<br>Across Nation</div>
+    </div>
+    <div class="header-center">
+      <h1>ACCOUNT OPENING FORM FOR RESIDENT INDIVIDUAL (PART – I)</h1>
+      <h2>(Must be accompanied with Terms and Conditions)</h2>
+      <h3>CUSTOMER INFORMATION SHEET (CIF Creation / Amendment)</h3>
+      <div class="header-note">In case of Joint Accounts / Related Person / Guardian, Part–I (CIF Sheet) and Terms &amp; Conditions to be taken for each customer</div>
+    </div>
+    <div class="header-sbi">
+      <div class="sbi-badge">SBI</div>
+      <div class="sbi-text">State Bank of India</div>
+    </div>
+  </div>
+
+  <div class="form-body">
+
+    <!-- BRANCH / DATE STRIP -->
+    <div class="info-strip">
+      <div><b>Date:</b> &nbsp;<span class="field filled w30" style="display:inline-flex">27 / 04 / 2026</span></div>
+      <div style="flex:1"><b>Branch Name:</b> &nbsp;<span class="field filled w60" style="display:inline-flex">Rajahmundry Main Branch</span></div>
+      <div><b>Branch Code:</b> &nbsp;<span class="field filled w25" style="display:inline-flex">002341</span></div>
+      <div class="stamp-area">Bank / Branch to affix rubber stamp of name and code no.</div>
+    </div>
+
+    <div class="info-strip">
+      <div><b>Customer ID:</b> &nbsp;<span class="field w40 empty" style="display:inline-flex">&nbsp;</span></div>
+      <div><b>Application Type:</b> &nbsp;
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">New</span></span> &nbsp;
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Update</span></span>
+      </div>
+      <div><b>Account No.:</b> &nbsp;<span class="field w40 empty" style="display:inline-flex">&nbsp;</span></div>
+      <div><b>CKYC No.:</b> &nbsp;<span class="field w40 empty" style="display:inline-flex">&nbsp;</span></div>
+    </div>
+
+    <div class="info-strip" style="border-bottom:0.6px solid var(--blue-dark)">
+      <div><b>Account Type:</b> &nbsp;
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Normal</span></span> &nbsp;
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Small</span></span> &nbsp;
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Minor</span></span>
+      </div>
+      <div><b>Staff:</b><span class="cb-box" style="margin-left:2mm"></span></div>
+      <div><b>PF No.:</b><span class="field w30 empty" style="display:inline-flex;margin-left:2mm">&nbsp;</span></div>
+    </div>
+
+    <!-- SECTION A -->
+    <div class="section-header">A.&nbsp; Personal Details</div>
+    <div class="form-inner">
+
+      <!-- 1. Name -->
+      <div class="row">
+        <span class="lbl">1. Name<span class="req">*</span> <span style="font-weight:400;font-size:6.5px">(Same as ID Proof):</span></span>
+        <div class="field filled wfull tall" style="font-size:10px;letter-spacing:1.5px">DASARI PRANEETH SANJAY</div>
+      </div>
+
+      <hr class="divider"/>
+
+      <!-- 2-3 DOB / Gender -->
+      <div class="row">
+        <span class="lbl">2. Date of Birth<span class="req">*</span>:</span>
+        <div class="field filled w30">01 / 01 / 2000</div>
+        <span class="lbl" style="margin-left:4mm">3. Gender<span class="req">*</span>:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Male</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Female</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Third Gender</span></span>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 4-5 Marital -->
+      <div class="row">
+        <span class="lbl">4. Marital Status:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Married</span></span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Unmarried</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Others</span></span>
+        <span class="lbl" style="margin-left:5mm">5. No. of Dependents:</span>
+        <div class="field filled w15" style="width:15mm">0</div>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 6. Name of Father -->
+      <div class="row">
+        <span class="lbl">6. Name of<span class="req">*</span> <span style="font-weight:400">(Please tick one):</span></span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Father</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Mother</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Spouse</span></span>
+        <div class="field filled wfull">DASARI RAVI KUMAR</div>
+      </div>
+      <div class="notice">Father name is mandatory, if PAN is not provided</div>
+
+      <hr class="divider"/>
+
+      <!-- 8-9 Nationality -->
+      <div class="row">
+        <span class="lbl">8. Nationality:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">In-Indian</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Others</span></span>
+        <span class="lbl" style="margin-left:5mm">Country Name:</span>
+        <div class="field w30 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:6mm">9. Citizenship:</span>
+        <div class="field filled w30">Indian</div>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 10. Occupation -->
+      <div class="row">
+        <span class="lbl">10. Occupation Type<span class="req">*</span>:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">State Govt.</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Central Govt.</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Public Sector Undertaking</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Defence</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Pvt. Sector</span></span>
+      </div>
+      <div class="row" style="margin-top:1mm">
+        <span class="lbl" style="margin-left:5mm">Business:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Industrialist</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Trade Sect.</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Contractor</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Other Self Employed</span></span>
+      </div>
+      <div class="row" style="margin-top:1mm">
+        <span class="lbl" style="margin-left:5mm">Others:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Medical Prof.</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Legal Prof.</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">CA/ICWA/Finance</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Eng./Architect/Tech.</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Retired</span></span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">Student</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Housewife</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Agriculture</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Political/Social Worker</span></span>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 11. Org -->
+      <div class="row">
+        <span class="lbl">11. Organisation Name:</span>
+        <div class="field filled w60">Andhra University</div>
+        <span class="lbl">Designation / Profession:</span>
+        <div class="field filled wfull">Student – B.Tech</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Nature of Business:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 12-13 Income -->
+      <div class="row">
+        <span class="lbl">12. Annual Income<span class="req">*</span> Rs.:</span>
+        <div class="field filled w35">2,00,000</div>
+        <span class="lbl" style="margin-left:6mm">13. Net Worth (approx value) Rs.:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 14. Source of Funds -->
+      <div class="row">
+        <span class="lbl">14. Source of Funds:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Salary</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Business Income</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Agriculture</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Investment</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Pension</span></span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">Others (Family Support)</span></span>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 15-16 -->
+      <div class="row">
+        <span class="lbl">15. Religion:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Hindu</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Muslim</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Christian</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Sikh</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Others</span></span>
+        <span class="lbl" style="margin-left:6mm">16. Category:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">General</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">OBC</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">SC</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">ST</span></span>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 17-18 -->
+      <div class="row">
+        <span class="lbl">17. Person with Disability:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">No</span></span>
+        <span class="lbl" style="margin-left:6mm">18. Educational Qualification:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Up to 9th</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">10th Class</span></span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">Graduate (Gen.)</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Post Graduate</span></span>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 19. PEP -->
+      <div class="row">
+        <span class="lbl">19. Please Tick the Applicable Box<span class="req">*</span>:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Politically Exposed Person</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Related to Politically Exposed Person</span></span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">None</span></span>
+      </div>
+      <hr class="divider"/>
+
+      <!-- 20-21 PAN / Tax -->
+      <div class="row">
+        <span class="lbl">20. Country of Tax Residence in India only and not in any other country:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No (fill FATCA form – Annexure I)</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">21. PAN<span class="req">*</span>:</span>
+        <div class="field filled w40" style="font-size:9px;letter-spacing:2px">ABCDE1234F</div>
+        <span class="lbl-sm" style="margin-left:3mm">(If PAN is not submitted, submit Form 60 – Annexure I)</span>
+        <span class="lbl" style="margin-left:6mm">Aadhaar No.:</span>
+        <div class="field filled w45" style="font-size:9px;letter-spacing:2px">1234 5678 9012</div>
+      </div>
+
+    </div><!-- /form-inner -->
+
+    <!-- SECTION B: CONTACT -->
+    <div class="section-header">B.&nbsp; Contact Details &nbsp;<span style="font-weight:400;font-size:7px">(All communications will be sent on provided Mobile No./Email-ID)</span></div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="lbl">Mobile No.:</span>
+        <div class="field filled w40" style="font-size:9px;letter-spacing:1.5px">9876543210</div>
+        <span class="lbl" style="margin-left:6mm">Email ID:</span>
+        <div class="field filled wfull">praneeth.sanjay@example.com</div>
+      </div>
+      <div class="row">
+        <span class="lbl">STD Tel. (Off):</span>
+        <div class="field w40 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:6mm">Tel. (Res):</span>
+        <div class="field w40 empty">&nbsp;</div>
+      </div>
+    </div>
+
+  </div><!-- /form-body -->
+  <div class="page-num">Page 1 of 7 &nbsp;|&nbsp; State Bank of India &nbsp;|&nbsp; Account Opening Form – Resident Individual</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  PAGE 2 — Address, KYC, Declaration, Photo                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="header-logo"><div class="logo-box">DSB</div></div>
+    <div class="header-center">
+      <h1>ACCOUNT OPENING FORM – PART I (Continued)</h1>
+      <h3>Address Details / KYC / Declaration</h3>
+    </div>
+    <div class="header-sbi"><div class="sbi-badge">SBI</div></div>
+  </div>
+  <div class="form-body">
+
+    <!-- SECTION C: KYC -->
+    <div class="section-header">C.&nbsp; Proof of Identity / Address &nbsp;<span style="font-weight:400;font-size:7px">(Officially Valid Documents — tick the appropriate Box)</span></div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">A-Passport</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">B-Voter's Identity Card</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">C-Driving Licence</span></span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">D-Aadhaar Number (Verification)</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">E-KYC Offline</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">F-NREGA Job Card</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Whether submitted document is equivalent e-document:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Document No. / Identification No.<span class="req">*</span>:</span>
+        <div class="field filled w60" style="font-size:9px;letter-spacing:2px">1234 5678 9012</div>
+        <span class="lbl" style="margin-left:4mm">Issued By:</span>
+        <div class="field filled w25">UIDAI</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Issue Date<span class="req">*</span>:</span>
+        <div class="field filled w30">15 / 06 / 2018</div>
+        <span class="lbl" style="margin-left:4mm">Expiry Date<span class="req">*</span>:</span>
+        <div class="field filled w30">Lifetime</div>
+      </div>
+    </div>
+
+    <!-- SECTION D: ADDRESS CURRENT -->
+    <div class="section-header">D.&nbsp; Address Details &nbsp;
+      <span style="background:#e8f5e9;color:#2e7d32;padding:0.5mm 2mm;border-radius:1px">✦ Current</span>
+      &nbsp;<span style="font-weight:400">Overseas</span>
+    </div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="lbl">Address Type<span class="req">*</span>:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">Residential / Business</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Residential</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Business</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Registered Office</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Unspecified</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Address<span class="req">*</span> (Line 1):</span>
+        <div class="field filled wfull">123 Main Street</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Address (Line 2):</span>
+        <div class="field filled wfull">Rasapudipalem</div>
+      </div>
+      <div class="row">
+        <span class="lbl">City / Village<span class="req">*</span>:</span>
+        <div class="field filled w45">Rajahmundry</div>
+        <span class="lbl" style="margin-left:4mm">District<span class="req">*</span>:</span>
+        <div class="field filled wfull">East Godavari</div>
+      </div>
+      <div class="row">
+        <span class="lbl">State<span class="req">*</span>:</span>
+        <div class="field filled w50">Andhra Pradesh</div>
+        <span class="lbl" style="margin-left:4mm">Pin<span class="req">*</span>:</span>
+        <div class="field filled w25">533101</div>
+        <span class="lbl" style="margin-left:4mm">Country Name<span class="req">*</span>:</span>
+        <div class="field filled wfull">India</div>
+      </div>
+    </div>
+
+    <!-- SECTION E: CORRESPONDENCE -->
+    <div class="section-header">E.&nbsp; Address Details — Correspondence</div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="lbl">Correspondence Address:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">Same as Current / Overseas Address</span></span>
+      </div>
+    </div>
+
+    <!-- SECTION F: OVD -->
+    <div class="section-header">F.&nbsp; If the Officially Valid Document (OVD) does not contain current address — provide any of the documents below (Not more than 2 months old)</div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Utility Bill</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">PPO / FPPO</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Property or Municipal tax receipt</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Letter of allotment of accommodation</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Self-Declaration</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Document No.:</span>
+        <div class="field w50 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">Date:</span>
+        <div class="field w30 empty">&nbsp;</div>
+      </div>
+    </div>
+
+    <!-- SECTION G: DECLARATION -->
+    <div class="section-header">G.&nbsp; Declaration Cum Undertaking Cum Self-Certification</div>
+    <div class="form-inner">
+      <ol class="terms-list" style="list-style:decimal;padding-left:5mm">
+        <li>I have read the copy of Terms and Conditions of the Account Opening Form given to me. The Terms and Conditions have been explained to me / us and having understood, I accept the same.</li>
+        <li>I hereby declare that I have submitted the Aadhaar Card issued by UIDAI voluntarily for identification and/or address proof towards the compliance of KYC norms under the PMLA, 2002.</li>
+        <li>I hereby consent that the Bank may verify the same with the UIDAI and authorise the UIDAI expressly to release the identity and address through biometric / OTP based authentication to the Bank.
+          <div class="row" style="margin-top:1.5mm">
+            <span class="lbl">E-KYC Authentication &amp; Aadhaar Seeding:</span>
+            <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">YES</span></span>
+            <span class="cb-item"><span class="cb-box"></span><span class="cb-label">NO</span></span>
+          </div>
+        </li>
+      </ol>
+
+      <div class="sig-row" style="margin-top:4mm">
+        <div class="photo-box">PHOTO*<br/><span style="font-size:5.5px">Please Paste<br/>Recent Passport Size<br/>(Do Not Staple)</span></div>
+        <div style="flex:1">
+          <div class="sig-row">
+            <div class="sig-box" style="min-height:22mm">
+              <div class="sig-caption">Signature / Thumb Impression of Applicant<br/><b>Please sign in black ink only</b></div>
+            </div>
+            <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:2mm">
+              <div class="row"><span class="lbl">Place:</span><div class="field filled w50">Rajahmundry</div></div>
+              <div class="row"><span class="lbl">Date:</span><div class="field filled w50">27 / 04 / 2026</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION H: OFFICE USE -->
+    <div class="section-header sub">H.&nbsp; FOR OFFICE USE &nbsp;
+      <span style="font-weight:400">Documents Received</span> &nbsp;▪&nbsp;
+      <span style="font-weight:400">Self-Certified</span> &nbsp;▪&nbsp;
+      <span style="font-weight:400">True Copies</span> &nbsp;▪&nbsp;
+      <span style="font-weight:400">Notary</span> &nbsp;▪&nbsp;
+      <span style="font-weight:400">Equivalent e-Documents</span>
+    </div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="lbl">Aadhaar Verification:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">e-KYC</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Offline</span></span>
+        <span class="lbl" style="margin-left:5mm">Threshold Limit:</span>
+        <div class="field w35 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">BIS Organisation Code:</span>
+        <div class="field w25 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">Customer Segment:</span>
+        <div class="field w25 empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Depositor:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Illiterate</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Blind</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Staff</span></span>
+        <span class="lbl" style="margin-left:5mm">Risk Category<span class="req">*</span>:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">High</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Medium</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Low</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Official Name:</span>
+        <div class="field wfull empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">PF No.:</span>
+        <div class="field w25 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">Designation:</span>
+        <div class="field w35 empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Date:</span>
+        <div class="field w30 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">SS No.:</span>
+        <div class="field w30 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">Signature:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-num">Page 2 of 7 &nbsp;|&nbsp; State Bank of India &nbsp;|&nbsp; Account Opening Form – Resident Individual</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  PAGE 3 — PART-II Account / Services / Term Deposit            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="header-logo"><div class="logo-box">DSB</div></div>
+    <div class="header-center">
+      <h1>ACCOUNT OPENING FORM FOR INDIVIDUAL (PART – II)</h1>
+      <h3>SAVING BANK, CURRENT ACCOUNT AND TERM DEPOSITS</h3>
+      <div class="header-note">Fields marked asterisk (*) are mandatory. Please fill up in BLOCK letters and use black ink for signature.</div>
+    </div>
+    <div class="header-sbi"><div class="sbi-badge">SBI</div></div>
+  </div>
+  <div class="form-body">
+
+    <div class="info-strip">
+      <div><b>First Applicant Customer ID:</b> <span class="field w50 empty" style="display:inline-flex">&nbsp;</span></div>
+      <div><b>Account No.:</b> <span class="field w45 empty" style="display:inline-flex">&nbsp;</span></div>
+      <div><b>Date:</b> <span class="field filled w30" style="display:inline-flex">27/04/2026</span></div>
+    </div>
+
+    <!-- A. TYPE OF ACCOUNT -->
+    <div class="section-header">A.&nbsp; Type of Account &nbsp;<span style="font-weight:400;font-size:7px">(In case of current account, declaration cum undertaking, Annexure 3 to be obtained)</span></div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">Savings Bank Account</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">BSBDA</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">BSBDA Small Account</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Current Account (Individual)</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Fixed Deposit / MOD / RD</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Caps Gain (SB)</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Savings Plus Account</span></span>
+      </div>
+    </div>
+
+    <!-- B. MODE OF OPERATION -->
+    <div class="section-header">B.&nbsp; Mode of Operation</div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label" style="font-weight:700;color:var(--blue-dark)">Self</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Either or Survivor</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Former or Survivor</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Any one or Survivor</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Jointly Operated</span></span>
+      </div>
+    </div>
+
+    <!-- C. SERVICES REQUIRED -->
+    <div class="section-header">C.&nbsp; Services Required</div>
+    <div class="form-inner">
+
+      <!-- ATM Card -->
+      <div class="row"><span class="lbl" style="font-size:7.5px">1. &nbsp;ATM-CUM-DEBIT CARD</span></div>
+      <div class="row" style="margin-left:3mm">
+        <span class="lbl">1st Applicant:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No</span></span>
+        <span class="lbl" style="margin-left:4mm">Name on Card:</span>
+        <div class="field filled w65" style="font-size:8.5px;letter-spacing:1px">DASARI PRANEETH SANJAY</div>
+        <span class="lbl" style="margin-left:4mm">Card Type:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Physical Card</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Virtual Card</span></span>
+      </div>
+      <div class="row" style="margin-left:3mm">
+        <span class="lbl">Network:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Rupay</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Visa</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Master</span></span>
+      </div>
+      <hr class="divider"/>
+
+      <div class="row">
+        <span class="lbl">2. Cheque Book:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No</span></span>
+        <span class="lbl" style="margin-left:8mm">4. SMS Alerts on Registered Mobile:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">3. Internet Banking (Transaction Rights):</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes – 1st Applicant</span></span>
+        <span class="lbl" style="margin-left:6mm">5. Phone Banking Services:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">6. Mobile Banking:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No</span></span>
+        <span class="lbl" style="margin-left:8mm">7. Passbook Required (For Savings Bank Account):</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Yes</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">8. e-Statement (at monthly intervals), in lieu of paper copy:</span>
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">Required</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Not Required</span></span>
+      </div>
+    </div>
+
+    <!-- D. TERM DEPOSIT -->
+    <div class="section-header">D.&nbsp; Term Deposit</div>
+    <div class="form-inner">
+      <div class="notice">In Case of Joint Accounts, Income Tax provision will applicable to primary / First Account holder only.</div>
+
+      <!-- D1 Fixed Deposit -->
+      <div class="section-header sub" style="font-size:7px;margin-bottom:1.5mm">D.(1) Fixed Deposit: For the following products/facilities, please furnish options/details:</div>
+      <div class="row">
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Term Deposit</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Term Deposit (Reinvestment)</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Annuity Deposit</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Tax Saving Scheme</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Caps Gain (TDR)</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Amount: Rs.</span><div class="field w40 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">Period:</span>
+        <div class="field w20 empty">&nbsp;</div><span class="lbl">Year(s)</span>
+        <div class="field w20 empty">&nbsp;</div><span class="lbl">Month(s)</span>
+        <div class="field w20 empty">&nbsp;</div><span class="lbl">Days</span>
+      </div>
+      <div class="row">
+        <span class="lbl">Interest Payable<span class="req">*</span>:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Monthly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Quarterly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Calendar Quarter</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Half Yearly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Yearly</span></span>
+      </div>
+
+      <!-- D2 MOD -->
+      <div class="section-header sub" style="font-size:7px;margin:2mm 0 1.5mm">D.(2) Multi-Option Deposit Scheme (MOD) / Auto Sweep</div>
+      <div class="notice">Not applicable for this account type — Savings Account selected.</div>
+
+      <!-- D3 RD -->
+      <div class="section-header sub" style="font-size:7px;margin:2mm 0 1.5mm">D.(3) Recurring Deposit</div>
+      <div class="notice">Not applicable at this stage.</div>
+    </div>
+
+    <!-- F. NOMINATION -->
+    <div class="section-header">F.&nbsp; Nomination &nbsp;<span style="font-weight:400;font-size:7px">(If required, fill Form DA-1)</span></div>
+    <div class="form-inner">
+      <div class="annex-title" style="font-size:8px;margin:1mm 0">FORM DA-1 (Nomination Form)</div>
+      <div class="notice">Nomination under section 45ZA of the Banking Regulation Act, 1949 and Rules 1985 in respect of Bank Deposits.</div>
+      <div class="row" style="margin-top:1.5mm">
+        <span class="cb-item"><span class="cb-box checked">✓</span><span class="cb-label">I / We want the name of the nominee to be printed on the passbook</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Details of Deposit – Type:</span>
+        <div class="field filled w45">Savings Bank Account</div>
+        <span class="lbl" style="margin-left:4mm">Account Number:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="lbl" style="margin-top:2mm;color:var(--blue-dark)">Details of Nominee</div>
+      <div class="row" style="margin-top:1mm">
+        <span class="lbl">Name:</span>
+        <div class="field filled wfull" style="font-size:9px;letter-spacing:1px">RAVI KUMAR</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Relationship with Depositor:</span>
+        <div class="field filled w45">Brother</div>
+        <span class="lbl" style="margin-left:4mm">Age (Years):</span>
+        <div class="field filled w20">25</div>
+        <span class="lbl" style="margin-left:4mm">Mobile No.:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Date of Birth of Nominee (if minor):</span>
+        <div class="field w35 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">Address of Nominee:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+
+      <div class="sig-row" style="margin-top:4mm">
+        <div class="sig-box"><div class="sig-caption">Signature / Thumb Impression of Applicant</div></div>
+        <div class="sig-box"><div class="sig-caption">Signature / Thumb Impression of Applicant</div></div>
+      </div>
+      <div class="row" style="margin-top:2mm">
+        <span class="lbl">*Signature of 1st Witness – Name:</span><div class="field wfull empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">Signature:</span><div class="field w35 empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">*Signature of 2nd Witness – Name:</span><div class="field wfull empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">Signature:</span><div class="field w35 empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Date:</span><div class="field filled w30">27/04/2026</div>
+        <span class="lbl" style="margin-left:4mm">Place:</span><div class="field filled w40">Rajahmundry</div>
+      </div>
+    </div>
+
+    <!-- G. DECLARATION PART-II -->
+    <div class="section-header">G.&nbsp; Declaration Cum Undertaking Cum Self-Certification</div>
+    <div class="form-inner">
+      <ol class="terms-list" style="list-style:decimal;padding-left:5mm">
+        <li>I/We have read the copy of Terms and Conditions of the Account Opening Form given to me/us. The Terms and Conditions have been explained to me/us and having understood, I/we accept the same.</li>
+        <li>(In case of Minor Accounts) I hereby declare that the date of birth of the minor who is my ................... and I am his/her natural and lawful guardian. <em>[Not applicable]</em></li>
+        <li>I hereby declare that I do not maintain a Basic Savings Bank Deposit Account (BSBDA) with any other Bank/Branch.</li>
+      </ol>
+      <div class="row" style="margin-top:2mm">
+        <span class="lbl">Place:</span><div class="field filled w40">Rajahmundry</div>
+        <span class="lbl" style="margin-left:4mm">Date:</span><div class="field filled w35">27 / 04 / 2026</div>
+      </div>
+      <div class="sig-row" style="margin-top:3mm">
+        <div class="sig-box" style="min-height:18mm"><div class="sig-caption">Signature / Thumb Impression of 1st Applicant</div></div>
+        <div class="sig-box" style="min-height:18mm"><div class="sig-caption">Signature / Thumb Impression of 2nd Applicant</div></div>
+      </div>
+    </div>
+
+    <!-- FOR OFFICE USE PART II -->
+    <div class="section-header sub">FOR OFFICE USE / ATTESTATION</div>
+    <div class="form-inner">
+      <table class="tbl" style="margin:1mm 0">
+        <tr>
+          <th>Open Account</th><th>Account</th><th>CIF Linking</th><th>Personalised Cheque</th>
+        </tr>
+        <tr>
+          <td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td>
+        </tr>
+      </table>
+      <table class="tbl">
+        <tr><th>Internet Banking Kit No.</th><th>Initials</th><th>RINB</th><th>MBS</th><th>SMS Alert</th></tr>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="page-num">Page 3 of 7 &nbsp;|&nbsp; State Bank of India &nbsp;|&nbsp; Account Opening Form – Individual (Part II)</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  PAGE 4 — SAVING PLUS / D.5 / NOMINATION ACKNOWLEDGEMENT       -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="header-logo"><div class="logo-box">DSB</div></div>
+    <div class="header-center"><h1>ACCOUNT OPENING FORM – PART II (Continued)</h1><h3>Savings Plus / D.5 / Nomination Acknowledgement</h3></div>
+    <div class="header-sbi"><div class="sbi-badge">SBI</div></div>
+  </div>
+  <div class="form-body">
+
+    <!-- D.5 -->
+    <div class="section-header">D.(5) – Joint Deposit Instructions</div>
+    <div class="form-inner">
+      <div class="notice" style="font-size:6.5px;line-height:1.6">
+        <b>A.</b> If the operating instruction is 'Either or Survivor' and one of the depositors expires before maturity, no pre-payment of the term deposit may be allowed without concurrence of the legal heirs of the deceased joint holder.<br/>
+        <b>B.</b> Premature withdrawal of the deposit on death of one of the depositors: Instead of the concurrence of the legal heirs of the deceased depositors as provided in Clause D(5)(A), the Bank, on death of any one of us, may allow premature withdrawal of the deposit by the surviving depositor without seeking consent from the legal heirs of the deceased depositor.
+      </div>
+      <div class="row" style="margin-top:2mm">
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Yes, I/We agree. As a result, we understand that the guidelines in Clause D(5)(A) as regards premature withdrawal of the deposit on death of one of the depositors, shall not apply.</span></span>
+      </div>
+      <div class="row">
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">No, I/We do not agree. As a result, we understand that the guidelines in Clause D(5)(A) shall apply to the deposit in entirety.</span></span>
+      </div>
+    </div>
+
+    <!-- E. SAVINGS PLUS -->
+    <div class="section-header">E.&nbsp; Saving Plus Account</div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="lbl">Threshold:</span><div class="field w35 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">Resultant Balance:</span><div class="field w35 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">Sweep Multiple:</span><div class="field w35 empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Frequency:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Weekly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Fortnightly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Monthly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Bi-Monthly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Quarterly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Half Yearly</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Yearly</span></span>
+      </div>
+    </div>
+
+    <!-- ACKNOWLEDGEMENT DA-1 -->
+    <div class="section-header sub" style="text-align:center">ACKNOWLEDGEMENT DA-1</div>
+    <div class="form-inner">
+      <div class="notice">We acknowledge receipt of nomination made by you in favour of:</div>
+      <div class="row" style="margin-top:2mm">
+        <span class="lbl">Name of the Nominee:</span>
+        <div class="field filled wfull" style="font-size:9px;letter-spacing:1px">RAVI KUMAR</div>
+        <span class="lbl" style="margin-left:4mm">Age:</span><div class="field filled w15">25</div>
+        <span class="lbl">Years</span>
+      </div>
+      <div class="row">
+        <span class="lbl">With respect to your Account Number:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Registration No.:</span>
+        <div class="field w50 empty">&nbsp;</div>
+        <div style="margin-left:auto;text-align:right">
+          <div class="lbl">Date: <span class="field filled w30" style="display:inline-flex">27/04/2026</span></div>
+          <div class="lbl" style="margin-top:1mm">Yours faithfully,</div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:10mm">
+        <div class="field wfull empty" style="min-height:12mm;align-items:flex-end">
+          <span style="font-size:6.5px;color:var(--text-mid)">Signature of Bank Official with Seal</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-num">Page 4 of 7 &nbsp;|&nbsp; State Bank of India &nbsp;|&nbsp; Account Opening Form</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  PAGE 5 — TERMS AND CONDITIONS                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="header-logo"><div class="logo-box">DSB</div></div>
+    <div class="header-center"><h1>TERMS AND CONDITIONS FOR OPENING OF DEPOSITS ACCOUNTS</h1></div>
+    <div class="header-sbi"><div class="sbi-badge">SBI</div></div>
+  </div>
+  <div class="form-body">
+    <div class="form-inner">
+      <ol class="terms-list" style="list-style:decimal;padding-left:5mm">
+        <li>I affirm and declare that I have read over and understood the rules and regulations of the "Bank" and those relating to various services offered by the Bank including but not limiting to debit card/internet banking/SMS banking/Tele-Banking/Mobile Banking/Virtual Banking and any other facilities. I agree to abide by the same as amended/modified from time to time by the Bank/Regulator/Government published through circulars, notifications, notice board/websites/newspaper publications, etc.</li>
+        <li>In respect of accounts opened on the basis of Aadhaar details, I hereby declare that I have submitted the Aadhaar Card issued by UIDAI voluntarily for identification and/or address proof towards the compliance of KYC norms under the PMLA, 2002 and I hereby consent that the Bank may verify the same with the UIDAI and authorise the UIDAI expressly to release the identity and address through biometric authentication to the Bank.</li>
+        <li>I confirm and declare that I am not prevented/prohibited/restricted by any applicable legal/regulatory/contractual or other provisions from opening and/or maintaining the accounts or to transact with the Bank in any other way.</li>
+        <li>I agree that my personal KYC details may be shared with Central KYC registry or any other competent authority. I hereby provide my consent to download the KYC records from the Central KYC Records Registry (CKYCRR) by using the KYC Identifier as submitted by me or retrieved through CKYCRR by using the information provided by me in the Customer Information Sheet (CIF).</li>
+        <li>I hereby certify that I have declared my status as per the rules applicable under section 285BA of the Income Tax Act, 1961 as notified by Central Board of Direct Taxes (CBDT) vide Notification No. S.O. 2155(E) dated 7 August 2015 and RBI Circular Ref No. DBR.AML.BC.No.36/14.01.001/2015-16 dated 28 August 2015 in the matter including any subsequent modification/amendment thereof.</li>
+        <li>I understand, acknowledge and authorise that as per the provisions of Income Tax Act, Rules made thereunder and the guidelines issued by the Government/RBI in the matter, depending upon the residential status and/or other criteria stipulated therein, the Bank may have to report the details in respect of my account(s) as per the prescribed format to the Central Board of Direct Taxes (CBDT) or other Government Agencies to comply with the obligations as per the Inter-Governmental Agreements (IGA) in respect of Foreign Accounts Tax Compliance Act (FATCA) and Common Reporting Standards (CRS).</li>
+        <li>I certify &amp; declare that the information provided by me for opening loan account and availing other services herein or through website/electronically as applicable to me signed/authenticated by me as well as in the documentary evidence provided by me for opening loan account and availing other services are, to the best of my knowledge, true, correct and complete.</li>
+        <li>I undertake the responsibility to declare and disclose immediately and in no case beyond 30 days from the date of change, any changes that may take place in the information provided herein/or otherwise, as well as in the documentary evidence provided by me or if any certification becomes incorrect or undergoes a change.</li>
+        <li>I also agree that my failure to disclose any material fact/information known to me now or in future or my failure to remedy any deficiency in documents/information/other details within the stipulated period, may invalidate me from transacting in the account and the Bank would be within its right to put restrictions in the operations of my account or to close it.</li>
+        <li>I also agree to furnish and intimate to the Bank any other particulars that are called upon me to provide on account of any change in law either in India or abroad.</li>
+        <li>I shall indemnify the Bank from any loss/damage that may be caused to the Bank on account of any defect/mistake in the details provided herein or on account of providing incorrect or incomplete information by me.</li>
+        <li>I undertake to submit data/information together with fresh KYC documents for updation of KYC details at periodical intervals as may be required by the Bank.</li>
+        <li>I understand that the account will be activated and debits will be allowed only after completion of Customer Due Diligence relating to KYC by the Bank.</li>
+        <li>In case the account is opened without PAN, I undertake to submit PAN on or before such date as may be notified by the Government of India, failing which the account shall cease to be operational till the time PAN is submitted, as per Prevention of Money-Laundering (Maintenance of Records) Rules 2005.</li>
+        <li>In case, deemed OVDs are submitted for Current Address at the time of Account opening, I undertake to submit Aadhaar or any of the OVD having Current Address within 3 months from the date of account opening, failing which I understand that my account may cease to be operational as per GOI guidelines at the material time.</li>
+        <li>I have received the Welcome Kit containing INB Kit and ATM card/cheque book and understand that in case of any misuse/misplacement of the contents of the Kit, the Bank will not be liable for any loss/damage.</li>
+        <li>I hereby certify that the Savings Bank Account would be used by me to route transactions of only non-business/non-commercial nature.</li>
+        <li>I have been advised of Average Monthly Balance (AMB) requirement for the account to be opened and given to understand that these requirements are subject to revision/changes.</li>
+        <li>I confirm that the product features of BSBD account have been explained to me (applicable to BSBD account applicant).</li>
+        <li>Applicable for Small Accounts: I understand that this account shall remain operational initially for twelve months, can be extended for further twelve months on submission of evidence applied for OVD.</li>
+        <li>I have been advised that if I do not provide my mobile number, I will not be eligible for any facility of electronic transactions other than ATM cash withdrawals.</li>
+        <li>I understand that this account will be opened under BSBD category. I also understand that in case, I do not wish to continue in this BSBD account and switch over to Regular Savings Bank account, I will have to maintain the Average Monthly Balance (AMB) applicable for Regular Savings Bank Account.</li>
+        <li>I understand that the requirements of Average Monthly Balance (AMB) and penalty for non-maintenance will be applicable in this account once the applicant becomes Major.</li>
+        <li>I hereby declare that the details furnished above are true and correct to the best of my knowledge and belief and I undertake to inform you of any changes therein, immediately in case any of the above information is found to be false or untrue or misleading or misrepresenting.</li>
+        <li>I understand that in the event of failed Standing Instruction for Loan Repayment/dishonour of a cheque/NACH/ECS due to lack of funds/insufficient funds on 04 occasions during financial year no fresh cheque book would be issued; closure of account may also be considered.</li>
+        <li>I/We confirm that the product features of account have been explained to me.</li>
+        <li>I acknowledge receipt of rules and regulations of Savings Bank Account.</li>
+      </ol>
+      <div class="sig-row" style="margin-top:4mm">
+        <div class="sig-box" style="min-height:18mm">
+          <div class="sig-caption">Signature / Thumb Impression of Applicants</div>
+        </div>
+        <div class="sig-box" style="min-height:18mm">
+          <div class="sig-caption">Signature / Thumb Impression of Applicants</div>
+        </div>
+      </div>
+
+      <!-- ACKNOWLEDGEMENT STRIP -->
+      <div style="border-top:1.5px dashed var(--border);margin-top:5mm;padding-top:2mm">
+        <div class="section-header sub" style="margin:0 0 1.5mm">ACKNOWLEDGEMENT DA-1</div>
+        <div class="row">
+          <span class="lbl">We acknowledge receipt of nomination made by you in favour of:</span>
+          <div class="field filled wfull">RAVI KUMAR</div>
+        </div>
+        <div class="row">
+          <span class="lbl">Name of the Nominee:</span><div class="field filled w50">RAVI KUMAR</div>
+          <span class="lbl" style="margin-left:3mm">Age:</span><div class="field filled w15">25</div>
+          <span class="lbl">Years</span>
+          <span class="lbl" style="margin-left:6mm">Date:</span>
+          <div style="margin-left:auto;font-size:7px;font-weight:700">27/04/2026 &nbsp;&nbsp;&nbsp; Yours faithfully</div>
+        </div>
+        <div class="row">
+          <span class="lbl">With respect to your Account Number:</span><div class="field wfull empty">&nbsp;</div>
+        </div>
+        <div class="row">
+          <span class="lbl">Registration No.:</span><div class="field w50 empty">&nbsp;</div>
+          <div class="field w55 empty" style="margin-left:auto;min-height:14mm;align-items:flex-end"><span style="font-size:6.5px;color:var(--text-mid)">Signature of Bank Official with Seal</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">Page 5 of 7 &nbsp;|&nbsp; State Bank of India &nbsp;|&nbsp; Terms and Conditions for Opening of Deposits Accounts</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  PAGE 6 — SAVINGS BANK RULES (ABRIDGED)                        -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="header-logo"><div class="logo-box">DSB</div></div>
+    <div class="header-center"><h1>SAVINGS BANK RULES (ABRIDGED)</h1></div>
+    <div class="header-sbi"><div class="sbi-badge">SBI</div></div>
+  </div>
+  <div class="form-body">
+    <div class="form-inner">
+
+      <div style="columns:2;column-gap:5mm;font-size:6.5px;color:#333;line-height:1.6">
+
+        <div><b style="color:var(--blue-dark)">Know Your Customer Guidelines</b><br/>
+        Any person fulfilling account opening requirements may, upon agreeing to comply with the prescribed rules, open a Savings Bank Account, provided she/he furnishes proof of identity and proof of address as required by the Bank.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Nomination &amp; Survivorship Facility</b><br/>
+        The nomination facility is available on Savings Bank Accounts and the account holders are advised to avail of this facility for smooth settlement of claim by legal heirs in unforeseen circumstances. Nomination can be made in favour of only one nominee. In case they do not wish to make a nomination, the fact should be recorded on the account opening form under their full signature.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Minors Accounts</b><br/>
+        Minors who can adhere to uniform signature and are not less than ten years old can open accounts in their single name and maintain therein a maximum balance of Rs. 10,00,000/. Minors may open joint accounts with their guardians.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">How To Open An Account?</b><br/>
+        In ordinary course, applicant(s) should attend the Bank personally for completion of formalities for opening the account. They will duly fill in and sign the prescribed application form. Applicant(s) should submit KYC documents, declaration as applicable for RBI/CBDT and two copies of his/her recently taken passport size photographs. Applicants can also apply for opening an account online.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Pass Book</b><br/>
+        The pass book and cheque book supplied to the account holder should be kept in a safe place. The Bank will not be responsible for any loss or incorrect payment attributable to the account holders' neglect in this regard. For withdrawing cash by means of a withdrawal form, the pass book must be presented. Withdrawals using cheque forms and Debit card can be effected without pass book.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Cheque Book</b><br/>
+        The Bank will issue the first cheque book after completion of all formalities with regard to opening of the account. Bank shall issue Cheque Book subject to recovery of charges as applicable. The current charges prescribed for this are available at the Banks website and Contact Centre. The account holders must use only the cheques from the cheque books issued to them by the Bank.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">General</b><br/>
+        Savings Bank account is essentially a facility to build up savings and hence must not be used as a Current Account. Bank may close an account should it have any reason to believe that the account holder has used her/his account for a purpose for which it is not allowed.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Deposits</b><br/>
+        Only three cash deposit transactions are allowed free of cost in a month. No restrictions on cash deposit at Non Home branch. No deposit in cash for less than Rs 10/- will be accepted. Cheques, drafts or other instruments drawn only in favour of the account holder will be accepted for credit of the account.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Withdrawals</b><br/>
+        The account holder can withdraw money personally from her/his ordinary Savings Bank Account by using Banks standard withdrawal form. The Pass Book/any OVD must accompany the withdrawal form. The withdrawal form can be used only for receiving payments by the account holder himself/herself. ATM cum Debit card can also be used in ATMs for cash withdrawal. The account holder cannot withdraw an amount less than Rs. 50/-.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Overdrafts</b><br/>
+        Overdrafts in Savings Bank accounts may be permitted under exceptional circumstances with prior arrangements only. Cheques drawn in excess of the balance in the account will be returned unpaid. Service charge will be recovered each time a cheque is returned unpaid for want of sufficient funds.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Inoperative Accounts</b><br/>
+        Account holders are advised to operate their accounts regularly. Accounts not operated are classified as Inoperative after the stipulated time period of 24 months since last operation.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Standing Instructions</b><br/>
+        The account holder can request the Bank for effecting periodical payment of insurance premium, membership fees, etc. by debit to her/his account on payment of service charges.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Payment of Interest</b><br/>
+        As per RBI guidelines applicable from time to time, Interest will be calculated on a daily product basis. Interest will be credited to the account at quarterly intervals. Interest will be paid only if it works out to Re 1/- or more.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Transfer &amp; Closure Of Account</b><br/>
+        Accounts may be transferred between branches of the Bank at the request of the account holder(s). Request for closure of account should state the reason for closure. The pass book must accompany such request. Joint accounts can be closed only at the request of all such joint signatories.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Change in Rules</b><br/>
+        The Bank reserves the right to alter, delete or add to any of these Rules and service charges for which the customer will be duly notified through Bank's website and/or branch notice board.</div><br/>
+
+        <div><b style="color:var(--blue-dark)">Features of BSBD Account</b><br/>
+        i. The deposit of cash at bank branch as well as ATMs/CDMs.<br/>
+        ii. Receipt/credit of money through any electronic channel or by means of deposit/collection of cheques drawn by Central/State Government agencies and departments.<br/>
+        iii. No limit on number and value of deposits that can be made in month.<br/>
+        iv. Minimum 4 withdrawals including ATM withdrawals.<br/>
+        v. ATM Card or ATM-cum-Debit Card.</div>
+
+      </div>
+    </div>
+  </div>
+  <div class="page-num">Page 6 of 7 &nbsp;|&nbsp; State Bank of India &nbsp;|&nbsp; Savings Bank Rules (Abridged)</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  PAGE 7 — ANNEXURE I: Form 60 & FATCA Declaration              -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="header-logo"><div class="logo-box">DSB</div></div>
+    <div class="header-center"><h1>ANNEXURE – I</h1><h3>Form 60 (In Case PAN is not Available) &amp; FATCA Declaration Form</h3></div>
+    <div class="header-sbi"><div class="sbi-badge">SBI</div></div>
+  </div>
+  <div class="form-body">
+
+    <div class="annex-title">FORM – 60 ( In Case PAN is not Available )</div>
+    <div class="form-inner">
+      <div class="notice" style="background:#fff3e0;border-left-color:#ef6c00;color:#333">
+        <b>Note:</b> PAN has been provided (ABCDE1234F). This Form 60 section is <b>NOT APPLICABLE</b> for this application. It is included here for completeness of the standard form.
+      </div>
+      <div class="row" style="margin-top:2mm">
+        <span class="lbl">NAME (Same as ID Proof):</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">If Applied for PAN and not yet generated, enter date of application:</span>
+        <div class="field w40 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">Acknowledgement No.:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Agriculture Income (Rs.):</span>
+        <div class="field w35 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">Other than Agricultural Income:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+
+      <div class="section-header sub" style="margin:2mm 0 1.5mm;text-align:center">VERIFICATION</div>
+      <div class="notice">
+        I, _________________________ do hereby declare that what is stated above is true to the best of my knowledge and belief. I further declare I do not have a permanent account number and my/our estimated total income (including income of spouse, minor child, etc.) as per section 64 of Income Tax Act 1961 computed in accordance with the provisions of Income Tax Act 1961 for the financial year in which the above transaction is held will be less than the maximum amount not chargeable to tax.
+      </div>
+      <div class="row" style="margin-top:2mm">
+        <span class="lbl">Verified to the day, the</span>
+        <div class="field w20 empty">&nbsp;</div>
+        <span class="lbl">day of</span>
+        <div class="field w25 empty">&nbsp;</div>
+        <span class="lbl">20</span>
+        <div class="field w15 empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Place:</span><div class="field w50 empty">&nbsp;</div>
+        <div style="margin-left:auto"><span class="lbl">Signature of the Declarant</span><div class="field w50 empty" style="min-height:12mm">&nbsp;</div></div>
+      </div>
+    </div>
+
+    <!-- RELATED PERSON -->
+    <div class="section-header">Details of Related Person (To be filled for minor)</div>
+    <div class="form-inner">
+      <div class="row">
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Addition of Related Person</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Deletion of Related Person</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">KYC of Related Person (If Available):</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Related Person Type:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Guardian of Minor</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Assignee</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">Authorised Representative</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Name<span class="req">*</span>:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Proof of Identity:</span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">A-Passport</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">B-Voter's ID</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">C-Driving Licence</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">D-UID (Aadhaar)</span></span>
+        <span class="cb-item"><span class="cb-box"></span><span class="cb-label">E-NREGA Job Card</span></span>
+      </div>
+      <div class="row">
+        <span class="lbl">Document No./Identification Number<span class="req">*</span>:</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">Issue Date<span class="req">*</span>:</span>
+        <div class="field w30 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:4mm">Expiry Date (If Applicable)<span class="req">*</span>:</span>
+        <div class="field w30 empty">&nbsp;</div>
+      </div>
+    </div>
+
+    <!-- FATCA -->
+    <div class="annex-title" style="margin-top:3mm">FATCA Declaration Form</div>
+    <div class="form-inner">
+      <div class="notice" style="background:#e8f5e9;border-left-color:#43a047">
+        <b>Status:</b> Tax Residence – India only. FATCA declaration: Country of Tax Residence is <b>India</b>. No foreign tax identification number applicable.
+      </div>
+      <div class="row" style="margin-top:1.5mm">
+        <span class="lbl">Place/City of Birth<span class="req">*</span>:</span>
+        <div class="field filled w50">Rajahmundry</div>
+        <span class="lbl" style="margin-left:4mm">Country of Birth<span class="req">*</span>:</span>
+        <div class="field filled wfull">India</div>
+      </div>
+      <div class="notice" style="margin:1.5mm 0">Multiple Tax Residency: Details of Country of Tax Residence in India, and/or in USA and/or in any other Country of Territory Outside India as Under:</div>
+      <table class="tbl">
+        <tr>
+          <th>Country of Tax Residence #</th>
+          <th>Tax Identification Number or equivalent if issued by jurisdiction</th>
+          <th>Identification Type (TIN or Other, please specify)</th>
+        </tr>
+        <tr>
+          <td class="filled">India</td>
+          <td class="filled">ABCDE1234F (PAN)</td>
+          <td class="filled">PAN</td>
+        </tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      </table>
+      <div class="row" style="margin-top:2mm">
+        <span class="lbl">Address (Resident Outside India for Tax Purpose):</span>
+        <div class="field wfull empty">&nbsp;</div>
+      </div>
+      <div class="row">
+        <span class="lbl">City/Village<span class="req">*</span>:</span>
+        <div class="field w40 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">State<span class="req">*</span>:</span>
+        <div class="field w35 empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">Country<span class="req">*</span>:</span>
+        <div class="field wfull empty">&nbsp;</div>
+        <span class="lbl" style="margin-left:3mm">ZIP/Post Code<span class="req">*</span>:</span>
+        <div class="field w25 empty">&nbsp;</div>
+      </div>
+      <div class="row" style="margin-top:2mm">
+        <span class="lbl">Place:</span><div class="field filled w40">Rajahmundry</div>
+        <span class="lbl" style="margin-left:4mm">Date:</span><div class="field filled w35">27 / 04 / 2026</div>
+        <div class="sig-box" style="min-height:14mm;margin-left:auto;width:50mm">
+          <div class="sig-caption">Signature of Applicant</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-num">Page 7 of 7 &nbsp;|&nbsp; State Bank of India &nbsp;|&nbsp; Annexure I – Form 60 &amp; FATCA Declaration</div>
+</div>
+
+</body>
+</html>

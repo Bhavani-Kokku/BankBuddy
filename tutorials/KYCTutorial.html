@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI KYC Updation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #525659;
+            margin: 0;
+            padding: 20px;
+            font-size: 11px;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+        .instructions {
+            text-align: center;
+            font-size: 10px;
+            margin-bottom: 15px;
+        }
+        .mandatory {
+            color: red;
+            font-weight: bold;
+        }
+        .section-header {
+            background-color: #333;
+            color: white;
+            padding: 4px;
+            font-weight: bold;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+            align-items: flex-end;
+        }
+        .field {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        .input-line {
+            border-bottom: 1px solid #000;
+            min-height: 16px;
+            color: #000080;
+            font-family: monospace;
+            font-size: 12px;
+            padding-bottom: 2px;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .sq {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #000;
+            display: inline-block;
+            text-align: center;
+            line-height: 12px;
+            font-size: 10px;
+        }
+        .office-use-box {
+            border: 1px dashed #000;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            float: right;
+            margin-left: 10px;
+        }
+        .photo-box {
+            border: 1px solid #000;
+            width: 100px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        @media print {
+            body { background: none; padding: 0; }
+            .page { margin: 0; box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header-top">
+            <span>Annexure B</span>
+            <span style="font-size: 18px;">SBI</span>
+        </div>
+        <div class="title">KYC UPDATION FORM INDIVIDUAL</div>
+        <div class="instructions">
+            Fields marked asterix (<span class="mandatory">*</span>) are mandatory. Please fill up in BLOCK letters only and use black ink for signature.
+        </div>
+        
+        <div class="row">
+            <div class="field"><label>Date:</label><div class="input-line"></div></div>
+            <div class="field"><label>Branch Name:</label><div class="input-line"></div></div>
+            <div class="field"><label>Branch Code:</label><div class="input-line"></div></div>
+        </div>
+        
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="field"><label>Customer ID (For office use):</label><div class="input-line"></div></div>
+            <div class="field"><label>Account No.:</label><div class="input-line"></div></div>
+            <div class="field"><label>CKYC No.:</label><div class="input-line"></div></div>
+        </div>
+
+        <div class="section-header">1 Personal Details</div>
+        <div class="row">
+            <div class="field"><label>Name <span class="mandatory">*</span>:</label><div class="input-line">DASARI PRANEETH SANJAY</div></div>
+            <div class="field"><label>Maiden Name:</label><div class="input-line"></div></div>
+        </div>
+        
+        <div class="row">
+            <div class="field"><label>Date of Birth <span class="mandatory">*</span>:</label><div class="input-line">01/01/2000</div></div>
+            <div class="field"><label>Gender <span class="mandatory">*</span>:</label>
+                <div class="checkbox-group">
+                    <span class="sq">✓</span> Male &nbsp; <span class="sq"></span> Female &nbsp; <span class="sq"></span> Transgender
+                </div>
+            </div>
+            <div class="field"><label>Marital Status <span class="mandatory">*</span>:</label>
+                <div class="checkbox-group">
+                    <span class="sq"></span> Married &nbsp; <span class="sq">✓</span> Unmarried &nbsp; <span class="sq"></span> Others
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>Name of Father/Mother/Spouse:</label><div class="input-line"></div></div>
+            <div class="field"><label>No. of Dependents:</label><div class="input-line">0</div></div>
+            <div class="field"><label>Illiterate:</label>
+                <div class="checkbox-group"><span class="sq"></span> YES &nbsp; <span class="sq">✓</span> NO</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>Name of Guardian (In Case Of Minor):</label><div class="input-line"></div></div>
+            <div class="field"><label>Relationship with Guardian:</label><div class="input-line"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>Nationality:</label>
+                <div class="checkbox-group"><span class="sq">✓</span> Indian &nbsp; <span class="sq"></span> Others</div>
+            </div>
+            <div class="field"><label>Occupation Type <span class="mandatory">*</span>:</label>
+                <div class="checkbox-group">
+                    <span class="sq"></span> Service &nbsp; <span class="sq"></span> Business &nbsp; <span class="sq">✓</span> Student &nbsp; <span class="sq"></span> Others
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>Monthly Income: Rs</label><div class="input-line">16,666</div></div>
+            <div class="field"><label>Net Worth: Rs</label><div class="input-line"></div></div>
+            <div class="field"><label>Source of Income:</label><div class="input-line">Student/Others</div></div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>Religion:</label>
+                <div class="checkbox-group">
+                    <span class="sq"></span> Hindu <span class="sq"></span> Muslim <span class="sq"></span> Christian <span class="sq"></span> Sikh <span class="sq"></span> Others
+                </div>
+            </div>
+            <div class="field"><label>Category:</label>
+                <div class="checkbox-group">
+                    <span class="sq"></span> General <span class="sq"></span> OBC <span class="sq"></span> SC <span class="sq"></span> ST
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>Person with disability:</label>
+                <div class="checkbox-group"><span class="sq"></span> Yes &nbsp; <span class="sq">✓</span> No</div>
+            </div>
+            <div class="field"><label>Educational Qualification:</label><div class="input-line">Graduate/Undergraduate</div></div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>Organization's Name / Designation:</label><div class="input-line"></div></div>
+            <div class="field"><label>Politically exposed Person:</label>
+                <div class="checkbox-group"><span class="sq">✓</span> None</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>ISO 3166 Country Code <span class="mandatory">*</span>:</label><div class="input-line">IN</div></div>
+            <div class="field"><label>Place/City of Birth <span class="mandatory">*</span>:</label><div class="input-line">Rajahmundry</div></div>
+        </div>
+
+        <div class="row">
+            <div class="field"><label>Country of Tax Residence in India only?</label>
+                <div class="checkbox-group"><span class="sq">✓</span> Yes &nbsp; <span class="sq"></span> No</div>
+            </div>
+            <div class="field"><label>PAN <span class="mandatory">*</span>:</label><div class="input-line">ABCDE1234F</div></div>
+        </div>
+
+        <div class="section-header">2 Contact Details</div>
+        <div class="row">
+            <div class="field"><label>Mobile No. <span class="mandatory">*</span>:</label><div class="input-line">+91 9876543210</div></div>
+            <div class="field"><label>Email ID:</label><div class="input-line">praneeth.sanjay@example.com</div></div>
+        </div>
+        
+        <div style="position: absolute; bottom: 10px; right: 15px; font-weight: bold;">Page 1</div>
+    </div>
+
+    <div class="page">
+        <div class="row" style="margin-top: 20px;">
+            <div class="field"><label>Tel.(Off):</label><div class="input-line"></div></div>
+            <div class="field"><label>Tel.(Res):</label><div class="input-line"></div></div>
+        </div>
+        <div style="position: absolute; bottom: 10px; right: 15px; font-weight: bold;">Page 2</div>
+    </div>
+
+    <div class="page">
+        <div class="section-header">3 Proof of Identity/Address <span class="mandatory">*</span></div>
+        <div class="row">
+            <div class="checkbox-group">
+                <span class="sq"></span> A-PASSPORT &nbsp; 
+                <span class="sq"></span> B-VOTER'S IDENTITY CARD &nbsp; 
+                <span class="sq"></span> C-DRIVING LICENCE &nbsp; 
+                <span class="sq">✓</span> D-UID(AADHAR) &nbsp; 
+                <span class="sq"></span> E-NREGA JOB CARD
+            </div>
+        </div>
+        <div class="row">
+            <div class="field"><label>Document No/Identification Number <span class="mandatory">*</span>:</label><div class="input-line">[Aadhaar Redacted]</div></div>
+            <div class="field"><label>Issue Date:</label><div class="input-line"></div></div>
+            <div class="field"><label>Expiry Date:</label><div class="input-line"></div></div>
+        </div>
+
+        <div class="section-header">4 Address details</div>
+        <div class="row">
+            <div class="checkbox-group">
+                <span class="sq">✓</span> Current &nbsp; <span class="sq"></span> Permanent &nbsp; <span class="sq"></span> Overseas
+            </div>
+            <div class="checkbox-group" style="margin-left: 20px;">
+                Address type: <span class="sq">✓</span> Residential &nbsp; <span class="sq"></span> Business &nbsp; <span class="sq"></span> Registered Office
+            </div>
+        </div>
+        <div class="row">
+            <div class="field"><label>Address <span class="mandatory">*</span>:</label><div class="input-line">123 Main Street, Rasapudipalem</div></div>
+        </div>
+        <div class="row">
+            <div class="field"><label>City/Village <span class="mandatory">*</span>:</label><div class="input-line">Rajahmundry</div></div>
+            <div class="field"><label>District:</label><div class="input-line">East Godavari</div></div>
+            <div class="field"><label>State <span class="mandatory">*</span>:</label><div class="input-line">Andhra Pradesh</div></div>
+            <div class="field"><label>Pin <span class="mandatory">*</span>:</label><div class="input-line">533101</div></div>
+        </div>
+
+        <div class="section-header">5 Address details (Correspondence)</div>
+        <div class="row">
+            <div class="checkbox-group">
+                <span class="sq">✓</span> Same as Current/Permanent Address
+            </div>
+        </div>
+
+        <div class="section-header">6 Additional Proof of Address (if OVD lacks current address)</div>
+        <div class="row">
+            <div class="checkbox-group">
+                <span class="sq"></span> Utility Bill &nbsp; <span class="sq"></span> PPO/FPPO &nbsp; <span class="sq"></span> Property Tax &nbsp; <span class="sq"></span> Letter of Allotment
+            </div>
+        </div>
+
+        <div class="section-header">7 DECLARATION CUM UNDERTAKING CUM SELF-CERTIFICATION</div>
+        <div style="font-size: 10px; margin-bottom: 10px; text-align: justify;">
+            I have read the copy of Terms and Conditions of the Account Opening given to me. The Terms and Conditions have been explained to me/us and having understood, I accept the same.<br>
+            1. I hereby declare that I have submitted the Aadhaar Card issued by UIDAI voluntarily for identification and/or address proof towards the compliance of KYC norms under the PMLA, 2002.<br>
+            2. I hereby consent that the Bank may verify the same with the UIDAI and authorise the UIDAI expressly to release the identity and address through biometric authentication to the Bank. (<span class="sq">✓</span> YES &nbsp; <span class="sq"></span> NO)<br>
+            3. I agree that my personal KYC details may be shared with Central KYC registry...
+        </div>
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="photo-box">Please Paste<br>Recent passport Size<br>PHOTO</div>
+            <div class="field" style="justify-content: flex-end; align-items: flex-end; margin-left: auto;">
+                <div class="input-line" style="width: 200px;"></div>
+                <label>Signature/Thumb impression of Applicant</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field"><label>Date:</label><div class="input-line"></div></div>
+            <div class="field"><label>Place:</label><div class="input-line">Rajahmundry</div></div>
+        </div>
+
+        <div class="section-header">8 FOR OFFICE USE/ATTESTATION</div>
+        <div class="row">
+            <div class="field">
+                1. PAN details verified.<br>
+                2. Information verified & updated.<br>
+                3. KYC updation date entered in CBS.
+            </div>
+            <div class="field" style="align-items: flex-end;">
+                Maker: _______________________<br><br>
+                Checker: _______________________
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 10px; right: 15px; font-weight: bold;">Page 3</div>
+    </div>
+
+    <div class="page">
+        <div class="row" style="margin-top: 20px;">
+            <div class="field"><label>PF No.:</label><div class="input-line" style="width: 200px;"></div></div>
+            <div class="field"><label>(S.S. No.):</label><div class="input-line" style="width: 200px;"></div></div>
+        </div>
+        <div style="margin-top: 40px; text-align: center; font-style: italic;">
+            (This form is to be sent to LCPC for digitisation and storage)
+        </div>
+        <div style="position: absolute; bottom: 10px; right: 15px; font-weight: bold;">Page 4</div>
+    </div>
+
+</body>
+</html>

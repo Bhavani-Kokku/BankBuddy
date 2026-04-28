@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SBI Home Loan Application Form – Dasari Praneeth Sanjay</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+:root{
+  --sbi-blue:#0057A8;
+  --sbi-dark:#003876;
+  --sbi-light:#E8F2FC;
+  --sbi-cyan:#00AEEF;
+  --accent:#1a73e8;
+  --red:#D32F2F;
+  --green:#2E7D32;
+  --field-bg:#F4F8FF;
+  --field-filled:#E8F5E9;
+  --field-border:#B0C4DE;
+  --text:#1a1a2e;
+  --muted:#546e7a;
+  --white:#ffffff;
+  --section-bg:#EEF4FB;
+  --page-shadow:0 8px 32px rgba(0,87,168,.18),0 2px 8px rgba(0,0,0,.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Source Sans 3',sans-serif;
+  background:linear-gradient(135deg,#0a1628 0%,#0d2b5e 40%,#0a3d8a 100%);
+  min-height:100vh;
+  padding:16px;
+  font-size:8.5px;
+  color:var(--text);
+}
+
+/* ── PAGE WRAPPER ── */
+.page{
+  width:210mm;
+  min-height:297mm;
+  margin:0 auto 20px;
+  background:var(--white);
+  box-shadow:var(--page-shadow);
+  position:relative;
+  overflow:hidden;
+  page-break-after:always;
+}
+
+/* ── COVER PAGE (Page 1) ── */
+.cover{
+  background:linear-gradient(160deg,#0057A8 0%,#0039a6 35%,#001f6b 70%,#00AEEF 100%);
+  min-height:297mm;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  position:relative;overflow:hidden;
+}
+.cover::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.cover-logo{
+  position:absolute;top:10mm;left:10mm;
+  display:flex;align-items:center;gap:10px;
+}
+.cover-logo .sbi-circle{
+  width:50px;height:50px;
+  background:var(--white);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;color:var(--sbi-blue);
+  font-family:'Playfair Display',serif;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+.cover-logo .brand{
+  color:var(--white);font-size:14px;font-weight:700;
+  line-height:1.1;letter-spacing:1px;
+}
+.cover-logo .brand span{
+  display:block;font-size:9px;font-weight:300;letter-spacing:3px;color:#90CAF9;
+}
+.cover-title{
+  text-align:center;color:var(--white);
+  position:relative;z-index:2;
+}
+.cover-title h1{
+  font-family:'Playfair Display',serif;
+  font-size:48px;font-weight:700;
+  letter-spacing:2px;
+  text-shadow:0 4px 20px rgba(0,0,0,.4);
+  margin-bottom:8px;
+}
+.cover-title .sub{
+  font-size:16px;font-weight:300;letter-spacing:6px;
+  color:#90CAF9;border-top:1px solid rgba(255,255,255,.3);
+  padding-top:10px;text-transform:uppercase;
+}
+.cover-house{
+  margin-top:30px;
+  width:120px;height:120px;
+  border:3px solid rgba(0,174,239,.6);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,174,239,.1);
+  backdrop-filter:blur(4px);
+  box-shadow:0 0 40px rgba(0,174,239,.4);
+}
+.cover-house svg{width:70px;height:70px;}
+.hex-bg{
+  position:absolute;right:8mm;bottom:8mm;
+  display:grid;grid-template-columns:repeat(4,20px);gap:4px;
+  opacity:.15;
+}
+.hex{width:18px;height:18px;background:var(--white);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);}
+
+/* ── FORM HEADER (pages 2-9) ── */
+.form-header{
+  background:linear-gradient(90deg,var(--sbi-dark) 0%,var(--sbi-blue) 60%,var(--sbi-cyan) 100%);
+  padding:3mm 6mm;
+  display:flex;align-items:center;justify-content:space-between;
+  color:var(--white);
+}
+.fh-logo{display:flex;align-items:center;gap:8px;}
+.fh-badge{
+  width:28px;height:28px;background:var(--white);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:700;color:var(--sbi-blue);
+}
+.fh-title{font-size:8px;font-weight:700;letter-spacing:.5px;}
+.fh-brand{font-size:6px;color:#90CAF9;margin-top:1px;letter-spacing:2px;}
+.fh-center{text-align:center;flex:1;padding:0 4mm;}
+.fh-center h2{font-size:11px;font-weight:700;letter-spacing:.5px;}
+.fh-center p{font-size:7px;color:#90CAF9;margin-top:1px;}
+.fh-pg{
+  font-size:8px;font-weight:700;
+  background:rgba(255,255,255,.15);
+  padding:2mm 4mm;border-radius:2px;
+  backdrop-filter:blur(4px);
+  white-space:nowrap;
+}
+
+/* ── FORM SECTION TITLE ── */
+.form-section{
+  background:var(--sbi-blue);color:var(--white);
+  font-size:8.5px;font-weight:700;
+  padding:2mm 4mm;margin:3mm 0 2mm;
+  display:flex;align-items:center;gap:3mm;
+  letter-spacing:.4px;
+  position:relative;
+}
+.form-section::after{
+  content:'';position:absolute;right:0;top:0;
+  width:0;height:100%;
+  border-top:100px solid transparent;
+  border-left:8px solid rgba(255,255,255,.2);
+}
+.form-section.sub{
+  background:var(--section-bg);color:var(--sbi-dark);
+  font-size:8px;border-left:3px solid var(--sbi-blue);
+}
+.section-badge{
+  background:rgba(255,255,255,.2);
+  border-radius:2px;padding:0 3px;
+  font-size:8px;
+}
+
+/* ── BODY INNER ── */
+.form-body{padding:0 4mm 4mm;}
+
+/* ── GRID ── */
+.row{display:flex;align-items:flex-start;gap:3mm;margin:1.5mm 0;flex-wrap:wrap;}
+.col{display:flex;flex-direction:column;gap:.8mm;}
+.col .lbl{font-size:7px;font-weight:600;color:var(--muted);white-space:nowrap;}
+.col-auto{flex:1;min-width:0;}
+
+/* ── MANDATORY MARK ── */
+.req{color:var(--red);font-weight:700;margin-left:1px;}
+
+/* ── FIELD ── */
+.field{
+  background:var(--field-bg);
+  border:0.5px solid var(--field-border);
+  border-radius:2px;
+  padding:1.5mm 2mm;
+  min-height:6.5mm;
+  display:flex;align-items:center;
+  font-size:8.5px;font-weight:600;
+  color:var(--text);letter-spacing:.3px;
+}
+.field.filled{
+  background:var(--field-filled);
+  border-color:#81C784;
+  color:#1B5E20;
+}
+.field.empty{font-style:italic;color:#B0BEC5;font-weight:400;font-size:7.5px;}
+.field.w16{width:16mm;}
+.field.w20{width:20mm;}
+.field.w25{width:25mm;}
+.field.w30{width:30mm;}
+.field.w35{width:35mm;}
+.field.w40{width:40mm;}
+.field.w45{width:45mm;}
+.field.w50{width:50mm;}
+.field.w55{width:55mm;}
+.field.w60{width:60mm;}
+.field.w70{width:70mm;}
+.field.w80{width:80mm;}
+.field.wfull{flex:1;width:100%;}
+.field.tall{min-height:10mm;}
+
+/* ── CHECKBOX ── */
+.cb-group{display:flex;align-items:center;gap:2.5mm;flex-wrap:wrap;}
+.cb{display:flex;align-items:center;gap:1.2mm;cursor:default;}
+.cb-box{
+  width:4.5mm;height:4.5mm;
+  border:0.6px solid #546e7a;
+  background:var(--white);
+  border-radius:1px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;flex-shrink:0;
+}
+.cb-box.on{background:var(--sbi-blue);border-color:var(--sbi-dark);color:var(--white);}
+.cb-lbl{font-size:7.5px;color:var(--text);}
+
+/* ── DIVIDER ── */
+.hr{border:none;border-top:.4px solid #CFD8DC;margin:2mm 0;}
+.hr-blue{border:none;border-top:.6px solid var(--sbi-blue);margin:2mm 0;}
+
+/* ── PHOTO BOX ── */
+.photo-box{
+  width:28mm;height:32mm;
+  border:1px dashed var(--field-border);
+  background:var(--field-bg);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  font-size:6px;color:var(--muted);
+  text-align:center;padding:2mm;gap:2px;flex-shrink:0;
+  border-radius:2px;
+}
+.photo-box .icon{font-size:18px;margin-bottom:2px;}
+
+/* ── SIGNATURE BOX ── */
+.sig-box{
+  flex:1;min-height:16mm;
+  border:.5px solid var(--field-border);
+  background:var(--field-bg);
+  display:flex;align-items:flex-end;
+  padding:2mm;border-radius:2px;
+}
+.sig-caption{font-size:6.5px;color:var(--muted);width:100%;text-align:center;}
+
+/* ── INFO NOTE ── */
+.note{
+  background:var(--sbi-light);
+  border-left:2.5px solid var(--sbi-blue);
+  font-size:7px;color:var(--muted);
+  padding:1.5mm 2.5mm;margin:1.5mm 0;line-height:1.6;
+}
+.note.warn{background:#FFF8E1;border-color:#F9A825;color:#5D4037;}
+.note.info{background:#E3F2FD;border-color:#1565C0;color:#0D47A1;}
+
+/* ── TABLE ── */
+.tbl{width:100%;border-collapse:collapse;margin:1.5mm 0;font-size:7.5px;}
+.tbl th{
+  background:var(--sbi-blue);color:var(--white);
+  padding:1.5mm 2mm;font-weight:700;
+  border:.5px solid var(--sbi-dark);text-align:left;font-size:7px;
+}
+.tbl td{
+  padding:1.5mm 2mm;
+  border:.4px solid var(--field-border);
+  background:var(--field-bg);
+}
+.tbl td.filled{background:var(--field-filled);font-weight:600;color:#1B5E20;}
+.tbl tr:nth-child(even) td{background:#F8FBFF;}
+.tbl tr:nth-child(even) td.filled{background:#C8E6C9;}
+
+/* ── MANDATORY LEGEND ── */
+.legend{
+  display:flex;align-items:center;gap:2mm;
+  font-size:6.5px;color:var(--muted);
+  padding:1mm 2mm;background:var(--section-bg);
+  border-radius:2px;margin-bottom:2mm;
+}
+.legend .dot{width:3mm;height:3mm;background:var(--red);border-radius:50%;}
+
+/* ── PAGE NUMBER ── */
+.pnum{
+  text-align:center;
+  font-size:7px;color:var(--muted);
+  padding:2mm 0;border-top:.3px solid #ECEFF1;
+  background:#FAFAFA;
+}
+
+/* ── CONSENT TEXT ── */
+.consent-ol{padding-left:5mm;}
+.consent-ol li{font-size:6.8px;line-height:1.7;color:#333;margin:1.5mm 0;}
+.consent-ol li b{color:var(--sbi-dark);}
+
+/* ── COVER footer dots ── */
+.cover-dots{
+  position:absolute;bottom:10mm;
+  display:flex;gap:4px;
+}
+.dot-w{width:5px;height:5px;background:rgba(255,255,255,.5);border-radius:50%;}
+.dot-w.big{width:8px;height:8px;background:var(--sbi-cyan);}
+
+/* ── ACK STRIP ── */
+.ack-strip{
+  border:1.5px dashed #90CAF9;
+  background:var(--sbi-light);
+  margin:4mm 0 0;
+  padding:3mm 4mm;
+}
+.ack-title{
+  font-size:9px;font-weight:700;color:var(--sbi-blue);
+  text-align:center;margin-bottom:2mm;letter-spacing:.5px;
+  border-bottom:.4px solid var(--sbi-blue);padding-bottom:1.5mm;
+}
+
+@media print{
+  body{background:white;padding:0;}
+  .page{box-shadow:none;margin:0;page-break-after:always;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ PAGE 1 – COVER ═══════════════════════ -->
+<div class="page cover">
+  <!-- Logo -->
+  <div class="cover-logo">
+    <div class="sbi-circle">SBI</div>
+    <div class="brand">HOME LOANS<span>STATE BANK OF INDIA</span></div>
+  </div>
+  <!-- Hex pattern -->
+  <div class="hex-bg">
+    <div class="hex"></div><div class="hex"></div><div class="hex"></div><div class="hex"></div>
+    <div class="hex"></div><div class="hex"></div><div class="hex"></div><div class="hex"></div>
+    <div class="hex"></div><div class="hex"></div><div class="hex"></div><div class="hex"></div>
+  </div>
+  <!-- Central content -->
+  <div class="cover-title">
+    <h1>HOME LOAN</h1>
+    <div class="sub">Application Form</div>
+    <div class="cover-house" style="margin:20px auto 0;">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10 L90 50 H75 V90 H55 V65 H45 V90 H25 V50 H10 Z" stroke="#00AEEF" stroke-width="4" fill="none" stroke-linejoin="round"/>
+        <rect x="42" y="65" width="16" height="25" stroke="#00AEEF" stroke-width="3" fill="rgba(0,174,239,0.1)"/>
+        <circle cx="50" cy="50" r="38" stroke="rgba(0,174,239,0.3)" stroke-width="1" fill="none"/>
+      </svg>
+    </div>
+  </div>
+  <div class="cover-dots">
+    <div class="dot-w"></div><div class="dot-w big"></div><div class="dot-w"></div>
+    <div class="dot-w big"></div><div class="dot-w"></div>
+  </div>
+  <!-- Applicant name watermark at bottom -->
+  <div style="position:absolute;bottom:15mm;right:8mm;text-align:right;color:rgba(255,255,255,.5);font-size:8px;">
+    Applicant: DASARI PRANEETH SANJAY<br/>Application Date: 27 / 04 / 2026
+  </div>
+</div>
+
+<!-- ═══════════════════════ PAGE 2 – FORM A: PERSONAL DETAILS ═══════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="fh-logo"><div class="fh-badge">SBI</div><div><div class="fh-title">HOME LOANS</div><div class="fh-brand">STATE BANK OF INDIA</div></div></div>
+    <div class="fh-center"><h2>FORM – A &nbsp;|&nbsp; PERSONAL DETAILS</h2><p>In case of multiple Borrower/Guarantor, Form A &amp; B to be filled separately</p></div>
+    <div class="fh-pg">Page 2 of 9</div>
+  </div>
+  <div class="form-body">
+    <div class="legend"><div class="dot"></div><span><span style="color:var(--red);font-weight:700">* Red asterisk</span> denotes mandatory fields</span></div>
+
+    <!-- Applicant type / Existing customer -->
+    <div class="row" style="align-items:center;background:var(--section-bg);padding:2mm;border-radius:2px;">
+      <span style="font-size:8px;font-weight:700;color:var(--sbi-dark)">Role:</span>
+      <div class="cb-group">
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Applicant</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Co-Applicant</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Guarantor</span></div>
+      </div>
+      <span style="margin-left:auto;font-size:7.5px;font-weight:700;color:var(--muted)">Existing Customer:</span>
+      <div class="cb-group">
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+      </div>
+      <div class="col"><div class="lbl">CIF No. / Account No.</div><div class="field empty w50">&nbsp;</div></div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- Name -->
+    <div class="form-section"><span class="section-badge">01</span> Applicant Name &amp; Identity</div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">First Name<span class="req">*</span></div><div class="field filled wfull">DASARI</div></div>
+      <div class="col col-auto"><div class="lbl">Middle Name</div><div class="field filled wfull">PRANEETH</div></div>
+      <div class="col col-auto"><div class="lbl">Last Name<span class="req">*</span></div><div class="field filled wfull">SANJAY</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Name of Spouse</div><div class="field empty w80">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Name of Father<span class="req">*</span></div><div class="field filled w80">DASARI RAVI KUMAR</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Gender / Marital / DOB -->
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Gender<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Male</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Female</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Third Gender</span></div>
+        </div>
+      </div>
+      <div class="col" style="margin-left:6mm">
+        <div class="lbl">Marital Status<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Single</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Married</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Divorced</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Widowed</span></div>
+        </div>
+      </div>
+      <div class="col" style="margin-left:auto">
+        <div class="lbl">Date of Birth<span class="req">*</span></div>
+        <div class="field filled w40">01 / 01 / 2000</div>
+      </div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Residential Status -->
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Residential Status<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Resident Indian (RI)</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Non-Resident Indian (NRI)</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Person of Indian Origin (PIO)</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Foreign Citizen (OCI)</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">If NRI – VISA No.</div><div class="field empty w50">&nbsp;</div></div>
+      <div class="col"><div class="lbl">VISA Issue Date</div><div class="field empty w40">&nbsp;</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Contact -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">📞</span> Contact Details</div>
+    <div class="row">
+      <div class="col"><div class="lbl">Mobile<span class="req">*</span></div><div class="field filled w45" style="font-size:9px;letter-spacing:.8px">9876543210</div></div>
+      <div class="col col-auto"><div class="lbl">Email<span class="req">*</span></div><div class="field filled wfull">praneeth.sanjay@example.com</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">PAN<span class="req">*</span></div><div class="field filled w50" style="font-size:9px;letter-spacing:2px;font-weight:700">ABCDE1234F</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- KYC -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">🪪</span> KYC Details &nbsp;<span style="font-weight:400;font-size:7px">(Minimum one to be filled)</span></div>
+    <table class="tbl">
+      <thead><tr><th>Document Type</th><th>Document Number</th></tr></thead>
+      <tbody>
+        <tr><td>Aadhaar / UID No.<span class="req">*</span></td><td class="filled" style="font-size:9px;letter-spacing:2px">1234 5678 9012</td></tr>
+        <tr><td>Voter ID No.</td><td class="empty">—</td></tr>
+        <tr><td>Passport No.</td><td class="empty">—</td></tr>
+        <tr><td>Driving License No.</td><td class="empty">—</td></tr>
+        <tr><td>MGNREGA Job Card No.</td><td class="empty">—</td></tr>
+        <tr><td>Letter – National Population Register (Name &amp; Address)</td><td class="empty">—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="hr-blue"/>
+
+    <!-- Permanent Address -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">🏠</span> Permanent Address<span class="req">*</span></div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address Line 1<span class="req">*</span></div><div class="field filled wfull">123 Main Street</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address Line 2</div><div class="field filled wfull">Rasapudipalem</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address Line 3</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Village</div><div class="field filled w45">Rasapudipalem</div></div>
+      <div class="col col-auto"><div class="lbl">City<span class="req">*</span></div><div class="field filled wfull">Rajahmundry</div></div>
+      <div class="col"><div class="lbl">District<span class="req">*</span></div><div class="field filled w40">East Godavari</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">State<span class="req">*</span></div><div class="field filled wfull">Andhra Pradesh</div></div>
+      <div class="col"><div class="lbl">Country<span class="req">*</span></div><div class="field filled w35">India</div></div>
+      <div class="col"><div class="lbl">Pin Code<span class="req">*</span></div><div class="field filled w30" style="letter-spacing:1.5px">533101</div></div>
+    </div>
+    <div class="row" style="align-items:center;margin-top:2mm;">
+      <span style="font-size:7.5px;font-weight:700;color:var(--muted)">Current address same as permanent address<span class="req">*</span>:</span>
+      <div class="cb-group" style="margin-left:3mm">
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Yes</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">No</span></div>
+      </div>
+      <div class="photo-box" style="margin-left:auto">
+        <div class="icon">📷</div>
+        <div>Affix recent<br/>passport size<br/>photograph<br/>and sign across</div>
+      </div>
+    </div>
+  </div>
+  <div class="pnum">Page 2 of 9 &nbsp;|&nbsp; SBI Home Loan Application – Form A (Personal Details)</div>
+</div>
+
+<!-- ═══════════════════════ PAGE 3 – FORM A CONTINUED ═══════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="fh-logo"><div class="fh-badge">SBI</div><div><div class="fh-title">HOME LOANS</div><div class="fh-brand">STATE BANK OF INDIA</div></div></div>
+    <div class="fh-center"><h2>FORM – A (Continued) &nbsp;|&nbsp; CURRENT ADDRESS &amp; OTHER DETAILS</h2></div>
+    <div class="fh-pg">Page 3 of 9</div>
+  </div>
+  <div class="form-body">
+
+    <!-- Current Address -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">📍</span> Current Address</div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address Line 1<span class="req">*</span></div><div class="field filled wfull">123 Main Street</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address Line 2</div><div class="field filled wfull">Rasapudipalem</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address Line 3</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Village</div><div class="field filled w45">Rasapudipalem</div></div>
+      <div class="col col-auto"><div class="lbl">City<span class="req">*</span></div><div class="field filled wfull">Rajahmundry</div></div>
+      <div class="col"><div class="lbl">District<span class="req">*</span></div><div class="field filled w40">East Godavari</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">State<span class="req">*</span></div><div class="field filled wfull">Andhra Pradesh</div></div>
+      <div class="col"><div class="lbl">Country<span class="req">*</span></div><div class="field filled w35">India</div></div>
+      <div class="col"><div class="lbl">Pin Code<span class="req">*</span></div><div class="field filled w30" style="letter-spacing:1.5px">533101</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Residential details -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">🏘</span> Residential Details</div>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Address Type for Communication<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Permanent</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Current</span></div>
+        </div>
+      </div>
+      <div class="col" style="margin-left:8mm">
+        <div class="lbl">Residential Type<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Rented</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Company Lease</span></div>
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Owned</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Years Residing in Current Address</div><div class="field filled w25">02</div></div>
+      <div class="col"><div class="lbl">Months Residing in Current Address</div><div class="field filled w25">04</div></div>
+      <div class="col" style="margin-left:auto"><div class="lbl">Household Annual Income<span class="req">*</span> (Rs.)</div><div class="field filled w50">2,00,000</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Relationship / Co-Applicant -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">👥</span> Relationship with Primary Applicant</div>
+    <div class="row">
+      <div class="cb-group">
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Spouse</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Father</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Mother</span></div>
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Brother</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Sister</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Son</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Daughter</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Daughter-in-law</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Others</span></div>
+      </div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Properties Owned -->
+    <div class="row">
+      <div class="col col-auto">
+        <div class="lbl">No. of Existing House / Residential Plot owned individually or jointly<span class="req">*</span></div>
+        <div class="field filled w20">0</div>
+      </div>
+      <div class="col col-auto" style="margin-left:4mm">
+        <div class="lbl">No. of Units acquired in single residential housing project / co-operative complex</div>
+        <div class="field filled w20">0</div>
+      </div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Builder / Director questions -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">⚖️</span> Compliance Declarations</div>
+    <div class="row" style="align-items:center">
+      <span class="lbl" style="flex:1">Is the customer a Builder/Partner/Director/Owner/Promoter acquiring a house/unit/plot in the project developed by them/their Company?<span class="req">*</span></span>
+      <div class="cb-group" style="margin-left:4mm">
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+      </div>
+    </div>
+    <div class="row" style="align-items:center;margin-top:2mm">
+      <span class="lbl" style="flex:1">Is Applicant/Co-Applicant/Guarantor a Director (including CMD) in another bank or specified near relative of any director of SBI/Other Bank?<span class="req">*</span></span>
+      <div class="cb-group" style="margin-left:4mm">
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">If Yes – Name of the Chairman/MD or other director</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Indicate Name of Bank / Subsidiary / Scheduled Co-operative Banks / Trustees of Mutual Fund / Venture Capital Fund</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- POA -->
+    <div class="row" style="align-items:center">
+      <span class="lbl" style="flex:1">Power of Attorney Provided?<span class="req">*</span></span>
+      <div class="cb-group" style="margin-left:4mm">
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Name of POA Holder</div><div class="field empty wfull">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Contact No. of POA Holder</div><div class="field empty w50">&nbsp;</div></div>
+    </div>
+
+    <div class="hr-blue" style="margin-top:4mm"/>
+
+    <div class="row" style="margin-top:3mm">
+      <div class="sig-box"><div class="sig-caption">Signature of Applicant / Co-Applicant / Guarantor</div></div>
+      <div class="sig-box"><div class="sig-caption">Signature of Co-Applicant (if any)</div></div>
+    </div>
+  </div>
+  <div class="pnum">Page 3 of 9 &nbsp;|&nbsp; SBI Home Loan Application – Form A (Continued)</div>
+</div>
+
+<!-- ═══════════════════════ PAGE 4 – FORM B: EMPLOYMENT DETAILS ═══════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="fh-logo"><div class="fh-badge">SBI</div><div><div class="fh-title">HOME LOANS</div><div class="fh-brand">STATE BANK OF INDIA</div></div></div>
+    <div class="fh-center"><h2>FORM – B &nbsp;|&nbsp; EMPLOYMENT DETAILS</h2></div>
+    <div class="fh-pg">Page 4 of 9</div>
+  </div>
+  <div class="form-body">
+    <div class="row" style="background:var(--section-bg);padding:2mm;border-radius:2px;align-items:center;">
+      <span style="font-size:8px;font-weight:700;color:var(--sbi-dark)">For:</span>
+      <div class="cb-group">
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Applicant</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Co-Applicant</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Guarantor</span></div>
+      </div>
+      <div class="col" style="margin-left:auto">
+        <div class="lbl">Is income considered for loan eligibility?<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No (Student)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section sub" style="margin-top:3mm"><span style="color:var(--sbi-blue)">💼</span> Occupation<span class="req">*</span></div>
+    <div class="cb-group" style="flex-wrap:wrap;gap:3mm;padding:2mm 0">
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Salaried</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Self-Employed Professional (Doctor/Engr/Architect/CA)</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Self-Employed Professional (Others)</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Business</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Agriculturist</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Retired</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Pensioner</span></div>
+      <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Student</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Home Maker</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Unemployed</span></div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- SALARIED SECTION -->
+    <div class="form-section"><span class="section-badge">B1</span> Salaried Details &nbsp;<span style="font-weight:400;font-size:7px">(Fill if Salaried — N/A for Student)</span></div>
+    <div class="note warn">⚠ Not Applicable — Applicant is a Student</div>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Organization Type</div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Central Govt</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">State Govt</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Quasi Govt</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Public Sector Units</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Defence</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Corporates</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Other Institutions</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Employment Status</div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Permanent</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Contractual</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Retainership</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Part Time</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Total Work Experience (Years)</div><div class="field empty w25">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Total Work Experience (Months)</div><div class="field empty w25">&nbsp;</div></div>
+      <div class="col col-auto"><div class="lbl">Employer's Name</div><div class="field empty wfull">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Industry</div><div class="field empty w35">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Type of Pension</div><div class="field empty w80">Old pension / New pension / Unified / EPFO / Others</div></div>
+      <div class="col" style="margin-left:auto"><div class="lbl">Date of Retirement</div><div class="field empty w40">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Gross Monthly Income (Rs.)<span class="req">*</span></div><div class="field empty w45">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Net Monthly Income (Rs.)<span class="req">*</span></div><div class="field empty w45">&nbsp;</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- FOR DEFENCE PERSONNEL -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">🎖</span> For Defence Personnel &nbsp;<span style="font-weight:400;font-size:7px">(if applicable)</span></div>
+    <div class="row">
+      <div class="cb-group">
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Indian Army</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Indian Navy</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Indian Air Force</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Is Check-off Available?</div><div class="cb-group"><div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div><div class="cb"><div class="cb-box"></div><span class="cb-lbl">No</span></div></div></div>
+      <div class="col" style="margin-left:4mm"><div class="lbl">Break in Service beyond 3 months in last 2 years?</div><div class="cb-group"><div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div><div class="cb"><div class="cb-box"></div><span class="cb-lbl">No</span></div></div></div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- NON-SALARIED -->
+    <div class="form-section"><span class="section-badge">B2</span> Non-Salaried Details &nbsp;<span style="font-weight:400;font-size:7px">(Fill if Self-Employed / Business — N/A for Student)</span></div>
+    <div class="note warn">⚠ Not Applicable — Applicant is a Student</div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Business Name</div><div class="field empty wfull">&nbsp;</div></div>
+      <div class="col col-auto"><div class="lbl">Industry Name</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Work Experience in Business/Profession (Years)</div><div class="field empty w30">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Work Experience (Months)</div><div class="field empty w25">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Net Profit Earned in Last Two Years (Rs.)</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Gross Monthly Income (Rs.)<span class="req">*</span></div><div class="field empty w45">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Net Monthly Income (Rs.)<span class="req">*</span></div><div class="field empty w45">&nbsp;</div></div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- Office / Business Address -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">🏢</span> Office / Business Address</div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address 1</div><div class="field filled wfull">Andhra University Campus, Visakhapatnam Road</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address 2</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address 3</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Village</div><div class="field empty w40">&nbsp;</div></div>
+      <div class="col col-auto"><div class="lbl">City</div><div class="field filled wfull">Rajahmundry</div></div>
+      <div class="col"><div class="lbl">District</div><div class="field filled w40">East Godavari</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">State</div><div class="field filled wfull">Andhra Pradesh</div></div>
+      <div class="col"><div class="lbl">Country</div><div class="field filled w30">India</div></div>
+      <div class="col"><div class="lbl">Pin Code</div><div class="field filled w30">533101</div></div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- SALARY/BUSINESS ACCOUNT DETAILS -->
+    <div class="form-section"><span class="section-badge">B3</span> Salary / Business Account Details</div>
+    <table class="tbl">
+      <thead><tr><th>Account Type</th><th>IFSC Code</th><th>Bank Name</th><th>Branch Name</th><th>Account Number</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="filled">Savings Account</td>
+          <td class="filled">SBIN0001234</td>
+          <td class="filled">State Bank of India</td>
+          <td class="filled">Rajahmundry Main</td>
+          <td class="filled" style="letter-spacing:1px">–––– (To be allotted)</td>
+        </tr>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+      </tbody>
+    </table>
+    <div class="row" style="margin-top:3mm">
+      <div class="sig-box"><div class="sig-caption">Signature of Applicant / Co-Applicant / Guarantor</div></div>
+    </div>
+  </div>
+  <div class="pnum">Page 4 of 9 &nbsp;|&nbsp; SBI Home Loan Application – Form B (Employment Details)</div>
+</div>
+
+<!-- ═══════════════════════ PAGE 5 – FORM C: LOAN DETAILS ═══════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="fh-logo"><div class="fh-badge">SBI</div><div><div class="fh-title">HOME LOANS</div><div class="fh-brand">STATE BANK OF INDIA</div></div></div>
+    <div class="fh-center"><h2>FORM – C &nbsp;|&nbsp; LOAN DETAILS</h2></div>
+    <div class="fh-pg">Page 5 of 9</div>
+  </div>
+  <div class="form-body">
+
+    <!-- Purpose -->
+    <div class="form-section"><span class="section-badge">C1</span> Purpose of Loan<span class="req">*</span></div>
+    <div class="cb-group" style="flex-wrap:wrap;gap:3mm;padding:2mm 0">
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Purchase of Plot for Construction of a House</span></div>
+      <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Purchase of a new House / Flat</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Purchase of Old House / Flat</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Construction of a new House / Flat</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Extension of existing old House / Flat</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Repair or Renovation of existing old House / Flat</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Takeover of Home Loans from other Banks / HFCs / FIs</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Combo Loan</span></div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- Loan Parameters -->
+    <div class="form-section"><span class="section-badge">C2</span> Loan Parameters</div>
+    <div class="row">
+      <div class="col"><div class="lbl">Requested Loan Amount (Rs.)<span class="req">*</span></div><div class="field filled w55">50,00,000</div></div>
+      <div class="col"><div class="lbl">Tenure (Months)<span class="req">*</span></div><div class="field filled w30">240</div></div>
+      <div class="col"><div class="lbl">Moratorium (Months)</div><div class="field empty w25">&nbsp;</div></div>
+      <div class="col"><div class="lbl">No. of Tranches</div><div class="field empty w25">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Facility<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Term Loan</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">OD (Maxgain)</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Hybrid (TL+OD)</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Repayment Mode<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Standing Instruction</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">NACH</span></div>
+        </div>
+      </div>
+      <div class="col" style="margin-left:6mm"><div class="lbl">SI / NACH Start Date (1st to 20th of Month)<span class="req">*</span></div><div class="field filled w50">01st of every month</div></div>
+    </div>
+    <div class="row">
+      <div class="col" style="align-items:center;flex-direction:row;gap:3mm">
+        <span class="lbl">Interest to be capitalised during moratorium?<span class="req">*</span></span>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Guarantee Amount (Rs.)</div><div class="field empty w50">&nbsp;</div></div>
+      <div class="col" style="margin-left:4mm">
+        <div class="lbl">IMGC Guarantee Required?<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Disbursement Schedule -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">📅</span> Disbursement Schedule</div>
+    <table class="tbl">
+      <thead><tr><th>#</th><th>Tranche Amount (Rs.)</th><th>Expected Date</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+        <tr><td>2</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+      </tbody>
+    </table>
+
+    <div class="hr-blue"/>
+
+    <!-- Sellers / Builders -->
+    <div class="form-section"><span class="section-badge">C3</span> Sellers / Builders Details</div>
+    <table class="tbl">
+      <thead><tr><th>Name of Seller / Builder<span class="req">*</span></th><th>Account No.</th><th>Bank Name</th><th>Branch Name</th><th>IFSC Code</th></tr></thead>
+      <tbody>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+      </tbody>
+    </table>
+
+    <div class="hr"/>
+
+    <!-- Existing Loans -->
+    <div class="form-section"><span class="section-badge">C4</span> Existing Loans (if any)</div>
+    <table class="tbl">
+      <thead><tr><th>Loan Account No.</th><th>Bank / FI</th><th>Product Name</th><th>Sanctioned Amount</th><th>Present Outstanding</th><th>EMI</th></tr></thead>
+      <tbody>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+      </tbody>
+    </table>
+
+    <div class="hr"/>
+
+    <!-- Standing Instruction Account -->
+    <div class="form-section"><span class="section-badge">C5</span> Account Details for Standing Instructions / NACH</div>
+    <table class="tbl">
+      <thead><tr><th>Account No.<span class="req">*</span></th><th>Account Type<span class="req">*</span></th><th>Name of Account Holder</th><th>Bank Name</th><th>Branch Name</th><th>IFSC Code</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="filled" style="letter-spacing:1px">–– (To be provided)</td>
+          <td class="filled">Savings Account</td>
+          <td class="filled">DASARI PRANEETH SANJAY</td>
+          <td class="filled">State Bank of India</td>
+          <td class="filled">Rajahmundry Main</td>
+          <td class="filled">SBIN0001234</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">In case of Takeover – Name of Bank from where existing loan is maintained</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+  </div>
+  <div class="pnum">Page 5 of 9 &nbsp;|&nbsp; SBI Home Loan Application – Form C (Loan Details)</div>
+</div>
+
+<!-- ═══════════════════════ PAGE 6 – FORM D: PROPERTY DETAILS ═══════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="fh-logo"><div class="fh-badge">SBI</div><div><div class="fh-title">HOME LOANS</div><div class="fh-brand">STATE BANK OF INDIA</div></div></div>
+    <div class="fh-center"><h2>FORM – D &nbsp;|&nbsp; PROPERTY DETAILS</h2></div>
+    <div class="fh-pg">Page 6 of 9</div>
+  </div>
+  <div class="form-body">
+
+    <!-- Property Type -->
+    <div class="form-section"><span class="section-badge">D1</span> Property Identification</div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Project Name (if applicable)</div><div class="field empty wfull">&nbsp;</div></div>
+      <div class="col col-auto"><div class="lbl">RERA Registration No. (if applicable)</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Property held / to be held in the name of<span class="req">*</span></div><div class="field filled wfull">DASARI PRANEETH SANJAY</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Property Type checkboxes -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">🏗</span> Property Type<span class="req">*</span></div>
+    <div class="cb-group" style="flex-wrap:wrap;gap:3mm;padding:2mm 0">
+      <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Residential Apartment (RERA Approved)</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Self-Constructed</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Small Project not covered under RERA</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Property not identified</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Builder Floor</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Independent House</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Row House / Villa / Others</span></div>
+    </div>
+    <div class="row">
+      <div class="col" style="align-items:center;flex-direction:row;gap:3mm">
+        <span class="lbl">Is property in Tribal Area?<span class="req">*</span></span>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Location -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">📌</span> Location of Property</div>
+    <div class="cb-group" style="flex-wrap:wrap;gap:3mm;padding:2mm 0">
+      <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Within the Municipal Corporation area of population ≥ 1 lac</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Within the Municipal Corporation area of population &gt;10,000 up to 1 lac</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Outside Municipal/Corporation area – Plot developed by Govt Body</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Outside Municipal Corporation area</span></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Construction / Purchase Details -->
+    <div class="form-section"><span class="section-badge">D2</span> Construction / Purchase Details</div>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Property Status<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Ready for Possession</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Under Construction</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Construction not Started</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Sale Transaction Category<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Normal Sale</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">POA Sale</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Gift Deed</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Sale through Third Party</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Guarantor</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Date of Agreement to Sale</div><div class="field empty w45">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Property Value (Rs.)<span class="req">*</span></div><div class="field filled w55">60,00,000</div></div>
+      <div class="col"><div class="lbl">Amount as per Agreement (Rs.)</div><div class="field empty w55">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Property Holding Status<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Free Hold</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Lease</span></div>
+        </div>
+      </div>
+      <div class="col" style="margin-left:6mm"><div class="lbl">Lease Period (Years)</div><div class="field empty w25">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Months</div><div class="field empty w20">&nbsp;</div></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Cost Details -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">💰</span> Cost Breakdown (Rs.)</div>
+    <table class="tbl">
+      <thead><tr><th>Cost Component</th><th>Amount (Rs.)</th></tr></thead>
+      <tbody>
+        <tr><td>Estimated Cost of Construction</td><td class="empty">&nbsp;</td></tr>
+        <tr><td>Cost of Extension</td><td class="empty">&nbsp;</td></tr>
+        <tr><td>Cost of Repair and Renovation</td><td class="empty">&nbsp;</td></tr>
+        <tr><td>Cost of Interior / Finishing</td><td class="empty">&nbsp;</td></tr>
+        <tr><td>Cost of Solar Photo Voltaic Lighting System</td><td class="empty">&nbsp;</td></tr>
+        <tr><td>GST</td><td class="empty">&nbsp;</td></tr>
+        <tr><td>Premium for Insurance of Mortgaged Property</td><td class="empty">&nbsp;</td></tr>
+        <tr><td>Other Amenities</td><td class="empty">&nbsp;</td></tr>
+        <tr><td style="font-weight:700">Amount of Margin Money<span class="req">*</span></td><td class="filled">10,00,000</td></tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col">
+        <div class="lbl">Source of Margin Money<span class="req">*</span></div>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Own Savings</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">From Friend and Relatives</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Realty Gold Loan</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Other Loan</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Others</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Property Address & Dimensions -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">🏠</span> Property Address &amp; Details</div>
+    <div class="row">
+      <div class="col"><div class="lbl">Building Name</div><div class="field empty w60">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Wing Name</div><div class="field empty w40">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Flat No.</div><div class="field empty w30">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Carpet Area (sq ft)</div><div class="field empty w35">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Built-up Area (sq ft)</div><div class="field empty w35">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Super Built-up Area (sq ft)</div><div class="field empty w40">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address 1<span class="req">*</span></div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address 2</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Address 3</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Village</div><div class="field empty w40">&nbsp;</div></div>
+      <div class="col col-auto"><div class="lbl">City<span class="req">*</span></div><div class="field empty wfull">&nbsp;</div></div>
+      <div class="col"><div class="lbl">District<span class="req">*</span></div><div class="field empty w40">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">State<span class="req">*</span></div><div class="field empty wfull">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Country<span class="req">*</span></div><div class="field empty w30">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Pin Code<span class="req">*</span></div><div class="field empty w30">&nbsp;</div></div>
+    </div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Net Rental Income expected from the proposed property (Monthly) (Rs.)</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+  </div>
+  <div class="pnum">Page 6 of 9 &nbsp;|&nbsp; SBI Home Loan Application – Form D (Property Details)</div>
+</div>
+
+<!-- ═══════════════════════ PAGE 7 – COLLATERAL DETAILS ═══════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="fh-logo"><div class="fh-badge">SBI</div><div><div class="fh-title">HOME LOANS</div><div class="fh-brand">STATE BANK OF INDIA</div></div></div>
+    <div class="fh-center"><h2>COLLATERAL DETAILS</h2><p>Applicable if collateral required other than Primary Security</p></div>
+    <div class="fh-pg">Page 7 of 9</div>
+  </div>
+  <div class="form-body">
+
+    <div class="form-section"><span class="section-badge">D3</span> Collateral Details</div>
+    <div class="note info">ℹ Complete this section only if the Bank requires collateral security beyond the primary mortgaged property. Applicable at Bank's discretion.</div>
+
+    <!-- Collateral Type -->
+    <div class="form-section sub"><span style="color:var(--sbi-blue)">🔒</span> Collateral Type<span class="req">*</span></div>
+    <div class="cb-group" style="flex-wrap:wrap;gap:3mm;padding:2mm 0">
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Term Deposit</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">NSC / KVP</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Life Insurance Policy</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Govt. Promissory Note</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Immovable Property</span></div>
+      <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Third Party Guarantee</span></div>
+    </div>
+
+    <div class="hr"/>
+
+    <!-- Collateral Details Table -->
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Collateral Owner<span class="req">*</span></th>
+          <th>Collateral Description<span class="req">*</span></th>
+          <th>Collateral Value (Rs.)<span class="req">*</span></th>
+          <th>Collateral Lien Value (Rs.)</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+        <tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note" style="margin-top:4mm">
+      <b>Note:</b> In case of Third Party Guarantee, the guarantor's personal details and financial details are to be furnished in Form A &amp; Form B separately. All collateral documents must be original or certified true copies as accepted by the Bank.
+    </div>
+
+    <!-- Additional space for full page -->
+    <div style="height:80mm;border:.4px dashed var(--field-border);background:var(--field-bg);margin-top:4mm;border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:8px;font-style:italic;">
+      Additional collateral details / notes (if any) — to be filled by applicant or Bank officer
+    </div>
+  </div>
+  <div class="pnum">Page 7 of 9 &nbsp;|&nbsp; SBI Home Loan Application – Collateral Details</div>
+</div>
+
+<!-- ═══════════════════════ PAGE 8 – FORM E: INSURANCE & DECLARATIONS ═══════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="fh-logo"><div class="fh-badge">SBI</div><div><div class="fh-title">HOME LOANS</div><div class="fh-brand">STATE BANK OF INDIA</div></div></div>
+    <div class="fh-center"><h2>FORM – E &nbsp;|&nbsp; INSURANCE &amp; DECLARATIONS</h2></div>
+    <div class="fh-pg">Page 8 of 9</div>
+  </div>
+  <div class="form-body">
+
+    <div class="note info" style="margin-top:2mm">
+      <b>Insurance Information:</b> You can opt to secure your home loan liability through the Group Credit Life Insurance solution/s. Please note that the Insurance cover is <b>optional</b> for home loan borrower and borrower can opt for insurance cover from any Insurance service provider. In case the Borrower intends to take loan for insurance cover, the premium amount can be sanctioned as a <b>SURAKSHA Loan</b> and the repayment of loan should be co-terminus with the Home Loan.
+    </div>
+
+    <div class="form-section"><span class="section-badge">E1</span> Insurance Options</div>
+    <div style="background:var(--section-bg);border-radius:3px;padding:3mm 4mm;margin:2mm 0;">
+      <div class="row" style="align-items:center;margin-bottom:2mm;">
+        <span style="font-size:8px;font-weight:700;color:var(--text);flex:1">Do you wish life cover for Home Loan?<span class="req">*</span></span>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+        </div>
+      </div>
+      <div class="row" style="align-items:center;margin-bottom:2mm;">
+        <span style="font-size:8px;font-weight:700;color:var(--text);flex:1">Need Suraksha Loan for Life Premium?<span class="req">*</span></span>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+        </div>
+      </div>
+      <div class="row" style="align-items:center;">
+        <span style="font-size:8px;font-weight:700;color:var(--text);flex:1">Need loan for insurance for mortgaged property?<span class="req">*</span></span>
+        <div class="cb-group">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+          <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl">No</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- Nominee Details -->
+    <div class="form-section"><span class="section-badge">E2</span> Nominee Details</div>
+    <div class="row">
+      <div class="col col-auto"><div class="lbl">Nominee Name<span class="req">*</span></div><div class="field filled wfull">RAVI KUMAR</div></div>
+      <div class="col"><div class="lbl">Relationship<span class="req">*</span></div><div class="field filled w40">Brother</div></div>
+      <div class="col"><div class="lbl">Nominee Age</div><div class="field filled w20">25</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><div class="lbl">Nominee Date of Birth</div><div class="field empty w40">&nbsp;</div></div>
+      <div class="col"><div class="lbl">Nominee Mobile</div><div class="field empty w50">&nbsp;</div></div>
+      <div class="col col-auto"><div class="lbl">Nominee Address</div><div class="field empty wfull">&nbsp;</div></div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- Digital consent -->
+    <div class="form-section"><span class="section-badge">E3</span> Digital Consent</div>
+    <div class="row" style="align-items:center;background:var(--section-bg);padding:2mm;border-radius:2px;">
+      <span style="font-size:8px;font-weight:700;flex:1">I/we agree to execute the loan/security documents by way of digital document execution facility.<span class="req">*</span></span>
+      <div class="cb-group">
+        <div class="cb"><div class="cb-box on">✓</div><span class="cb-lbl" style="font-weight:700;color:var(--sbi-blue)">Yes</span></div>
+        <div class="cb"><div class="cb-box"></div><span class="cb-lbl">No</span></div>
+      </div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <!-- Additional Consent for EU/UK NRI -->
+    <div class="form-section sub" style="margin-top:2mm"><span style="color:var(--sbi-blue)">🌍</span> Additional Consent for EU/UK NRI Customers &nbsp;<span style="font-weight:400;font-size:7px">(Fill only if applicable)</span></div>
+    <div class="note warn">⚠ Not Applicable — Applicant is a Resident Indian (RI)</div>
+    <div style="opacity:.5;pointer-events:none;">
+      <div class="row">
+        <span class="lbl">III. SBI may send NRI Newsletter/marketing information:</span>
+        <div class="cb-group" style="margin-left:3mm">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Yes</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">No</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="lbl">If interested, preferred mode of communication:</span>
+        <div class="cb-group" style="margin-left:3mm">
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Email</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">Phone</span></div>
+          <div class="cb"><div class="cb-box"></div><span class="cb-lbl">SMS</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hr-blue"/>
+
+    <div class="row" style="margin-top:3mm">
+      <div style="flex:1">
+        <div style="font-size:7.5px;font-weight:700;color:var(--muted);margin-bottom:1mm">Place<span class="req">*</span></div>
+        <div class="field filled w60">Rajahmundry</div>
+      </div>
+      <div style="flex:1">
+        <div style="font-size:7.5px;font-weight:700;color:var(--muted);margin-bottom:1mm">Date<span class="req">*</span></div>
+        <div class="field filled w50">27 / 04 / 2026</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:3mm">
+      <div class="sig-box"><div class="sig-caption">Signature of Applicant<br/>(sign in the box)</div></div>
+      <div class="sig-box"><div class="sig-caption">Signature of Co-Applicant / Guarantor<br/>(sign in the box)</div></div>
+    </div>
+  </div>
+  <div class="pnum">Page 8 of 9 &nbsp;|&nbsp; SBI Home Loan Application – Form E (Insurance &amp; Declarations)</div>
+</div>
+
+<!-- ═══════════════════════ PAGE 9 – CONSENT-CUM-DECLARATION ═══════════════════════ -->
+<div class="page">
+  <div class="form-header">
+    <div class="fh-logo"><div class="fh-badge">SBI</div><div><div class="fh-title">HOME LOANS</div><div class="fh-brand">STATE BANK OF INDIA</div></div></div>
+    <div class="fh-center"><h2>CONSENT-CUM-DECLARATION (FOR ALL APPLICANTS)</h2></div>
+    <div class="fh-pg">Page 9 of 9</div>
+  </div>
+  <div class="form-body">
+
+    <ol class="consent-ol">
+      <li>I/We certify that the information and particulars provided by me/us in this application form (and all documents referred or provided herewith) are true, correct, complete and up to date in all respects and I have not withheld any information. I/We authorize State Bank of India to make inquiries related to or verify said information directly or through any third party. I/We further acknowledge the Bank's right to seek any information from any other source in this regard. I/We understand that all of the above-mentioned information shall form the basis of any facility that the Bank may decide to grant to me/us at its sole discretion.</li>
+      <li>I/we understand that the Bank will use the information furnished by me/us in accordance with the applicable laws of India and any other foreign laws to which I/we/the Bank may be subject to. The said information will be used solely for the purpose of processing, sanctioning, updating, maintaining, and operating my/our account/s or facility/ies availed by me/us and processing transactions initiated by me/us in such account/pursuant to such facility.</li>
+      <li>I/We agree and undertake to provide any further information that Bank may require. I/We agree and understand that Bank reserves the right to retain the application form, and the documents provided therewith and will not return the same to me/us.</li>
+      <li>I/We further agree that any facility that may be provided to me/us shall be governed by the rules of the Bank that may be in force from time to time. I/We will be bound by the terms and conditions of the credit facility/ies that may be granted to me/us. I/We authorize the Bank to debit my home loan account with the Bank for any fees, charges, interest etc. as may be applicable.</li>
+      <li>I/We undertake and declare that I/we will comply with the Foreign Exchange Management Act, 1999 ("FEMA") and the applicable rules, regulations, notifications, directions or orders made thereunder and any amendments thereof. I/We undertake to intimate the Bank before proceeding overseas on permanent employment and/or emigrating and/or changing my/our nationality.</li>
+      <li>I/We acknowledge that the Bank remains entitled to assign any activities to any third-party agency at its sole discretion. I/We hereby consent to, agree and authorize the Bank to disclose information and data relating to me/us and details of my/our account to third party agencies including Bank's group entities, without any specific consent or authorization from me/us, for the purpose of any services in connection with the facility/ies availed by me/us and I/we shall not hold the Bank liable for use of this information.</li>
+      <li>I/we hereby agree and give consent for the disclosure or obtention by the Bank of all or any such; (a) information and data (including personal data) relating to me/us (b) the information or data relating to any credit facility availed of/to be availed of by me/us and (c) default, if any, committed by me/us in discharge of my/our such obligation, as the Bank may deem appropriate and necessary, to Credit Information Companies, Information Utilities, and/or any other agency authorised in this behalf by Government of India/Reserve Bank of India/any other statutory or regulatory authority for purposes of credit decision, prevention of fraud and money laundering, reporting obligations or any other related and ancillary matters.</li>
+      <li>I/We agree to receive SMS alerts/Phone calls related to my/our application status and account activity as well as product use messages/calls that the Bank will send/make, from time to time, on the mobile/phone number/email as mentioned in this application form. I/We undertake to intimate the Bank in the event of any change in the mobile/phone number/email and residential address furnished by me/us.</li>
+      <li>I/We further acknowledge that I/we have read, understood and agree with the Most Important Terms and Conditions governing the home loan product chosen by me/us.</li>
+      <li>I/We authorize the Bank to share, disclose, exchange, receive or use in any manner whatsoever, without any further specific consent or authorisation from me/us, the information/data provided by/related to me/us to/from the Group Companies/Associates/Subsidiaries/Affiliates/Joint Ventures of State Bank of India/any person with whom the Bank has entered/propose to enter into contracts for provision of Life insurance product/services, property insurance product/services and mortgage guarantee product/services, as opted by me/us in the loan application form/product specific form.</li>
+      <li>I/we agree to execute the loan/security documents by way of digital document execution facility. <strong>Yes ✓</strong></li>
+    </ol>
+
+    <div class="hr-blue" style="margin-top:3mm"/>
+
+    <div style="font-size:8px;font-weight:700;color:var(--sbi-dark);margin:2mm 0;">By signing the below, I/we indicate my/our acceptance hereof:</div>
+
+    <div class="row" style="margin-top:2mm">
+      <div>
+        <div style="font-size:7px;font-weight:700;color:var(--muted);margin-bottom:1mm">Place<span class="req">*</span></div>
+        <div class="field filled w55">Rajahmundry, Andhra Pradesh</div>
+      </div>
+      <div style="margin-left:6mm">
+        <div style="font-size:7px;font-weight:700;color:var(--muted);margin-bottom:1mm">Date<span class="req">*</span></div>
+        <div class="field filled w50">27 / 04 / 2026</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:3mm">
+      <div class="sig-box" style="min-height:18mm"><div class="sig-caption">Signature of Applicant<br/><b>DASARI PRANEETH SANJAY</b><br/>(sign in the box)</div></div>
+      <div class="sig-box" style="min-height:18mm"><div class="sig-caption">Signature of Co-Applicant / Guarantor<br/>(sign in the box)</div></div>
+    </div>
+
+    <div class="hr-blue" style="margin-top:4mm"/>
+
+    <!-- ACKNOWLEDGEMENT RECEIPT -->
+    <div class="ack-strip">
+      <div class="ack-title">✂ &nbsp; ACKNOWLEDGEMENT RECEIPT &nbsp; ✂ &nbsp; (Please tear off this acknowledgement slip along these dotted lines) — Customer Copy</div>
+      <div style="display:flex;gap:4mm;flex-wrap:wrap;margin-top:2mm;">
+        <div class="col" style="flex:1"><div class="lbl">Loan Application Received On<span class="req">*</span></div><div class="field filled wfull">27 / 04 / 2026</div></div>
+        <div class="col" style="flex:1"><div class="lbl">Complete Document Set Received On</div><div class="field empty wfull">&nbsp;</div></div>
+      </div>
+      <div style="display:flex;gap:4mm;flex-wrap:wrap;margin-top:2mm;">
+        <div class="col" style="flex:1"><div class="lbl">Processing Fee Cheque No.</div><div class="field empty wfull">&nbsp;</div></div>
+        <div class="col" style="flex:1"><div class="lbl">Valuation Fee Cheque No.</div><div class="field empty wfull">&nbsp;</div></div>
+        <div class="col" style="flex:1"><div class="lbl">Legal Fee Cheque No.</div><div class="field empty wfull">&nbsp;</div></div>
+      </div>
+      <div style="display:flex;gap:4mm;flex-wrap:wrap;margin-top:2mm;">
+        <div class="col" style="flex:1"><div class="lbl">Processing Fee Amount (Rs.)</div><div class="field empty wfull">&nbsp;</div></div>
+        <div class="col" style="flex:1"><div class="lbl">Valuation Fee Amount (Rs.)</div><div class="field empty wfull">&nbsp;</div></div>
+        <div class="col" style="flex:1"><div class="lbl">Legal Fee Amount (Rs.)</div><div class="field empty wfull">&nbsp;</div></div>
+      </div>
+      <div style="display:flex;gap:4mm;flex-wrap:wrap;margin-top:2mm;">
+        <div class="col" style="flex:2"><div class="lbl">Cheques Drawn in Favour of</div><div class="field filled wfull">"State Bank of India"</div></div>
+        <div class="col" style="flex:1"><div class="lbl">Cheque Date</div><div class="field empty wfull">&nbsp;</div></div>
+        <div class="col" style="flex:1"><div class="lbl">Payable at</div><div class="field filled wfull">Rajahmundry</div></div>
+      </div>
+      <div style="margin-top:2.5mm;font-size:7px;color:var(--muted);line-height:1.6;">
+        Request will be disposed of and acceptance/rejection notification would be mailed within <b>15 days</b> from the date of receipt of completed application form with supporting documents.
+      </div>
+      <div style="display:flex;gap:4mm;flex-wrap:wrap;margin-top:3mm;align-items:flex-end;">
+        <div class="col" style="flex:1"><div class="lbl">Date and Place (On behalf of SBI)</div><div class="field empty wfull" style="min-height:10mm">&nbsp;</div></div>
+        <div class="col" style="flex:1;text-align:right"><div class="lbl" style="text-align:right">Authorised Signatory</div><div class="sig-box" style="min-height:12mm"><div class="sig-caption">Bank Official Signature &amp; Seal</div></div></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="pnum">Page 9 of 9 &nbsp;|&nbsp; SBI Home Loan Application – Consent-cum-Declaration</div>
+</div>
+
+</body>
+</html>

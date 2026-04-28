@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Car Loan Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .page {
+            width: 850px;
+            background: white;
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #0056a0;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #0056a0;
+            margin: 0 0 5px 0;
+            font-size: 1.8em;
+            text-transform: uppercase;
+        }
+        .header h3 {
+            margin: 0;
+            color: #555;
+        }
+        .section-title {
+            background-color: #0056a0;
+            color: white;
+            padding: 8px 15px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .grid-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .grid-form-full {
+            grid-column: span 2;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            color: #444;
+        }
+        .mandatory {
+            color: red;
+            font-weight: bold;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="date"], 
+        .form-group input[type="email"], 
+        .form-group select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .declaration-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            font-size: 0.85em;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+        .signature-area {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .signature-box {
+            border-top: 1px solid #333;
+            width: 200px;
+            text-align: center;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header">
+            <h1>SBI Car Loan</h1>
+            <h3>WALK IN. DRIVE OUT.</h3>
+            <p style="margin-top: 10px; font-weight: bold;">APPLICATION FORM</p>
+        </div>
+
+        <div class="section-title">FORM-A (PERSONAL DETAILS)</div>
+        
+        <div class="form-group grid-form-full" style="margin-bottom: 20px;">
+            <label>Applying As: <span class="mandatory">*</span></label>
+            <div class="checkbox-group">
+                <label><input type="radio" name="apply_as" checked> Applicant</label>
+                <label><input type="radio" name="apply_as"> Co-Applicant</label>
+                <label><input type="radio" name="apply_as"> Guarantor</label>
+            </div>
+        </div>
+
+        <div class="grid-form">
+            <div class="form-group">
+                <label>Salutation <span class="mandatory">*</span></label>
+                <select>
+                    <option selected>Mr.</option>
+                    <option>Mrs.</option>
+                    <option>Ms.</option>
+                    <option>Dr.</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Full Name <span class="mandatory">*</span></label>
+                <input type="text" value="DASARI PRANEETH SANJAY">
+            </div>
+
+            <div class="form-group">
+                <label>Gender <span class="mandatory">*</span></label>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="gender" checked> Male</label>
+                    <label><input type="radio" name="gender"> Female</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Date of Birth <span class="mandatory">*</span></label>
+                <input type="text" value="01/01/2000">
+            </div>
+
+            <div class="form-group">
+                <label>Marital Status <span class="mandatory">*</span></label>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="marital"> Married</label>
+                    <label><input type="radio" name="marital" checked> Unmarried</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Nationality <span class="mandatory">*</span></label>
+                <input type="text" value="INDIAN">
+            </div>
+
+            <div class="form-group">
+                <label>PAN No. / GIR No. <span class="mandatory">*</span></label>
+                <input type="text" value="ABCDE1234F">
+            </div>
+            <div class="form-group">
+                <label>Aadhaar Number (Photo ID)</label>
+                <input type="text" value="[Aadhaar Redacted]">
+            </div>
+
+            <div class="form-group grid-form-full">
+                <label>Present Residential Address <span class="mandatory">*</span></label>
+                <input type="text" value="123 MAIN STREET, RASAPUDIPALEM">
+            </div>
+
+            <div class="form-group">
+                <label>City <span class="mandatory">*</span></label>
+                <input type="text" value="RAJAHMUNDRY">
+            </div>
+            <div class="form-group">
+                <label>State <span class="mandatory">*</span></label>
+                <input type="text" value="ANDHRA PRADESH">
+            </div>
+
+            <div class="form-group">
+                <label>Pin Code <span class="mandatory">*</span></label>
+                <input type="text" value="533101">
+            </div>
+            <div class="form-group">
+                <label>Mobile (Primary) <span class="mandatory">*</span></label>
+                <input type="text" value="9876543210">
+            </div>
+
+            <div class="form-group grid-form-full">
+                <label>Email (Personal) <span class="mandatory">*</span></label>
+                <input type="email" value="praneeth.sanjay@example.com">
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="section-title">FORM-B (EMPLOYMENT & INCOME DETAILS)</div>
+
+        <div class="grid-form">
+            <div class="form-group grid-form-full">
+                <label>Nature of Occupation <span class="mandatory">*</span></label>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="occ"> Salaried</label>
+                    <label><input type="radio" name="occ"> Agriculturist</label>
+                    <label><input type="radio" name="occ"> Business / Self Employed</label>
+                    <label><input type="radio" name="occ" checked> Other (Student)</label>
+                </div>
+            </div>
+
+            <div class="form-group grid-form-full">
+                <label>Specific Occupation / Employer Name</label>
+                <input type="text" value="STUDENT">
+            </div>
+        </div>
+
+        <label style="font-weight: bold; margin-bottom: 10px; display: block;">Income / Financial Details <span class="mandatory">*</span></label>
+        <table>
+            <tr>
+                <th>Income Head</th>
+                <th>Gross Income</th>
+                <th>Net Income</th>
+                <th>Frequency</th>
+            </tr>
+            <tr>
+                <td>Annual Income</td>
+                <td><input type="text" value="2,00,000 INR" style="width: 90%; border: none; background: transparent;"></td>
+                <td><input type="text" style="width: 90%; border: none; background: transparent;"></td>
+                <td>Annual</td>
+            </tr>
+        </table>
+
+        <label style="font-weight: bold; margin-bottom: 10px; display: block;">Bank Accounts Held <span class="mandatory">*</span></label>
+        <table>
+            <tr>
+                <th>Bank Name</th>
+                <th>Branch</th>
+                <th>Account Type</th>
+                <th>Initial Deposit Balance</th>
+            </tr>
+            <tr>
+                <td>State Bank of India</td>
+                <td><input type="text" placeholder="Branch Name" style="width: 90%; border: none; background: transparent;"></td>
+                <td>Savings Account</td>
+                <td>5000 INR</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="section-title">FORM-C (VEHICLE & LOAN DETAILS)</div>
+
+        <div class="grid-form">
+            <div class="form-group grid-form-full">
+                <label>Scheme Name <span class="mandatory">*</span></label>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="scheme" checked> SBI Car Loan</label>
+                    <label><input type="radio" name="scheme"> Certified Pre-Owned Car Loan</label>
+                    <label><input type="radio" name="scheme"> Other Scheme</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Vehicle Manufacturer <span class="mandatory">*</span></label>
+                <input type="text" placeholder="e.g. Maruti Suzuki, Hyundai">
+            </div>
+            <div class="form-group">
+                <label>Vehicle Model <span class="mandatory">*</span></label>
+                <input type="text" placeholder="e.g. Swift, Creta">
+            </div>
+
+            <div class="form-group">
+                <label>Cost of Vehicle (Project Cost) <span class="mandatory">*</span></label>
+                <input type="text" placeholder="₹">
+            </div>
+            <div class="form-group">
+                <label>Requested Loan Amount <span class="mandatory">*</span></label>
+                <input type="text" placeholder="₹">
+            </div>
+
+            <div class="form-group grid-form-full">
+                <label>Life Insurance Cover (Optional)</label>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="insurance"> Yes, I wish to be covered by SBI Life</label>
+                    <label><input type="radio" name="insurance" checked> No</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="section-title">FORM-D (DECLARATION)</div>
+
+        <div class="declaration-box">
+            I/We certify that the information provided by me/us in this application form is true and correct in all respects and State Bank of India is entitled to verify this directly or through any third party agent. I/We understand that all of the above-mentioned information shall form the basis of any facility that the Bank may decide to grant to me/us at its sole discretion.<br><br>
+            I/We further agree that any facility that may be provided to me/us shall be governed by the rules of the Bank that may be in force from time to time. I/We authorise the Bank to debit my Car loan account with the Bank for any fees, charges, interest etc. as may be applicable.<br><br>
+            I/We acknowledge that the existence of this account and details thereof will be recorded with credit reference agencies (like CIBIL) and such information may be shared with banks/financial institutions and other credit grantors for the purposes of assessing further applications for credit.
+        </div>
+
+        <div class="grid-form">
+            <div class="form-group">
+                <label>Place <span class="mandatory">*</span></label>
+                <input type="text" value="RAJAHMUNDRY">
+            </div>
+            <div class="form-group">
+                <label>Date <span class="mandatory">*</span></label>
+                <input type="date">
+            </div>
+        </div>
+
+        <div class="signature-area">
+            <div class="signature-box">
+                Signature of Applicant
+            </div>
+            <div class="signature-box">
+                Signature of Co-Applicant
+            </div>
+            <div class="signature-box">
+                Signature of Guarantor
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Savings Bank Withdrawal Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .page {
+            width: 800px;
+            background-color: #fff;
+            padding: 30px;
+            border: 2px solid #000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .mandatory {
+            color: red;
+            font-weight: bold;
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .account-name {
+            width: 60%;
+        }
+        .date-section {
+            width: 30%;
+            text-align: right;
+        }
+        .input-line {
+            border: none;
+            border-bottom: 1px dashed #000;
+            font-family: monospace;
+            font-size: 14px;
+            width: 100%;
+            padding: 2px;
+            background: transparent;
+        }
+        .date-boxes {
+            display: inline-block;
+            border: 1px solid #000;
+            padding: 2px 10px;
+            letter-spacing: 5px;
+            font-family: monospace;
+        }
+        .center-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .center-title h1, .center-title h2 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .warning-box {
+            border: 1px solid #000;
+            padding: 10px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            display: flex;
+        }
+        .warning-text {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .account-number-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .account-boxes {
+            display: flex;
+            margin-left: 10px;
+        }
+        .account-boxes div {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #000;
+            margin-right: 2px;
+        }
+        .payment-section {
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+        .amount-box-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .amount-box {
+            border: 2px solid #000;
+            padding: 5px 20px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-left: 10px;
+            min-width: 150px;
+        }
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 50px;
+        }
+        .footer-col {
+            text-align: center;
+            font-size: 14px;
+        }
+        .signature-line {
+            border-bottom: 1px solid #000;
+            width: 200px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .hindi-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .sub-text {
+            font-size: 12px;
+        }
+        .bottom-tag {
+            text-align: left;
+            font-size: 10px;
+            margin-top: 20px;
+        }
+        
+        @media print {
+            body { background-color: #fff; padding: 0; }
+            .page { box-shadow: none; border: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="header-row">
+        <div class="account-name">
+            <span class="hindi-text">खाताधारक का (के) नाम</span> / <span class="sub-text">Name of the Account Holder(s)</span> <span class="mandatory">*</span>
+            <input type="text" class="input-line" value="Dasari Praneeth Sanjay">
+        </div>
+        <div class="date-section">
+            <span class="hindi-text">दिनांक</span><br>
+            <span class="sub-text">Date</span> <span class="mandatory">*</span>
+            <div class="date-boxes">27/04/2026</div>
+        </div>
+    </div>
+
+    <div class="center-title">
+        <h1>भारतीय स्टेट बैंक</h1>
+        <h2>State Bank of India</h2>
+        <h2 style="margin-top: 15px;">बचत खाता निकासी फार्म</h2>
+        <h2>SAVINGS BANK WITHDRAWAL FORM</h2>
+    </div>
+
+    <div class="warning-box">
+        <div>
+            <span class="hindi-text">सावधानी :</span><br>
+            <span class="sub-text" style="font-weight: bold;">NOTE :</span>
+        </div>
+        <div class="warning-text">
+            यह बचत बैंक निकासी आदेश फार्म चैक नहीं है। इस फार्म के साथ पास-बुक रहना अनिवार्य है, अन्यथा भुगतान प्राप्त नहीं होगा ।<br>
+            This form is not a Cheque, Payment will be refused if the pass book is not produced with this form.
+        </div>
+    </div>
+
+    <div class="account-number-row">
+        <div>
+            <span class="hindi-text">खाता संख्या</span> <span class="mandatory">*</span><br>
+            <span class="sub-text">ACCOUNT NUMBER</span>
+        </div>
+        <div class="account-boxes">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+
+    <div class="payment-section">
+        <span class="hindi-text">कृपया केवल मुझे/हमें अदा करें</span> / <span class="sub-text">Please pay self/our selves only</span> <span class="mandatory">*</span><br>
+        <div style="display: flex; align-items: baseline;">
+            <span class="hindi-text" style="margin-right: 10px;">रूपये/Rupees</span> 
+            <input type="text" class="input-line" value="Five Thousand Only">
+        </div>
+        
+        <span class="hindi-text">तथा राशि को मेरे / हमारे बचत बैंक खाता नं...</span><br>
+        <span class="sub-text">AND DEBIT THE AMOUNT TO MY/OUR ABOVE SAVING BANK ACCOUNT NO.......</span>
+        <input type="text" class="input-line" value="[Same as Above]" style="width: 200px;">
+        <span class="hindi-text">. में डालिए।</span>
+    </div>
+
+    <div class="amount-box-container">
+        <span class="hindi-text">रु/Rs......</span> <span class="mandatory">*</span>
+        <div class="amount-box">5000 /-</div>
+    </div>
+
+    <div class="footer-row">
+        <div class="footer-col" style="text-align: left;">
+            <span class="hindi-text">सारणी</span>/<span class="sub-text">Scroll No.</span><br><br>
+            <span class="hindi-text">विभाजन सं०</span>/<span class="sub-text">Partition No.</span>
+        </div>
+        
+        <div class="footer-col">
+            <span class="hindi-text">नकद भुगतान</span> / <span class="sub-text">PAY CASH</span><br><br><br>
+            <span class="signature-line"></span><br>
+            <span class="hindi-text">पासकर्त्ता अधिकारी</span>/<span class="sub-text">PASSING OFFICER</span>
+        </div>
+        
+        <div class="footer-col">
+            <span class="signature-line"></span> <span class="mandatory">*</span><br>
+            <span class="hindi-text">खाताधारक का (के) हस्ताक्षर</span><br>
+            <span class="sub-text">Signature(s) of the Account Holder(s)</span>
+        </div>
+    </div>
+
+    <div class="bottom-tag">
+        maxutils.com/fan/ <br>
+        कृपया राष्ट्र भाषा का प्रयोग करें ।
+    </div>
+
+</div>
+
+</body>
+</html>

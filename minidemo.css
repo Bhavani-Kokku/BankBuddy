@@ -1,0 +1,81 @@
+/* BODY */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* HEADER (DATE & TIME) */
+header {
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* MAIN CONTAINER (CENTERS EVERYTHING) */
+main {
+    max-width: 1100px;
+}
+
+/* TOP BLUE BOX */
+.top {
+    background-color: navy;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 90%;
+    font-size: 28px;
+}
+
+/* MARQUEE TEXT */
+marquee {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* GRID LAYOUT */
+.forms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+/* EACH SERVICE BOX */
+.form {
+    width: 100%;
+    background-color: #e6e6e6;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* HOVER EFFECT */
+.form:hover {
+    background-color: #d0e8ff;
+    transform: scale(1.05);
+}
+
+/* LINKS INSIDE BOX */
+.form a {
+    text-decoration: none;
+    color: purple;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background-color: #5bb6d6;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+}

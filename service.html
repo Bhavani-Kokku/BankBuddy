@@ -16,6 +16,11 @@
     <h3>Required Documents<br>(Please confirm you have all the documents with you)</h3>
     <div id="docs"></div>
 
+    <div class="form-buttons">
+  <button onclick="openOriginal()">📄 View Original Form</button>
+  <button onclick="openSample()">🧾 View Filled Sample</button>
+  </div>
+
     <!-- ✅ ALWAYS CLICKABLE -->
     <button onclick="generateToken()">Generate Token</button>
 
@@ -50,14 +55,13 @@
 
       "Account Opening": ["ID Proof", "Address Proof", "PAN Card / Form 60", "Passport Photos"],
       "Joint Account Opening": ["ID Proof (all holders)", "Address Proof", "PAN Card", "Photos"],
-      "NRI Account Opening": ["Passport", "Visa", "Address Proof", "PAN"],
 
       "Deposit Money": ["Deposit Slip", "Account Number", "Cash / Cheque"],
       "Withdraw Money": ["Withdrawal Slip", "Passbook", "ID Proof"],
 
       "ATM / Debit Card Application": ["Account Details", "ID Proof", "Photo"],
       "Internet Banking Registration": ["Account Number", "Mobile Number", "ID Proof"],
-      "Cheque Book Request": ["Account Number", "ID Proof"],
+      "Claim Assets": ["Death certificate", "ID Proof of nominee","Account details"],
 
       "Aadhaar Seeding": ["Aadhaar Card", "Account Details"],
       "KYC Update": ["ID Proof", "Address Proof", "PAN Card"],
@@ -82,19 +86,155 @@
         "Address Proof", "Passport Photos"
       ],
 
-      "Settlement of Deceased Account": [
-        "Death Certificate", "ID Proof of Nominee", "Account Details",
-        "Legal Heir Certificate / Will"
-      ],
-
-      "Account Closure": [
-        "Closure Form", "ID Proof", "Passbook / Debit Card"
-      ],
-
-      "Debit Card Block / Unblock": [
-        "Account Details", "ID Proof", "Request Form"
-      ]
+      
     };
+  
+
+  window.openOriginal = function () {
+  const service = localStorage.getItem("service");
+  
+  if (service === "Account Opening") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/accountOpening.pdf";
+  }
+  if (service === "Joint Account Opening") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/joint Bsection MOO.pdf";
+  }
+  if (service === "Deposit Money") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/deposit form.pdf";
+  }
+  if (service === "Withdraw Money") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/withdrawl form.pdf";
+  }
+  if (service === "ATM / Debit Card Application") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/Atm.pdf";
+  }
+  if (service === "Internet Banking Registration") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/IBRegForm.pdf";
+  }
+  if (service === "Claim Assets") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/Claim_assets.pdf";
+  }
+  if (service === "Aadhaar Seeding") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/Aadhaar-seeding-.pdf";
+  }
+  if (service === "KYC Update") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/KYC updation.pdf";
+  }
+  if (service === "Mobile / Email Update") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/MobileNum.pdf";
+  }
+  if (service === "Fixed Deposit (FD)") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/FD Gsection.pdf";
+  }
+  if (service === "Recurring Deposit (RD)") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/Recurring Deposit sectionD3.pdf";
+  }
+  if (service === "Car Loan") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/CarLoan.pdf";
+  }
+  if (service === "Home Loan") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/Home-Loan-Application-Form.pdf";
+  }
+  if (service === "Public Provident Fund (PPF)") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/Link_PPF_LoanAC.pdf";
+  }
+  if (service === "Senior Citizen Savings Scheme (SCSS)") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/New_forms_of_SCSS_v1.pdf";
+  }
+  if (service === "Sukanya Samriddhi Account") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="forms/New_forms_of_SSA_v1.pdf";
+  }
+}
+
+window.openSample = function () {
+  const service = localStorage.getItem("service");
+
+  if (service === "Account Opening") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/accountOpeningTutorial.html";
+  }
+  if (service === "Joint Account Opening") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/JointAccTutorial.html";
+  }
+  if (service === "Deposit Money") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/depositformTutorial.html";
+  }
+  if (service === "Withdraw Money") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/withdrawlTutorial.html";
+  }
+  if (service === "ATM / Debit Card Application") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/atmTutorial.html";
+  }
+  if (service === "Internet Banking Registration") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/internetBankingTutorial.html";
+  }
+  if (service === "Claim Assets") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/ClaimassetsTutorial.html";
+  }
+  if (service === "Aadhaar Seeding") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/seeding.html";
+  }
+  if (service === "KYC Update") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/KYCTutorial.html";
+  }
+  if (service === "Mobile / Email Update") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/MobileNumTutorial.html";
+  }
+  if (service === "Fixed Deposit (FD)") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/FDTutorial.html";
+  }
+  if (service === "Recurring Deposit (RD)") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/RDTutorial.html";
+  }
+  if (service === "Car Loan") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/CarLoanTutorial.html";
+  }
+  if (service === "Home Loan") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/HomeLoanTutorial.html";
+  }
+  if (service === "Public Provident Fund (PPF)") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/PPFTutorial.html";
+  }
+  if (service === "Senior Citizen Savings Scheme (SCSS)") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/SCSSTutorial.html";
+  }
+  if (service === "Sukanya Samriddhi Account") {
+    localStorage.setItem("cameFromForm", "true");
+    window.location.href="tutorials/SSATutorial.html";
+  }
+}
     const defaultServiceTime = {
       "Account Opening": 8,
       "Joint Account Opening": 10,
@@ -103,7 +243,7 @@
       "Withdraw Money": 4,
       "ATM / Debit Card Application": 5,
       "Internet Banking Registration": 6,
-      "Cheque Book Request": 4,
+      "Claim Assets": 4,
       "Aadhaar Seeding": 5,
       "KYC Update": 6,
       "Mobile / Email Update": 3,
@@ -153,7 +293,7 @@
       if (
         service.includes("ATM") ||
         service.includes("Card") ||
-        service.includes("Cheque") ||
+        service.includes("Claim") ||
         service.includes("Internet")
       ) return 3;
 
@@ -266,13 +406,41 @@
       const waitingTime = await calculateWaitingTime(counter, newToken);
       const avgTime = await getAvgServiceTime(service);
 
-      document.getElementById("message").innerHTML = `
+  const resultHTML = `
   ✅ Token: ${newToken} <br>
   👉 Go to Counter ${counter} <br>
   ⏳ Estimated Waiting Time: ${waitingTime} minutes <br>
   ⏱️ Average Service Time (${service}): ${avgTime} minutes
 `;
+
+document.getElementById("message").innerHTML = resultHTML;
+
+// 🔥 SAVE
+localStorage.setItem("tokenData", resultHTML);
+localStorage.setItem("tokenService", service); // 🔥 IMPORTANT
+
     };
+
+window.onload = function () {
+
+  const cameFromForm = localStorage.getItem("cameFromForm");
+
+  if (cameFromForm === "true") {
+    const saved = localStorage.getItem("tokenData");
+    const currentService = localStorage.getItem("service");
+    const savedService = localStorage.getItem("tokenService");
+
+    if (saved && savedService === currentService) {
+      document.getElementById("message").innerHTML = saved;
+    }
+
+    localStorage.removeItem("cameFromForm"); // 🔥 reset
+  } else {
+    // ❌ user came fresh → clear old token
+    localStorage.removeItem("tokenData");
+    localStorage.removeItem("tokenService");
+  }
+};
 
   </script>
 

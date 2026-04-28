@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Mobile Banking Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #525659;
+            margin: 0;
+            padding: 20px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 15mm 20mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+        .mandatory {
+            color: red;
+            font-weight: bold;
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        .branch-info {
+            width: 40%;
+        }
+        .title-box {
+            width: 55%;
+            text-align: center;
+        }
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+        }
+        .field-group {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 12px;
+        }
+        .label {
+            font-weight: bold;
+            margin-right: 10px;
+            white-space: nowrap;
+        }
+        .input-line {
+            border-bottom: 1px solid #000;
+            flex-grow: 1;
+            padding: 0 5px 2px 5px;
+            color: #000080;
+            font-family: monospace;
+            font-size: 14px;
+            min-height: 18px;
+        }
+        .name-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .name-box {
+            width: 32%;
+            text-align: center;
+        }
+        .name-box .input-line {
+            width: 100%;
+            display: inline-block;
+            text-align: left;
+        }
+        .name-subtext {
+            font-size: 10px;
+            margin-top: 3px;
+        }
+        .dob-group {
+            display: flex;
+            gap: 15px;
+            align-items: flex-end;
+        }
+        .dob-box {
+            text-align: center;
+        }
+        .dob-box .input-line {
+            width: 30px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f9f9f9;
+        }
+        .terms {
+            text-align: justify;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            align-items: flex-end;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 250px;
+            text-align: center;
+            padding-top: 5px;
+            font-weight: bold;
+        }
+        .note {
+            font-size: 10px;
+            margin-top: 10px;
+            font-style: italic;
+            text-align: justify;
+        }
+        .office-use {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        .office-title {
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 15px;
+        }
+        
+        @media print {
+            body { background: none; padding: 0; }
+            .page { margin: 0; box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header-row">
+            <div class="branch-info">
+                To<br>
+                The Branch Manager <span class="mandatory">*</span><br>
+                State Bank of India<br>
+                <div class="input-line" style="margin-top: 5px; width: 80%;">Rajahmundry</div>
+            </div>
+            <div class="title-box">
+                <div class="title">STATE BANK OF INDIA<br>Mobile Banking Service<br>Registration Form</div>
+                <div class="meta-info">
+                    <div style="display:flex; width: 45%;">Date: <span class="input-line" style="text-align: center;">27/04/2026</span></div>
+                    <div style="display:flex; width: 45%;">Sl. No.: <span class="input-line"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-bottom: 20px;">
+            I wish to register/ deregister for Mobile Banking Services of SBI offered under "State Bank FreedoM".<br>
+            I submit the information required for the purpose as under:
+        </p>
+
+        <div style="font-weight: bold; margin-bottom: 5px;">Name of Customer <span class="mandatory">*</span> <span style="font-size: 10px; font-weight: normal;">(Maximum 20 Characters and leave a box blank after each name)</span></div>
+        <div class="name-row">
+            <div class="name-box">
+                <div class="input-line">Dasari</div>
+                <div class="name-subtext">(Surname)</div>
+            </div>
+            <div class="name-box">
+                <div class="input-line">Praneeth</div>
+                <div class="name-subtext">(First Name)</div>
+            </div>
+            <div class="name-box">
+                <div class="input-line">Sanjay</div>
+                <div class="name-subtext">(Middle Name)</div>
+            </div>
+        </div>
+
+        <div class="field-group">
+            <div class="label" style="width: 15%;">Email id:</div>
+            <div class="input-line" style="width: 35%;">praneeth.sanjay@example.com</div>
+            
+            <div class="label" style="width: 15%; padding-left: 20px;">Date of Birth <span class="mandatory">*</span>:</div>
+            <div class="dob-group">
+                <div class="dob-box"><div class="input-line">01</div><div class="name-subtext">DD</div></div>
+                <div class="dob-box"><div class="input-line">01</div><div class="name-subtext">MM</div></div>
+                <div class="dob-box"><div class="input-line">00</div><div class="name-subtext">YY</div></div>
+            </div>
+        </div>
+
+        <div class="field-group">
+            <div class="label" style="width: 15%;">User ID:</div>
+            <div class="input-line" style="width: 85%;"></div>
+        </div>
+
+        <div class="field-group">
+            <div class="label" style="width: 30%;">My Mobile Number <span class="mandatory">*</span>:</div>
+            <div class="input-line" style="width: 70%;">9876543210</div>
+        </div>
+
+        <div class="field-group">
+            <div class="label" style="width: 30%;">Primary Account number <span class="mandatory">*</span>:</div>
+            <div class="input-line" style="width: 70%;"></div>
+        </div>
+
+        <div class="field-group">
+            <div class="label" style="width: 30%;">Single/Joint# Accounts <span class="mandatory">*</span>:</div>
+            <div class="input-line" style="width: 70%;">Single</div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 45%;">Other Account Numbers</th>
+                    <th style="width: 35%;">Single/Joint # Accounts</th>
+                    <th style="width: 20%;">Add/ Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="height: 25px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 25px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="terms">
+            I have read the terms and conditions prescribed by the Bank for offering Mobile Banking Services to its customers and unconditionally accept them. I am also aware that Bank is entitled to modify the terms and conditions without any notice and posting them on the Bank's website would constitute appropriate notice. I agree that the transactions executed while using Mobile Banking Services under my User ID and MPIN will be binding on me/ all the joint account holders.
+        </p>
+
+        <div class="signature-row">
+            <div style="display:flex; align-items: flex-end; width: 40%;">
+                <span class="label">Date <span class="mandatory">*</span>:</span> 
+                <span class="input-line">27/04/2026</span>
+            </div>
+            <div>
+                <div style="font-family: monospace; color: #000080; text-align: center; margin-bottom: 10px;">Dasari Praneeth Sanjay</div>
+                <div class="signature-line">Signature of the account holder(s) <span class="mandatory">*</span></div>
+            </div>
+        </div>
+
+        <p class="note">
+            (Please choose the option) (# Rights on the "State Bank FreedoM" Service will be same as that in your account at the Branch. Accounts which are operated by all or some of the account holders jointly will not be enabled for mobile banking services.)
+        </p>
+
+        <div class="office-use">
+            <div class="office-title">FOR OFFICE USE ONLY</div>
+            
+            <p>Verified the details of the account holder from the record and found correct. The applicant is permitted to subscribe to Mobile Banking Service offered by the Bank.</p>
+            <div class="signature-row" style="margin-top: 30px; margin-bottom: 20px;">
+                <div style="display:flex; width: 40%;"><span class="label">Date:</span> <span class="input-line"></span></div>
+                <div style="width: 40%; text-align: center;"><div style="border-top: 1px solid #000; padding-top: 5px;">Authorised Official</div></div>
+            </div>
+
+            <p style="margin-top: 30px;">Above details uploaded for enabling the account(s) for Mobile Banking Service requested by the customer.</p>
+            <div class="signature-row" style="margin-top: 40px;">
+                <div style="display:flex; width: 30%;"><span class="label">Date:</span> <span class="input-line"></span></div>
+                <div style="width: 30%; text-align: center;"><div style="border-top: 1px solid #000; padding-top: 5px;">Entry made by</div></div>
+                <div style="width: 30%; text-align: center;"><div style="border-top: 1px solid #000; padding-top: 5px;">Authorised Official</div></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

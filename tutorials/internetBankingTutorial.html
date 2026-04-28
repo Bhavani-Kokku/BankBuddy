@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online SBI Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #525659;
+            margin: 0;
+            padding: 20px;
+            font-size: 14px;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            position: relative;
+        }
+        .to-section {
+            text-align: left;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .header-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-title {
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+        .text-block {
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .mandatory {
+            color: red;
+            font-weight: bold;
+        }
+        .form-row {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-end;
+        }
+        .label {
+            font-weight: bold;
+            margin-right: 10px;
+            white-space: nowrap;
+        }
+        .value-line {
+            border-bottom: 1px solid #000;
+            flex-grow: 1;
+            padding-bottom: 2px;
+            font-family: monospace;
+            font-size: 16px;
+            color: #000080; /* Dark blue to mimic ink */
+        }
+        .dob-container {
+            display: flex;
+            gap: 15px;
+            align-items: flex-end;
+        }
+        .dob-box {
+            text-align: center;
+        }
+        .dob-box .value-line {
+            width: 40px;
+            display: inline-block;
+        }
+        .dob-label {
+            font-size: 10px;
+            margin-top: 2px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+        .notes {
+            font-size: 12px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            align-items: flex-end;
+        }
+        .signature-box {
+            text-align: center;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 200px;
+            padding-top: 5px;
+            font-weight: bold;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page { margin: 0; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="to-section">
+            To<br>
+            The Branch Manager<br>
+            State Bank of India<br>
+            <div class="value-line" style="width: 250px; display: inline-block; margin-top: 5px;"></div>
+        </div>
+
+        <div class="header-container">
+            <div class="form-title">ONLINE SBI REGISTRATION FORM</div>
+        </div>
+
+        <div class="text-block">
+            I wish to register as a user of 'OnlineSBI', SBI's Internet Banking Service.
+        </div>
+
+        <div class="form-row">
+            <div class="label">
+                Name of Customer <span class="mandatory">*</span><br>
+                <span style="font-size: 10px; font-weight: normal;">(25 Characters)</span>
+            </div>
+            <div class="value-line" style="margin-left: 10px;">Dasari Praneeth Sanjay</div>
+        </div>
+
+        <div class="form-row">
+            <div class="label">Mobile Number <span class="mandatory">*</span> : +91</div>
+            <div class="value-line">9876543210</div>
+        </div>
+
+        <div class="form-row">
+            <div class="label">E-Mail <span class="mandatory">*</span> :</div>
+            <div class="value-line">praneeth.sanjay@example.com</div>
+        </div>
+
+        <div class="form-row">
+            <div class="label" style="margin-right: 20px;">Date of Birth <span class="mandatory">*</span> :</div>
+            <div class="dob-container">
+                <div class="dob-box">
+                    <div class="value-line">01</div>
+                    <div class="dob-label">DD</div>
+                </div>
+                <span style="margin-bottom: 12px;">/</span>
+                <div class="dob-box">
+                    <div class="value-line">01</div>
+                    <div class="dob-label">MM</div>
+                </div>
+                <span style="margin-bottom: 12px;">/</span>
+                <div class="dob-box">
+                    <div class="value-line">00</div>
+                    <div class="dob-label">YY</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>My Account Numbers <span class="mandatory">*</span></th>
+                    <th>Single/ Joint*<br>Accounts</th>
+                    <th>(Branch Use)<br>Transaction<br>Rights (Y/N)</th>
+                    <th>(Branch Use)<br>** Limited<br>Transaction<br>Rights (Y/N)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="height: 35px; font-family: monospace; color: #000080; text-align: left;"></td>
+                    <td style="font-family: monospace; color: #000080;">Single</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr><td style="height: 35px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 35px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 35px;"></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="notes">
+            * Rights on the OnLineSBI Service will be same as that in your account at the branch.<br>
+            ** Transaction rights to transfer funds within own CIF, e-TDR/e-STDR and new a/c opening request through branch intervention
+        </div>
+
+        <div class="text-block" style="text-align: justify;">
+            I have read the provisions contained in the "Terms of Service (Terms & Conditions) document" of "OnlineSBI" and accept them. I agree that the transactions executed over OnlineSBI under my Username and Password will be binding on me.
+        </div>
+
+        <div class="signature-section">
+            <div>
+                <div class="label" style="margin-bottom: 10px;">Date: <span class="value-line" style="display:inline-block; width: 120px; text-align: center;">27/04/2026</span></div>
+            </div>
+            <div class="signature-box">
+                <br><br><br>
+                <div class="signature-line">Customer's Signature <span class="mandatory">*</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

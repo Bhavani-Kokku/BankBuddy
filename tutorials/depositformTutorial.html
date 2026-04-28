@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS Pay-In-Slip Form-D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            background-color: white;
+            width: 1000px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .counterfoil {
+            flex: 1;
+            padding: 30px;
+            box-sizing: border-box;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .divider {
+            width: 0;
+            border-left: 2px dashed #999;
+            margin: 20px 0;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h3, .header h4, .header h5 {
+            margin: 5px 0;
+            color: #333;
+        }
+        .badge {
+            display: inline-block;
+            border: 1px solid #333;
+            padding: 3px 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            font-weight: bold;
+            min-width: 150px;
+        }
+        .form-group input, .form-group textarea {
+            flex-grow: 1;
+            padding: 5px;
+            border: none;
+            border-bottom: 1px solid #000;
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            text-transform: uppercase;
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        .mandatory {
+            color: red;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .signature-area {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            align-items: flex-end;
+        }
+        .signature-box {
+            text-align: center;
+            border-top: 1px solid #000;
+            width: 150px;
+            padding-top: 5px;
+        }
+        .notes-section {
+            margin-top: 20px;
+            font-size: 11px;
+            color: #555;
+            text-align: justify;
+        }
+        .rupees-words {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .rupees-words input {
+            flex-grow: 1;
+            border: none;
+            border-bottom: 1px solid #000;
+            margin-left: 5px;
+            margin-right: 5px;
+            outline: none;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="counterfoil">
+            <div class="header">
+                <h4>FORM-D</h4>
+                <p style="margin: 0; font-size: 11px;">(See sub-rule (1) of rule 3 and rule 10)</p>
+                <h4>PAY-IN - SLIP FOR DEPOSITS</h4>
+                <h5>UNDER SENIOR CITIZENS SAVINGS SCHEME, 2004</h5>
+                <div class="badge">COUNTERFOIL - 1<br>DEPOSITOR'S COPY</div>
+            </div>
+
+            <div class="form-group">
+                <label>SBI BRANCH NAME <span class="mandatory">*</span></label>
+                <input type="text" placeholder="Branch Name">
+            </div>
+            <div class="form-group">
+                <label>NAME & ADDRESS <br>OF DEPOSITOR <span class="mandatory">*</span></label>
+                <textarea rows="2">DASARI PRANEETH SANJAY&#10;123 MAIN ST, RASAPUDIPALEM, RAJAHMUNDRY, AP - 533101</textarea>
+            </div>
+            <div class="form-group">
+                <label>FATHER/HUSBAND NAME</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>SCSS A/C NO <span class="mandatory">*</span></label>
+                <input type="text">
+            </div>
+
+            <table>
+                <tr>
+                    <td>AMOUNT OF DEPOSIT <span class="mandatory">*</span></td>
+                    <td style="width: 30%;">₹ <input type="text" value="5000" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <td>CHEQUE / DD REALISATION CHARGE</td>
+                    <td>₹ <input type="text" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <td>ACCOUNT TRANSFER FEES</td>
+                    <td>₹ <input type="text" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <td>DUPLICATE PASSBOOK FEES</td>
+                    <td>₹ <input type="text" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <td>OTHER CHARGES IF ANY</td>
+                    <td>₹ <input type="text" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <th>TOTAL AMOUNT <span class="mandatory">*</span></th>
+                    <th>₹ <input type="text" value="5000" style="border:none; width: 80%; outline:none; background:transparent; font-weight:bold;"></th>
+                </tr>
+            </table>
+
+            <div class="rupees-words">
+                (Rupees <input type="text" value="FIVE THOUSAND ONLY"> )
+            </div>
+
+            <table>
+                <tr>
+                    <th colspan="2">DETAILS OF CASH DEPOSIT</th>
+                    <th>AMOUNT</th>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="text-right">Total By Cash</th>
+                    <th>₹</th>
+                </tr>
+            </table>
+
+            <div class="form-group">
+                <label style="min-width: 180px;">Cheque / DD No & Date</label>
+                <input type="text"> & <input type="date" style="width: 110px;">
+            </div>
+            <div class="form-group">
+                <label style="min-width: 180px;">Bank / Branch on Which Drawn</label>
+                <input type="text">
+            </div>
+
+            <div class="signature-area">
+                <div class="signature-box">Depositor's Signature</div>
+                <div style="font-weight: bold;">For the Use of Branch</div>
+            </div>
+
+            <p style="margin-top: 15px; text-align: justify; font-size: 12px;">
+                Received ₹ <input type="text" style="border:none; border-bottom:1px solid #000; width:60px;" value="5000"> (Rupees <input type="text" style="border:none; border-bottom:1px solid #000; width:150px;" value="FIVE THOUSAND"> Only) as detailed herein above. For deposit in SCSS A/c No <input type="text" style="border:none; border-bottom:1px solid #000; width:100px;">
+            </p>
+
+            <div class="signature-area" style="margin-top: 40px;">
+                <div class="signature-box">Teller/Cashier</div>
+                <div class="signature-box">Service Manager</div>
+            </div>
+
+            <div class="notes-section">
+                <strong>NOTE:</strong><br>
+                1. The cheque/demand draft should be in favour of the "YOURSELF FOR SCSS DEPOSIT" or in favour of the "Depositor SCSS A/c" endorsed in favour of the SBI.<br>
+                2. Cheques / Demand Drafts are subject to realisation of the proceeds.
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="counterfoil">
+            <div class="header">
+                <h4>FORM-D</h4>
+                <p style="margin: 0; font-size: 11px;">(See sub-rule (1) of rule 3 and rule 10)</p>
+                <h4>PAY-IN - SLIP FOR DEPOSITS</h4>
+                <h5>UNDER SENIOR CITIZENS SAVINGS SCHEME, 2004</h5>
+                <div class="badge">COUNTERFOIL - 2<br>BANK'S COPY</div>
+            </div>
+
+            <div class="form-group">
+                <label>SBI BRANCH NAME <span class="mandatory">*</span></label>
+                <input type="text" placeholder="Branch Name">
+            </div>
+            <div class="form-group">
+                <label>NAME & ADDRESS <br>OF DEPOSITOR <span class="mandatory">*</span></label>
+                <textarea rows="2">DASARI PRANEETH SANJAY&#10;123 MAIN ST, RASAPUDIPALEM, RAJAHMUNDRY, AP - 533101</textarea>
+            </div>
+            <div class="form-group">
+                <label>FATHER/HUSBAND NAME</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>SCSS A/C NO <span class="mandatory">*</span></label>
+                <input type="text">
+            </div>
+
+            <table>
+                <tr>
+                    <td>AMOUNT OF DEPOSIT <span class="mandatory">*</span></td>
+                    <td style="width: 30%;">₹ <input type="text" value="5000" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <td>CHEQUE / DD REALISATION CHARGE</td>
+                    <td>₹ <input type="text" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <td>ACCOUNT TRANSFER FEES</td>
+                    <td>₹ <input type="text" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <td>DUPLICATE PASSBOOK FEES</td>
+                    <td>₹ <input type="text" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <td>OTHER CHARGES IF ANY</td>
+                    <td>₹ <input type="text" style="border:none; width: 80%; outline:none;"></td>
+                </tr>
+                <tr>
+                    <th>TOTAL AMOUNT <span class="mandatory">*</span></th>
+                    <th>₹ <input type="text" value="5000" style="border:none; width: 80%; outline:none; background:transparent; font-weight:bold;"></th>
+                </tr>
+            </table>
+
+            <div class="rupees-words">
+                (Rupees <input type="text" value="FIVE THOUSAND ONLY"> )
+            </div>
+
+            <table>
+                <tr>
+                    <th colspan="2">DETAILS OF CASH DEPOSIT</th>
+                    <th>AMOUNT</th>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="text-right">Total By Cash</th>
+                    <th>₹</th>
+                </tr>
+            </table>
+
+            <div class="form-group">
+                <label style="min-width: 180px;">Cheque / DD No & Date</label>
+                <input type="text"> & <input type="date" style="width: 110px;">
+            </div>
+            <div class="form-group">
+                <label style="min-width: 180px;">Bank / Branch on Which Drawn</label>
+                <input type="text">
+            </div>
+
+            <div class="signature-area">
+                <div class="signature-box">Depositor's Signature</div>
+                <div style="font-weight: bold;">For the Use of Branch</div>
+            </div>
+
+            <p style="margin-top: 15px; text-align: justify; font-size: 12px;">
+                Received ₹ <input type="text" style="border:none; border-bottom:1px solid #000; width:60px;" value="5000"> (Rupees <input type="text" style="border:none; border-bottom:1px solid #000; width:150px;" value="FIVE THOUSAND"> Only) as detailed herein above. For deposit in SCSS A/c No <input type="text" style="border:none; border-bottom:1px solid #000; width:100px;">
+            </p>
+
+            <div class="signature-area" style="margin-top: 40px;">
+                <div class="signature-box">Teller/Cashier</div>
+                <div class="signature-box">Service Manager</div>
+            </div>
+
+            <div class="notes-section">
+                <strong>NOTE:</strong><br>
+                1. The cheque/demand draft should be in favour of the "YOURSELF FOR SCSS DEPOSIT" or in favour of the "Depositor SCSS A/c" endorsed in favour of the SBI.<br>
+                2. Cheques / Demand Drafts are subject to realisation of the proceeds.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

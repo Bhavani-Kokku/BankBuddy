@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settlement of Deceased's Assets Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+        }
+        .page {
+            width: 850px;
+            background: white;
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .header h2, .header h3, .header h4 {
+            margin: 5px 0;
+            color: #222;
+            text-transform: uppercase;
+        }
+        .section-title {
+            background-color: #f0f0f0;
+            padding: 8px;
+            font-weight: bold;
+            margin: 20px 0 15px 0;
+            border: 1px solid #ccc;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .form-row {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-row label {
+            font-weight: bold;
+            min-width: 180px;
+        }
+        .form-input {
+            border: none;
+            border-bottom: 1px solid #000;
+            padding: 4px;
+            font-family: inherit;
+            flex-grow: 1;
+            font-size: 13px;
+            text-transform: uppercase;
+            background: transparent;
+            outline: none;
+        }
+        .mandatory {
+            color: red;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 6px;
+            text-align: left;
+        }
+        th {
+            background-color: #f9f9f9;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .signature-box {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 200px;
+            margin: 0 auto 5px auto;
+            padding-top: 5px;
+        }
+        .disclaimer-text {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header">
+            <h3>SETTLEMENT OF DECEASED'S ASSETS WITHOUT LEGAL REPRESENTATION/NOMINATION</h3>
+            <h4>DETAIL OF CLAIMANTS / DOCUMENTS SUBMITTED</h4>
+        </div>
+
+        <div class="form-row">
+            <label>NAME OF DECEASED <span class="mandatory">*</span></label>
+            <input type="text" class="form-input">
+        </div>
+        <div class="form-row">
+            <label>DATE & PLACE OF DEATH <span class="mandatory">*</span></label>
+            <input type="date" class="form-input" style="flex-grow: 0; width: 150px;">
+            <span style="margin: 0 10px;">&</span>
+            <input type="text" class="form-input">
+        </div>
+        <div class="form-row">
+            <label>ACCOUNT(S) NO <span class="mandatory">*</span></label>
+            <input type="text" class="form-input">
+        </div>
+
+        <div class="section-title">Claimant Details</div>
+        <div class="form-row">
+            <label>NAME OF CLAIMANT(S) <span class="mandatory">*</span></label>
+            <input type="text" class="form-input" value="DASARI PRANEETH SANJAY">
+        </div>
+        <div class="form-row">
+            <label>ADDRESS <span class="mandatory">*</span></label>
+            <input type="text" class="form-input" value="123 MAIN STREET, RASAPUDIPALEM, RAJAHMUNDRY, AP - 533101">
+        </div>
+        <div class="form-row">
+            <label>MOB/PH NO <span class="mandatory">*</span></label>
+            <input type="text" class="form-input" value="9876543210">
+        </div>
+        <div class="form-row">
+            <label>EMAIL ID</label>
+            <input type="text" class="form-input" value="PRANEETH.SANJAY@EXAMPLE.COM" style="text-transform: lowercase;">
+        </div>
+
+        <div class="section-title">DOCUMENTS TO BE SUBMITTED</div>
+        <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox"> DEATH CERTIFICATE OF DECEASED <span class="mandatory">*</span></label>
+            <label class="checkbox-item"><input type="checkbox"> PASSBOOK / ATM CARD / UNUSED CHEQUE LEAVES / STDR RECEIPT (In Original) <span class="mandatory">*</span></label>
+            <label class="checkbox-item"><input type="checkbox"> IDENTITY CARD OF ALL CLAIMANT(S) (Showing Relationship with the Deceased) <span class="mandatory">*</span></label>
+            <label class="checkbox-item"><input type="checkbox"> ADDRESS PROOF OF ALL CLAIMANT(S) <span class="mandatory">*</span></label>
+            <label class="checkbox-item"><input type="checkbox"> FAMILY MEMBERSHIP / LEGAL HEIRSHIP CERTIFICATE <span class="mandatory">*</span></label>
+            <label class="checkbox-item"><input type="checkbox"> STAMPED LETTER OF INDEMNITY</label>
+            <label class="checkbox-item"><input type="checkbox"> STAMPED AFFIDAVIT / LETTER OF DISCLAIMER / RELINQUISHMENT</label>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <h3>FORM - I</h3>
+            <h4>CLAIM FOR PAYMENT OF BALANCES IN THE ACCOUNT(S)</h4>
+        </div>
+        
+        <div class="grid-2" style="margin-bottom: 20px;">
+            <div>
+                <strong>To,</strong><br>
+                Chief / Branch Manager<br>
+                State Bank of India<br>
+                <input type="text" class="form-input" placeholder="Branch Name">
+            </div>
+            <div style="text-align: right;">
+                <strong>Date:</strong> <input type="date" class="form-input" style="width: 130px;">
+            </div>
+        </div>
+
+        <p class="disclaimer-text">
+            I/We advise that Shri/Smt/Kum <input type="text" class="form-input" style="width: 250px;"> is not traceable since / expired on <input type="date" class="form-input" style="width: 130px;"> <span class="mandatory">*</span>. 
+            Late Shri/Smt/Kum <input type="text" class="form-input" style="width: 250px;"> was maintaining accounts in your Branch as follows:
+        </p>
+
+        <table>
+            <tr>
+                <th>Sl No.</th>
+                <th>Nature of Deposit (SB/CA/TDR/RD) <span class="mandatory">*</span></th>
+                <th>Account Number <span class="mandatory">*</span></th>
+                <th>Amount (₹) <span class="mandatory">*</span></th>
+                <th>Nature of Liability to Bank (If Any)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="form-input"></td>
+                <td><input type="text" class="form-input"></td>
+                <td><input type="text" class="form-input"></td>
+                <td><input type="text" class="form-input"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="text" class="form-input"></td>
+                <td><input type="text" class="form-input"></td>
+                <td><input type="text" class="form-input"></td>
+                <td><input type="text" class="form-input"></td>
+            </tr>
+        </table>
+
+        <div class="form-row">
+            <label>Law of Succession Applicable: <span class="mandatory">*</span></label>
+            <input type="text" class="form-input" placeholder="(Hindu / Muslim / Sikh / Christian etc.)">
+        </div>
+        <div class="form-row">
+            <label>Religion: <span class="mandatory">*</span></label>
+            <input type="text" class="form-input">
+        </div>
+
+        <h4 style="margin-top: 20px;">Details of Legal Heirs / Living Relatives</h4>
+        <table>
+            <tr>
+                <th>Name of Living Relative <span class="mandatory">*</span></th>
+                <th>Relationship <span class="mandatory">*</span></th>
+                <th>Age <span class="mandatory">*</span></th>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-input" value="DASARI PRANEETH SANJAY"></td>
+                <td><input type="text" class="form-input"></td>
+                <td><input type="text" class="form-input" value="26"></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-input" value="RAVI KUMAR"></td>
+                <td><input type="text" class="form-input" value="BROTHER"></td>
+                <td><input type="text" class="form-input"></td>
+            </tr>
+        </table>
+
+        <div class="disclaimer-text" style="margin-top: 20px;">
+            <strong>Declaration:</strong> I/We declare that the facts stated above are true and correct to the best of my/our knowledge and belief.
+        </div>
+
+        <div class="signature-box" style="text-align: right; margin-top: 50px;">
+            <div class="signature-line"></div>
+            <strong>Signature of Claimant</strong><br>
+            (DASARI PRANEETH SANJAY)
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <h3>FORM - II (COS 540)</h3>
+            <h4>LETTER OF INDEMNITY</h4>
+        </div>
+
+        <p class="disclaimer-text">
+            IN CONSIDERATION of your paying or agreeing to pay us, <br>
+            Name(s) of Claimant(s): <strong>DASARI PRANEETH SANJAY</strong> <span class="mandatory">*</span><br><br>
+            The sum of Rupees <input type="text" class="form-input" style="width: 200px;"> standing at the credit of Account No. <input type="text" class="form-input" style="width: 200px;"> with your Bank in the name of Shri/Smt/Kum <input type="text" class="form-input" style="width: 200px;"> since deceased, without production of Letters of Administration or a Succession Certificate, we do hereby for ourselves and our heirs, jointly and severally UNDERTAKE AND AGREE TO INDEMNIFY you and successors against all claims, losses, damages, or charges.
+        </p>
+
+        <div class="grid-2" style="margin-top: 60px;">
+            <div class="signature-box">
+                <div class="signature-line"></div>
+                Signature of Claimant
+            </div>
+            <div class="signature-box">
+                <div class="signature-line"></div>
+                Signature of Surety 1
+            </div>
+        </div>
+
+        <hr style="margin: 40px 0; border: 1px dashed #ccc;">
+
+        <div class="header">
+            <h3>FORM - III</h3>
+            <h4>LETTER OF DISCLAIMER</h4>
+        </div>
+        <p class="disclaimer-text">
+            With reference to the Account No. <input type="text" class="form-input" style="width: 150px;"> in the name of Late <input type="text" class="form-input" style="width: 200px;">, we the following legal heirs have no interest in the above assets and as such we have no objection to your paying the balance amount to Shri/Smt/Kum <strong>DASARI PRANEETH SANJAY</strong>.
+        </p>
+
+        <table>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Name of Disclaimer(s)</th>
+                <th>Age</th>
+                <th>Signature</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="form-input"></td>
+                <td><input type="text" class="form-input"></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <h3>FORM - V</h3>
+            <h4>FORM OF RECEIPT</h4>
+        </div>
+        <p class="disclaimer-text">
+            Received from STATE BANK OF INDIA, <input type="text" class="form-input" style="width: 150px;"> Branch a sum of ₹ <input type="text" class="form-input" style="width: 100px;"> <span class="mandatory">*</span> (Rupees <input type="text" class="form-input" style="width: 300px;"> only) vide Banker's Cheque No. <input type="text" class="form-input" style="width: 150px;"> dated <input type="date" class="form-input"> being the proceeds of the deposit(s) standing in the name of Late Shri/Smt/Kum <input type="text" class="form-input" style="width: 250px;"> in full and final settlement of all the claims made by me/us.
+        </p>
+        
+        <div class="signature-box" style="text-align: right; margin-top: 40px;">
+            <div style="border: 1px solid #000; width: 60px; height: 80px; display: inline-block; text-align: center; line-height: 80px; margin-bottom: 10px; font-size: 10px;">Re.1/- Stamp</div><br>
+            <div class="signature-line"></div>
+            (SIGNATURE OF ALL CLAIMANTS)
+        </div>
+
+        <hr style="margin: 40px 0; border: 1px dashed #ccc;">
+
+        <div class="header">
+            <h3>FORM - VI (COS 539)</h3>
+            <h4>AFFIDAVIT</h4>
+        </div>
+        <p class="disclaimer-text">
+            I/We (1) <input type="text" class="form-input" style="width: 250px;"> Son/Wife of <input type="text" class="form-input" style="width: 200px;"> Residing at <input type="text" class="form-input" style="width: 300px;"><br><br>
+            Do hereby make oath / Solemnly affirm and say that Late Shri/Smt/Kum <input type="text" class="form-input" style="width: 250px;"> died intestate on <input type="date" class="form-input">. That we know the deceased and his family since the last <input type="text" class="form-input" style="width: 50px;"> Years. That we are not related in any manner whatsoever to the deceased nor have we any claim in the estate of the deceased. We are making this solemn declaration believing the same to be true.
+        </p>
+        
+        <div class="grid-2" style="margin-top: 50px;">
+            <div>
+                Sworn / solemnly affirmed before me:<br><br>
+                <div class="signature-line" style="margin-left: 0; margin-top: 30px;"></div>
+                <strong>NOTARY / MAGISTRATE</strong>
+            </div>
+            <div class="signature-box" style="margin-top: 0;">
+                <br><br>
+                <div class="signature-line"></div>
+                <strong>Signature of Deponent(s)</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <h3>FORM - IX</h3>
+            <h4>OPINION REPORT ON THE SURETY</h4>
+        </div>
+        
+        <table>
+            <tr>
+                <td style="width: 40%; font-weight: bold;">1. Name of Surety <span class="mandatory">*</span></td>
+                <td><input type="text" class="form-input"></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">2. Address with Phone No <span class="mandatory">*</span></td>
+                <td><input type="text" class="form-input"></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">3. Occupation</td>
+                <td><input type="text" class="form-input"></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">4. Present Monthly Income <span class="mandatory">*</span></td>
+                <td>₹ <input type="text" class="form-input" style="width: 80%;"></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">5. Net-worth of Surety (Assets - Liabilities) <span class="mandatory">*</span></td>
+                <td>₹ <input type="text" class="form-input" style="width: 80%;"></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">6. Details of Bank A/c <span class="mandatory">*</span></td>
+                <td><input type="text" class="form-input"></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">7. Whether Surety is related to the Deceased/Claimants?</td>
+                <td>
+                    <label><input type="radio" name="surety_rel"> Yes</label>
+                    <label style="margin-left: 15px;"><input type="radio" name="surety_rel"> No</label>
+                </td>
+            </tr>
+        </table>
+
+        <div class="disclaimer-text" style="margin-top: 20px;">
+            I confirm that all the statements made by me in this application are true and correct and have been made by me.
+        </div>
+
+        <div class="grid-2" style="margin-top: 50px;">
+            <div>
+                <strong>Date:</strong> <input type="date" class="form-input" style="width: 150px;"><br><br>
+                <strong>Place:</strong> <input type="text" class="form-input" style="width: 150px;">
+            </div>
+            <div class="signature-box" style="margin-top: 0;">
+                <div class="signature-line"></div>
+                <strong>Signature of Surety</strong>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
