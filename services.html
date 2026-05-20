@@ -199,12 +199,72 @@
   <audio id="settlementAudio" src="audio/settlement.mpeg"></audio>
 
   <!-- 🔷 FOOTER -->
-  <footer>
-    Customer Care: 1800-123456
+   <footer class="bottombar">
+    <div class="homesection">
+      <button class="home-btn">
+        🏠Home
+      </button>
+    </div>
+
+    <div class="contact-section">
+      Customer-Care:1800-1123456
+    </div>
+    <div class="spacer">
+    </div>
   </footer>
 
   <!-- 🔥 JS -->
   <script>
+
+    // function goService(serviceName) {
+    //   localStorage.setItem("service", serviceName);
+    //   window.location.href = "service.html";
+    // }
+
+    // /* 🌐 Language toggle */
+    // function setLang(lang) {
+    //   document.body.className = "lang-" + lang;
+    // }
+    // /* 🔊 PLAY BASED ON LANGUAGE */
+    // function playLangAudio(enId, teId) {
+
+    //   let lang = document.body.className;
+
+    //   if (lang === "lang-te") {
+    //     playAudio(teId);
+    //   } else {
+    //     playAudio(enId);
+    //   }
+    // }
+
+    // /* 🔊 PLAY AUDIO 
+    // function playAudio(id) {
+    //   const audio = document.getElementById(id);
+    //   audio.currentTime = 0;
+    //   audio.play();
+    // }*/
+    // function playAudio(id) {
+    //   stopAllAudio(); // 🔥 ensures only one audio plays
+    //   const audio = document.getElementById(id);
+    //   audio.currentTime = 0;
+    //   audio.play().catch(() => { });
+    // }
+
+
+    // /* 🔊 STOP AUDIO */
+    // function stopAudio(id) {
+    //   const audio = document.getElementById(id);
+    //   audio.pause();
+    //   audio.currentTime = 0;
+    // }
+
+    // /* 🔊 STOP ALL */
+    // function stopAllAudio() {
+    //   document.querySelectorAll("audio").forEach(a => {
+    //     a.pause();
+    //     a.currentTime = 0;
+    //   });
+    // }
 
     function goService(serviceName) {
       localStorage.setItem("service", serviceName);
@@ -256,6 +316,10 @@
       });
     }
 
+    let hm_btn=document.querySelector(".home-btn");
+    hm_btn.addEventListener("click",function(){
+      window.location.href="index.html";
+    })
   </script>
 
 </body>

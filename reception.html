@@ -47,7 +47,15 @@ h1 {
   width: 300px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
+.back {
+  position: fixed;
+  bottom: 30px;
+  left: 40px;
+  padding: 12px 28px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+}
 button {
   padding: 10px 20px;
   border: none;
@@ -233,6 +241,6 @@ if(localStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "login.html";
 }
 </script>
-
+<button class="back" onclick="window.location.href='index.html'">Back</button>
 </body>
 </html>
