@@ -111,7 +111,7 @@ button {
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
   getFirestore, collection, query, where,
-  onSnapshot, updateDoc, doc, getDocs, limit
+  onSnapshot, updateDoc, doc, getDocs, limit ,orderBy
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 /* 🔥 FIREBASE CONFIG */
@@ -149,7 +149,6 @@ function loadToken() {
     collection(db, "tokens"),
     where("status", "==", "serving"),
     where("counter", "==", currentCounter),
-    where("date", "==", today),
     limit(1)
   );
 
@@ -167,8 +166,12 @@ function loadToken() {
 
     currentDocId = docSnap.id;
 
-    document.getElementById("currentToken").innerText =
-      "Token " + data.token;
+    document.getElementById("currentToken").innerHTML =
+  `
+  Token ${data.token}<br>
+  Phone: XXXXXX${data.phoneDigits || "----"}<br>
+  ${data.priority ? "⭐ Priority User" : ""}
+  `;  
   });
 }
 
@@ -180,24 +183,28 @@ function loadQueue() {
   const q = query(
     collection(db, "tokens"),
     where("status", "==", "waiting"),
-    where("counter", "==", currentCounter),
-    where("date", "==", today)
+    where("counter", "==", currentCounter)
   );
 
   onSnapshot(q, (snapshot) => {
 
-    let tokens = [];
+  let tokens = [];
 
-    snapshot.forEach(docSnap => {
-      tokens.push(docSnap.data().token);
-    });
+snapshot.forEach(docSnap => {
 
-    // sort tokens
-    tokens.sort((a, b) => a - b);
+  const data = docSnap.data();
 
-    // display list
-    document.getElementById("queueList").innerText =
-      tokens.length ? tokens.join(", ") : "No waiting tokens";
+  tokens.push(data);
+
+});
+tokens.sort((a, b) => a.token - b.token);
+
+  document.getElementById("queueList").innerText =
+  tokens.length
+    ? tokens.map(t =>
+        `Token ${t.token}${t.priority ? " ⭐" : ""}`
+      ).join(", ")
+    : "No waiting tokens";
 
     // display count
     document.getElementById("queueCount").innerText =
@@ -217,24 +224,25 @@ window.nextToken = async function() {
     });
   }
 
-  // get next waiting token (same counter)
   const q = query(
-    collection(db, "tokens"),
-    where("status", "==", "waiting"),
-    where("counter", "==", currentCounter),
-    where("date", "==", today),
-    limit(1)
-  );
+  collection(db, "tokens"),
+  where("status", "==", "waiting"),
+  where("counter", "==", currentCounter),
+  orderBy("token"),
+  limit(1)
+);
 
-  const snapshot = await getDocs(q);
+const snapshot = await getDocs(q);
 
-  if (!snapshot.empty) {
-    const nextDoc = snapshot.docs[0];
+if (!snapshot.empty) {
 
-    await updateDoc(doc(db, "tokens", nextDoc.id), {
-      status: "serving"
-    });
-  }
+  const nextDoc = snapshot.docs[0];
+
+  await updateDoc(doc(db, "tokens", nextDoc.id), {
+    status: "serving"
+  });
+
+}
 };
 if(localStorage.getItem("isLoggedIn") !== "true") {
     alert("Please login first!");

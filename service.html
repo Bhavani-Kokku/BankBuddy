@@ -20,7 +20,31 @@
   <button onclick="openOriginal()">📄 View Original Form</button>
   <button onclick="openSample()">🧾 View Filled Sample</button>
   </div>
+  <div class="verification-section">
 
+  <h3>Verification</h3>
+
+  <input type="number"
+         id="phoneDigits"
+         maxlength="4"
+         placeholder="Last 4 digits of phone number"
+         style="width: 260px; padding: 10px;border-radius: 6px">
+
+  <h3>Accessibility Support</h3>
+
+  <label>
+    <input type="checkbox" id="seniorCitizen">
+    Senior Citizen
+  </label>
+
+  <br>
+
+  <label>
+    <input type="checkbox" id="pwd">
+    Person with Disability
+  </label>
+
+</div>
     <!-- ✅ ALWAYS CLICKABLE -->
     <button onclick="generateToken()">Generate Token</button>
     <button class="back" onclick="window.location.href='services.html'">Back</button>
@@ -364,7 +388,17 @@ window.openSample = function () {
           "❌ Token not generated! Please confirm you have ALL required documents.";
         return;
       }
+      const phoneDigits =
+    document.getElementById("phoneDigits").value;
 
+const isPriority =
+    document.getElementById("seniorCitizen").checked ||
+    document.getElementById("pwd").checked;
+
+if (phoneDigits.length !== 4) {
+  alert("Please enter exactly 4 digits");
+  return;
+}
       const today = new Date().toDateString();
 
       // GLOBAL TOKEN COUNT
@@ -393,14 +427,32 @@ window.openSample = function () {
       if (snapshotServing.empty) {
         statusValue = "serving";
       }
+      const q = query(
+  collection(db, "tokens"),
+  where("status", "==", "waiting"),
+  where("counter", "==", counter),
+  where("date", "==", today)
+);
 
+const snapshot = await getDocs(q);
+
+let existingTokens = [];
+
+snapshot.forEach(docSnap => {
+  existingTokens.push(docSnap.data());
+});
+
+let queueOrder = newToken;
       // SAVE TOKEN
       await addDoc(collection(db, "tokens"), {
         token: newToken,
         counter: counter,
         service: service,
         status: statusValue,
-        date: today
+        date: today,
+        phoneDigits: phoneDigits,
+        priority: isPriority,
+        queueOrder: queueOrder
       });
 
       // 🔥 CALCULATE WAITING TIME
