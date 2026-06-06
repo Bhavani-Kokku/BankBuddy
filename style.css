@@ -63,8 +63,8 @@ h1{
 }
 
 .card-front {
-  background-image: url(bankbuddy.jpeg);
-  background-size: contain;
+  background-image: url(images/cardFrontwall.png);
+  background-size: cover;
   background-position: center;
   background-color: skyblue;
   color: #fff;
@@ -74,7 +74,7 @@ h1{
 
 .card-back {
   background-image: url(sbi.jpeg);
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-color: navy;
   color: #fff;
